@@ -37,6 +37,7 @@ const config: Config = {
       'classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -45,6 +46,7 @@ const config: Config = {
           remarkPlugins: [math],
           rehypePlugins: [katex]
         },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -93,7 +95,7 @@ const config: Config = {
           items: [
             {
               label: 'Knowledge',
-              to: '/docs/intro',
+              to: '/',
             },
           ],
         },
@@ -101,17 +103,17 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Graypaper',
+              href: 'https://graypaper.com/',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Prize',
+              href: 'https://jam.web3.foundation/',
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
+              label: 'jamcha.in',
+              href: 'https://jamcha.in/',
+            }
           ],
         },
         {

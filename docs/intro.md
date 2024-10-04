@@ -1,6 +1,7 @@
 ---
 title: Intro
 sidebar_position: 0
+slug: /
 ---
 
-Knowledge base for JAM implementors. 
+Knowledge base of the JAM implementors teams.

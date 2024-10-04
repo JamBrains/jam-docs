@@ -10,24 +10,32 @@ The Chain Specification is a configuration that defines all core constants of th
 
 Each chain spec must define the following parameters. All other values are assumed to be set to the values of the Graypaper.
 
-### `name`
+### chain
 
 The name of the spec.
 
-### $\mathsf{V}$ `num_validators`
+### V `num_validators`
 
 The number of validators.
 
-### $\mathsf{E}$ `slots_per_epoch`
+### C `num_cores`
+
+The number of cores.
+
+### P `slot_duration`
+
+Slot time duration in seconds.
+
+### E `epoch_duration`
 
 The number of slots in an epoch.
 
-### $\mathsf{Y}$ `ticket_contest_end_epoch`
+### Y `contest_duration`
 
 The epoch in which the ticket contest ends.  
 Constraint: $\mathsf{Y} > 0 \land \mathsf{Y} < \mathsf{E}$
 
-### $\mathsf{N}$ `tickets_per_validator`
+### N `tickets_per_validator`
 
 The maximum number of tickets each validator can submit. This must be configurable to ensure that a 2/3+1 majority of validators can still finish the ticket contest successfully.  
-Constraint: $(\frac{2}{3} * \mathsf{V} + 1) * \mathsf{N} >= \mathsf{E}$
+Constraint: $(\frac{2*\mathsf{V}}{3} + 1) * \mathsf{N} >= \mathsf{E}$
