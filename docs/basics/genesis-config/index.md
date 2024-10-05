@@ -1,6 +1,8 @@
 ---
 id: Genesis Config
 sidebar_label: Genesis Config
+sidebar_position: 2
+slug: /basics/genesis-config
 ---
 
 The genesis config provides the initial values that are needed by all nodes to start the JAM chain. Each field is explained below.
