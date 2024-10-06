@@ -70,7 +70,7 @@ const config: Config = {
     navbar: {
       title: 'JAM Docs',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'JAM Docs Logo',
         src: 'img/logo.svg',
       },
       items: [
