@@ -1,7 +1,8 @@
 ---
 id: 3X Large
-sidebar_label: XXX Large
+sidebar_label: 3X Large
 sidebar_position: 6
+slug: /basics/chain-spec/3x-large
 ---
 
 ```yaml
