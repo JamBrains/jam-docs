@@ -4,6 +4,8 @@ sidebar_label: Tiny
 sidebar_position: 0
 ---
 
+A tiny spec for local testing.
+
 ```yaml
 chain: tiny
 num_validators: 6
