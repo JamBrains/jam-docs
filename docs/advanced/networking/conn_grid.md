@@ -1,13 +1,12 @@
 ---
-id: Connectivity Grid
-sidebar_label: Connectivity Grid
+id: Block Propagation Grid
+sidebar_label: Block Propagation Grid
 sidebar_position: 3
 ---
 
-Our interpretation of the SNP spec leads to the following connectivity graph. There are three grids;
-previous, current and future validator set. As simplification it uses just eight instead of 31 as
-grid size. One validator is selected in red, connecting to its first order peers in red. The
-second order connections are in green. The third order connections are all nodes.
+Our interpretation of the SNP spec leads to the following grid for block propagation. There are three grids;
+previous, current and future validator set.  
+As simplification it uses just eight instead of 31 as grid size. One validator is selected in red, propagating to its first order peers in red. The second order propagatings are in green. The third order propagatings are all nodes.
 
 <iframe
   src="https://stackblitz.com/edit/typescript-dm85k5?embed=1&file=index.ts&hideDevTools=1&hideExplorer=1&hideNavigation=1&theme=dark&view=preview"
