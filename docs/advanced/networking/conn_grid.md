@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Our interpretation of the SNP spec leads to the following grid for block propagation. There are three grids;
 previous, current and future validator set.  
-As simplification it uses just eight instead of 31 as grid size. One validator is selected in red, propagating to its first order peers in red. The second order propagatings are in green. The third order propagatings are all nodes.
+As simplification it uses just eight instead of 31 as grid size. One validator is selected in red, propagating to its first order peers in red. The second order propagations are in green. The third order propagations are all nodes.
 
 <iframe
   src="https://stackblitz.com/edit/typescript-dm85k5?embed=1&file=index.ts&hideDevTools=1&hideExplorer=1&hideNavigation=1&theme=dark&view=preview"
@@ -24,7 +24,7 @@ As simplification it uses just eight instead of 31 as grid size. One validator i
 
 ## Example
 
-For the validator with index `32` (grid coordinate `(1, 1)`), this would mean that they are connected to the following other validator coordinates on the same epoch:
+For the validator with index `32` (grid coordinate `(1, 1)`), this would mean that they are propagating to the following other validator coordinates on the same epoch:
 
 `[{0, 1}, {2, 1}, {3, 1}, {4, 1}, {5, 1}, {6, 1}, {7, 1}, {8, 1}, {9, 1}, {10, 1}, {11, 1}, {12, 1}, {13, 1}, {14, 1}, {15, 1}, {16, 1}, {17, 1}, {18, 1}, {19, 1}, {20, 1}, {21, 1}, {22, 1}, {23, 1}, {24, 1}, {25, 1}, {26, 1}, {27, 1}, {28, 1}, {29, 1}, {30, 1}, {1, 0}, {1, 2}, {1, 3}, {1, 4}, {1, 5}, {1, 6}, {1, 7}, {1, 8}, {1, 9}, {1, 10}, {1, 11}, {1, 12}, {1, 13}, {1, 14}, {1, 15}, {1, 16}, {1, 17}, {1, 18}, {1, 19}, {1, 20}, {1, 21}, {1, 22}, {1, 23}, {1, 24}, {1, 25}, {1, 26}, {1, 27}, {1, 28}, {1, 29}, {1, 30}]`
 
@@ -32,4 +32,4 @@ Translating to the following indices:
 
 `[1, 63, 94, 125, 156, 187, 218, 249, 280, 311, 342, 373, 404, 435, 466, 497, 528, 559, 590, 621, 652, 683, 714, 745, 776, 807, 838, 869, 900, 931, 31, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61]`
 
-Additionally their are also connected to the same indices in the previous and future epoch.
+Additionally their are also propagating to the same indices in the previous and future epoch.
