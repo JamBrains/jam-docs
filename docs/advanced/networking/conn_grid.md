@@ -1,7 +1,7 @@
 ---
-id: Connectivity
-sidebar_label: Connectivity
-sidebar_position: 2
+id: Connectivity Grid
+sidebar_label: Connectivity Grid
+sidebar_position: 3
 ---
 
 Our interpretation of the SNP spec leads to the following connectivity graph. There are three grids;
