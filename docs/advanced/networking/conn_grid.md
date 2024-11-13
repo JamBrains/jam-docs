@@ -4,8 +4,9 @@ sidebar_label: Block Propagation Grid
 sidebar_position: 3
 ---
 
-Our interpretation of the SNP spec leads to the following grid for block propagation. There are three grids;
-previous, current and future validator set.  
+The SNP spec specifies that nodes need to announce their blocks only to specific peers - not to the whole network. Our interpretation of the SNP spec leads to the following grid for block propagation:
+
+There are three grids; previous, current and future validator set.  
 As simplification it uses just eight instead of 31 as grid size. One validator is selected in red, propagating to its first order peers in red. The second order propagations are in green. The third order propagations are all nodes.
 
 <iframe
