@@ -120,4 +120,4 @@ Fergie:
 
 </details>
 
-... there are 2^256 dev accounts in total that continue in the same pattern but are unnamed.
+... there are 2^32 dev accounts in total that continue in the same pattern but are unnamed.
