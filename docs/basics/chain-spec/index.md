@@ -41,3 +41,7 @@ Constraint: $\mathsf{Y} > 0 \land \mathsf{Y} < \mathsf{E}$
 
 The maximum number of tickets each validator can submit. This must be configurable to ensure that a 2/3+1 majority of validators can still finish the ticket contest successfully.  
 Constraint: $(\frac{2*\mathsf{V}}{3} + 1) * \mathsf{N} >= \mathsf{E}$
+
+### R `rotation_period`
+
+The rotation period of validator-core assignments, in timeslots.
