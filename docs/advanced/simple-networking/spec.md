@@ -1,11 +1,10 @@
 ---
 id: spec
-sidebar_label: JAMNP-S Spec
+sidebar_label: Spec
 sidebar_position: 1
-slug: /advanced/simple-networking/spec
 ---
 
-(source https://github.com/zdave-parity/jam-np/blob/main/simple.md from {new Date().toISOString().split('T')[0]})
+(source: https://github.com/zdave-parity/jam-np/blob/main/simple.md from {new Date().toISOString().split('T')[0]})
 
 <!-- The raw MD from above will be downloaded and appended -->
  # JAM Simple Networking Protocol (JAMNP-S)
@@ -40,9 +39,9 @@ Encryption and authentication occur as usual in TLS:
 ### ALPN
 
 The protocol name, version, and chain are identified using QUIC/TLS "ALPN" (Application Layer
-Protocol Negotiation). The protocol identifier should be either `jamnp-s/V/H` or
+Protocol Negotiation). The (ASCII-encoded) protocol identifier should be either `jamnp-s/V/H` or
 `jamnp-s/V/H/builder`. Here `V` is the protocol version, `0`, and `H` is the first 8 nibbles of the
-hash of the chain's genesis block header.
+hash of the chain's genesis header, in lower-case hexadecimal.
 
 The `/builder` suffix should always be permitted by the side accepting the connection, but only
 used by the side initiating the connection if it is connecting as a work-package builder. Note that
@@ -66,7 +65,7 @@ Given two Ed25519 public keys $(a, b)$, the Preferred Initiator $P(a, b) \in \{a
 
 ```math
 P(a, b) \equiv \begin{cases}
-    a &\text{when } \text{bits}(a)_{255} \oplus \text{bits}(b)_{255} \oplus (a < b)\\
+    a &\text{when } (a_{31} > 127) \oplus (b_{31} > 127) \oplus (a < b)\\
     b &\text{otherwise}
 \end{cases}
 ```
@@ -75,21 +74,18 @@ Validators should accept connections from other nodes too, with a reasonable num
 20) reserved for work-package builders. Builders may reasonably be required to prove their
 credentials through submission of a valid work-package in order to retain their connection.
 
-### Grid structure
-
-Validators are conceptually linked in a grid structure. Two validators are linked if:
-
-- They are validators in the same epoch and either have the same row (`index / 31`) or the same
-  column (`index % 31`).
-- They are validators in different epochs but have the same index.
-
 ### Epoch transitions
 
-At the beginning of a new epoch, validators should wait to apply connectivity changes until at
-least one block in the previous or new epoch is finalized. The intent of this rule is to ensure
-that the validator set currently required to advance finality remains connected. In normal
-operation, where finality is running shortly behind block production, no waiting should be
-required.
+At the beginning of a new epoch, validators should wait to apply connectivity changes until both:
+
+- The first block in the epoch has been finalized.
+- At least 2 minutes have elapsed since the beginning of the epoch.
+
+This rule is intended to:
+
+- Ensure that the validator set currently required to advance finality remains connected.
+- Ensure consensus is reached on new connectivity before it is applied.
+- Synchronize connectivity changes across validators, making epoch transitions smoother.
 
 ## Protocols and streams
 
@@ -117,9 +113,13 @@ After opening a stream, the stream initiator must send a single byte identifying
 UP stream kinds are numbered starting from 0, CE stream kinds are numbered starting from 128. The
 identified protocol becomes active immediately after this byte is sent.
 
+### Messages
+
 All stream protocols are specified in terms of _messages_. A message is transmitted in two parts.
 First, the size (in bytes) of the message content is transmitted, encoded as a little-endian 32-bit
 unsigned integer. Second, the message content itself is transmitted.
+
+### Notation
 
 In the protocol descriptions below:
 
@@ -137,13 +137,50 @@ In the protocol descriptions below:
 - Encoding is as per the serialization codec defined in the gray paper.
 - `len++` preceding a sequence indicates that the sequence should be explicitly prefixed by its
   length. If a sequence is not preceded by `len++`, the length is either fixed or implied by
-  context.
+  context. In the case of a message consisting of a single sequence, the length of the sequence is
+  implied by the message size in bytes. If the encoded size of an element of the sequence is fixed,
+  the length of the sequence can be trivially calculated by dividing the message size by this size.
+  Otherwise, the sequence length can be determined by reading and decoding elements one at a time
+  from the stream until the number of bytes read matches the size of the message.
+
+### Common types
+
+The following "common" types are used in multiple protocols.
+
+```
+Header = As in GP
+Work-Report = As in GP
+Hash = Header Hash = Work-Report Hash = [u8; 32]
+
+Slot = u32
+Epoch Index = u32 (Slot / E)
+
+Validator Index = u16
+Core Index = u16
+
+Ed25519 Signature = [u8; 64]
+
+Erasure-Root = [u8; 32]
+Shard Index = u16
+Bundle Shard = [u8]
+Segment Shard = [u8; 12]
+```
+
+### Grid structure
+
+Primarily for the purpose of block announcements, the previous, current, and next validator sets
+are conceptually arranged in a grid structure. Two validators are considered neighbours in the grid
+if:
+
+- They are validators in the same epoch and either have the same row (`index / W`) or the same
+  column (`index % W`). `W` here is `floor(sqrt(V))`, where `V` is the number of validators.
+- They are validators in different epochs but have the same index.
 
 ### UP 0: Block announcement
 
-This should be opened between two nodes if either:
+This should be opened between two connected nodes if either:
 
-- Both nodes are validators, and are linked in the grid structure.
+- Both nodes are validators, and are neighbours in the grid structure.
 - At least one of the nodes is not a validator.
 
 Here, "validator" means a validator in either the previous, current, or next epoch. As this is a UP
@@ -152,22 +189,20 @@ protocol, the initiator of the connection is responsible for opening the stream 
 Both sides should begin by sending a handshake message containing all known leaves (descendants of
 the latest finalized block with no known children).
 
-An announcement should be sent on the stream whenever a new block is produced or received.
-Announcement of a block may only be skipped if:
+An announcement should be sent on the stream whenever a new, valid, block is produced or received.
+Announcement of a block may only be skipped if either:
 
 - A descendant of the block is announced instead.
 - The block is not a descendant of the latest finalized block.
+- The block, or a descendant of the block, has been announced by the other side of the stream.
 
-The hash and slot of the latest finalized block should be included in the handshake message and
-also in every announcement message that is sent.
+The header hash and slot of the latest finalized block should be included in the handshake message
+and also in every announcement message that is sent.
 
 ```
-Header Hash = [u8; 32]
-Slot = u32
 Final = Header Hash ++ Slot
 Leaf = Header Hash ++ Slot
 Handshake = Final ++ len++[Leaf]
-Header = As in GP
 Announcement = Header ++ Final
 
 Node -> Node
@@ -196,8 +231,7 @@ unknown, the actual work-reports and preimages should be requested using protoco
 respectively.
 
 ```
-Header Hash = [u8; 32]
-Direction = { 0 (Ascending exclusive), 1 (Descending inclusive) } (Single byte)
+Direction = 0 (Ascending exclusive) OR 1 (Descending inclusive) (Single byte)
 Maximum Blocks = u32
 Block = As in GP
 
@@ -225,7 +259,7 @@ the given start key is not present in the state trie, the "path to the start key
 either at a fork node with an all-zeroes hash in the branch that would be taken for the start key,
 or at a leaf node with a different key.
 
-The total encoded length of the response should not exceed the given maximum size in bytes, unless
+The total encoded size of the response should not exceed the given maximum size in bytes, unless
 the response contains only a single key/value pair. As such, the response may not cover the full
 requested range.
 
@@ -233,7 +267,6 @@ Note that the keys in the response are only 31 bytes, as the final key byte is i
 Merklization function.
 
 ```
-Header Hash = [u8; 32]
 Key = [u8; 31] (First 31 bytes of key only)
 Maximum Size = u32
 Boundary Node = As returned by B/L, defined in the State Merklization appendix of the GP
@@ -241,7 +274,7 @@ Value = len++[u8]
 
 Node -> Node
 
---> Header Hash ++ Start Key ++ End Key ++ Maximum Size
+--> Header Hash ++ Key (Start) ++ Key (End) ++ Maximum Size
 --> FIN
 <-- [Boundary Node]
 <-- [Key ++ Value]
@@ -261,7 +294,7 @@ Protocol 131 is used for the first step (generating validator to proxy validator
 used for the second step (proxy validator to all current validators). Both protocols look the same
 on the wire; the difference is only in which step they are used for.
 
-The first step should be performed shortly after the connectivity changes for a new epoch are
+The first step should be performed one minute after the connectivity changes for a new epoch are
 applied. The index of the proxy validator for a ticket is determined by interpreting the last 4
 bytes of the ticket's VRF output as a big-endian unsigned integer, modulo the number of validators.
 The proxy validator is selected from the next epoch's validator list. If the generating validator
@@ -271,41 +304,45 @@ following section.
 
 Proxy validators should verify the proof of any ticket they receive, and verify that they are the
 correct proxy for the ticket. If these checks succeed, they should forward the ticket to all
-current validators. Forwarding should be delayed until 2 minutes into the epoch, to avoid exposing
-the timing of the message from the generating validator. Forwarding should be evenly spaced out
-from this point until half-way through the Safrole lottery period. Forwarding may be stopped if the
-ticket is included in a finalized block.
+current validators. Forwarding should be delayed until 3 minutes after the application of
+connectivity changes, to avoid exposing the timing of the message from the generating validator.
+Forwarding should be evenly spaced out from this point until half-way through the Safrole lottery
+period. Forwarding may be stopped if the ticket is included in a finalized block.
 
 If finality is running far enough behind that the state required to verify a received ticket is not
 known with certainty, the stream should be reset/stopped. This applies to both protocol 131 and
 132.
 
 ```
-Epoch Index = u32 (Should identify the epoch that the ticket will be used in)
-Attempt = { 0, 1 } (Single byte)
+Attempt = 0 OR 1 (Single byte)
 Bandersnatch RingVRF Proof = [u8; 784]
-Ticket = Epoch Index ++ Attempt ++ Bandersnatch RingVRF Proof
+Ticket = Attempt ++ Bandersnatch RingVRF Proof (As in GP)
 
 Validator -> Validator
 
---> Ticket
+--> Epoch Index ++ Ticket (Epoch index should identify the epoch that the ticket will be used in)
 --> FIN
 <-- FIN
 ```
 
 ### CE 133: Work-package submission
 
-Submission of a work-package from a builder to a guarantor assigned to the relevant core.
+Submission of a work-package from a builder to a guarantor.
+
+The second message should contain all the extrinsic data referenced by the work-package, formatted
+as in work-package bundles, which are defined in the Computation of Work Results section of the GP.
+
+Note that the content of imported segments _should not_ be sent; it is the responsibility of the
+receiving guarantor to fetch this data from the availability system.
 
 ```
-Core Index = u16
-Work Package = As in GP
+Work-Package = As in GP
 Extrinsic = [u8]
 
 Builder -> Guarantor
 
---> Core Index ++ Work Package
---> [Extrinsic] (Message length should equal sum of extrinsic data lengths)
+--> Core Index ++ Work-Package
+--> [Extrinsic] (Message size should equal sum of extrinsic data lengths)
 --> FIN
 <-- FIN
 ```
@@ -320,13 +357,13 @@ using this protocol, but only after:
 - It has been determined that it is possible to generate a work-report that could be included on
   chain. This will involve, for example, verifying the WP's authorization.
 - All import segments have been retrieved. Note that this will involve mapping any WP hashes in the
-  import list to segment roots.
+  import list to segments-roots.
 
 The refine logic need not be executed before sharing a work-package; ideally, refinement should be
 done while waiting for the other guarantors to respond.
 
 Unlike CE 133, a full work-package bundle is sent, along with any necessary work-package hash to
-segment root mappings. The bundle includes imported data segments and their justifications as well
+segments-root mappings. The bundle includes imported data segments and their justifications as well
 as the work-package and extrinsic data. The bundle should precisely match the one that is
 ultimately erasure coded and made available in the case where the work-report gets included on
 chain.
@@ -334,23 +371,21 @@ chain.
 The guarantor receiving the work-package bundle should perform basic verification first and then
 execute the refine logic, returning the hash of the resulting work-report and a signature that can
 be included in a guaranteed work-report. The basic verification should include checking the
-validity of the authorization and checking the work-package hash to segment root mappings. If the
+validity of the authorization and checking the work-package hash to segments-root mappings. If the
 mappings cannot be verified, the guarantor may, at their discretion, either refuse to refine the
 work-package or blindly trust the mappings.
 
 ```
-Core Index = u16
-Segment Root Mappings = len++[Work Package Hash ++ Segment Root]
-Work Package Bundle = As in GP
-Work Report Hash = [u8; 32]
-Ed25519 Signature = [u8; 64]
+Segments-Root = [u8; 32]
+Segments-Root Mappings = len++[Work-Package Hash ++ Segments-Root]
+Work-Package Bundle = As in GP
 
 Guarantor -> Guarantor
 
---> Core Index ++ Segment Root Mappings
---> Work Package Bundle
+--> Core Index ++ Segments-Root Mappings
+--> Work-Package Bundle
 --> FIN
-<-- Work Report Hash ++ Ed25519 Signature
+<-- Work-Report Hash ++ Ed25519 Signature
 <-- FIN
 ```
 
@@ -358,32 +393,36 @@ Guarantor -> Guarantor
 
 Distribution of a fully guaranteed work-report ready for inclusion in a block.
 
-After sharing a work-package received via CE 133 and getting back a signature from at least one
-other guarantor, a guaranteed work-report may be constructed and distributed.
+After sharing a work-package received via CE 133 and getting back a signature from another
+guarantor, a guaranteed work-report may be constructed. The third guarantor should be given a
+reasonable amount of time (e.g. two seconds) to produce an additional signature before the
+guaranteed work-report is distrubuted.
 
 Guaranteed work-reports should be distributed to all current validators, and during the last core
 rotation of an epoch, additionally to all validators for the next epoch. Note that these validator
 sets are likely to overlap.
 
-Once in possession of two signatures for a work-report, the third guarantor should be given a
-reasonable amount of time (e.g. two seconds) to produce an additional signature before the
-guaranteed work-report is distrubuted.
+There are two reasons for distributing to the validators for the next epoch:
+
+- These validators may be able to include the work-report in a block themselves.
+- If the work-report is included in a block by a current validator, they will need the work-report
+  in order to validate the block and keep up with the chain.
+
+Guarantors should try to avoid producing and distributing work-reports that cannot be included in
+the next block. In particular, they should avoid producing and distributing work-reports with slots
+that are too far in the past or the future.
 
 ```
-Work Report = As in GP
-Slot = u32
-Validator Index = u16
-Ed25519 Signature = [u8; 64]
-Guaranteed Work Report = Work Report ++ Slot ++ len++[Validator Index ++ Ed25519 Signature]
+Guaranteed Work-Report = Work-Report ++ Slot ++ len++[Validator Index ++ Ed25519 Signature] (As in GP)
 
 Guarantor -> Validator
 
---> Guaranteed Work Report
+--> Guaranteed Work-Report
 --> FIN
 <-- FIN
 ```
 
-## CE 136: Work-report request
+### CE 136: Work-report request
 
 Request for the work-report with the given hash.
 
@@ -394,14 +433,11 @@ A node announcing a new block may be assumed to possess the referenced work-repo
 should thus be queried first for missing reports.
 
 ```
-Work Report Hash = [u8; 32]
-Work Report = As in GP
-
 Node -> Node
 
---> Work Report Hash
+--> Work-Report Hash
 --> FIN
-<-- Work Report
+<-- Work-Report
 <-- FIN
 ```
 
@@ -412,7 +448,7 @@ work-report. The response should include a work-package bundle shard and a seque
 exported/proof segment shards. The response should also include a "justification", proving the
 correctness of the shards.
 
-The justification should be the co-path of the path from the erasure root to the shards, given by:
+The justification should be the co-path of the path from the erasure-root to the shards, given by:
 
 ```math
 T(\mathbf{s}, i, \mathcal{H})
@@ -421,25 +457,18 @@ T(\mathbf{s}, i, \mathcal{H})
 Where:
 
 - $\mathbf{s}$ is the sequence of (work-package bundle shard hash, segment shard root) pairs
-  satisfying $u = \mathcal{M}_B(\mathbf{s})$, where $u$ is the erasure root and $\mathcal{M}_B$ is
+  satisfying $u = \mathcal{M}_B(\mathbf{s})$, where $u$ is the erasure-root and $\mathcal{M}_B$ is
   as defined in the General Merklization appendix of the GP.
 - $i$ is the shard index.
 - $\mathcal{H}$ is the Blake 2b hash function.
 - $T$ is as defined in the General Merklization appendix of the GP.
 
-Note that the last entry in the justification may consist of a pair of hashes.
-
 ```
-Erasure Root = [u8; 32]
-Shard Index = u16
-Bundle Shard = [u8]
-Segment Shard = [u8; 12]
-Hash = [u8; 32]
-Justification = [Hash OR (Hash ++ Hash)]
+Justification = [0 ++ Hash OR 1 ++ Hash ++ Hash] (Each discriminator is a single byte)
 
 Assurer -> Guarantor
 
---> Erasure Root ++ Shard Index
+--> Erasure-Root ++ Shard Index
 --> FIN
 <-- Bundle Shard
 <-- [Segment Shard] (Should include all exported and proof segment shards with the given index)
@@ -455,20 +484,16 @@ This protocol should be used by auditors to request work-package bundle shards f
 order to reconstruct work-package bundles for auditing. In addition to the requested shard, the
 response should include a justification, proving the correctness of the shard.
 
-The justification should be the co-path of the path from the erasure root to the shard. The assurer
+The justification should be the co-path of the path from the erasure-root to the shard. The assurer
 should construct this by appending the corresponding segment shard root to the justification
-received via CE 137. The last-but-one entry in the justification may consist of a pair of hashes.
+received via CE 137.
 
 ```
-Erasure Root = [u8; 32]
-Shard Index = u16
-Bundle Shard = [u8]
-Hash = [u8; 32]
-Justification = [Hash OR (Hash ++ Hash)]
+Justification = [0 ++ Hash OR 1 ++ Hash ++ Hash] (Each discriminator is a single byte)
 
 Auditor -> Assurer
 
---> Erasure Root ++ Shard Index
+--> Erasure-Root ++ Shard Index
 --> FIN
 <-- Bundle Shard
 <-- Justification
@@ -487,7 +512,7 @@ justification for the returned segment shards. In the second variant, the assure
 justification for each returned segment shard, allowing the guarantor to immediately assess the
 correctness of the response.
 
-The justification for a segment shard should be the co-path from the erasure root to the shard,
+The justification for a segment shard should be the co-path from the erasure-root to the shard,
 given by:
 
 ```math
@@ -503,27 +528,23 @@ Where:
 - $\mathcal{H}$ is the Blake 2b hash function.
 - $T$ is as defined in the General Merklization appendix of the GP.
 
-Note that one entry in the justification may be a pair of hashes, and the last entry may be a
-segment shard.
-
 Guarantors should initially use protocol 139 to fetch segment shards. If a reconstructed import
 segment is inconsistent with its reconstructed proof, the segment and proof should be reconstructed
 again, using shards retrieved with protocol 140. When using this protocol, the guarantor can verify
 the correctness of each response as it is received, requesting shards from a different assurer in
 the case of an incorrect response. If the reconstructed segment and proof are still inconsistent,
-then it can be concluded that the erasure root is invalid.
+then it can be concluded that the erasure-root is invalid.
+
+The number of segment shards requested in a single stream should not exceed $W_M = 2^{11}$ (this
+constant is defined in the GP).
 
 ```
-Erasure Root = [u8; 32]
-Shard Index = u16
 Segment Index = u16
-Segment Shard = [u8; 12]
-Hash = [u8; 32]
-Justification = [Hash OR (Hash ++ Hash) OR Segment Shard]
+Justification = [0 ++ Hash OR 1 ++ Hash ++ Hash OR 2 ++ Segment Shard] (Each discriminator is a single byte)
 
 Guarantor -> Assurer
 
---> [Erasure Root ++ Shard Index ++ len++[Segment Index]]
+--> [Erasure-Root ++ Shard Index ++ len++[Segment Index]]
 --> FIN
 <-- [Segment Shard]
 [Protocol 140 only] for each segment shard {
@@ -542,10 +563,8 @@ the next validator set for the distribution 2 seconds before a new epoch -- the 
 extrinsic and block seal are both checked using the posterior keysets.
 
 ```
-Anchor Hash = [u8; 32]
 Bitfield = [u8; 43] (One bit per core)
-Ed25519 Signature = [u8; 64]
-Assurance = Anchor Hash ++ Bitfield ++ Ed25519 Signature
+Assurance = Header Hash (Anchor) ++ Bitfield ++ Ed25519 Signature
 
 Assurer -> Validator
 
@@ -560,18 +579,19 @@ Announcement of possession of a requested preimage. This should be used by non-v
 introduce preimages.
 
 The recipient of the announcement is expected to follow up by requesting the preimage using
-protocol 143, provided the preimage has been requested on chain and the recipient is not already in
-possession of it.
+protocol 143, provided the preimage has been requested on chain by the given service and the
+recipient is not already in possession of it.
 
 Preimage announcements _should not_ be forwarded to other validators; validators should propagate
 preimages only be including them in blocks they author.
 
 ```
-Hash = [u8; 32]
+Service ID = u32
+Preimage Length = u32
 
 Node -> Validator
 
---> Hash
+--> Service ID ++ Hash ++ Preimage Length
 --> FIN
 <-- FIN
 ```
@@ -589,11 +609,9 @@ Requests for a preimage should be made to nodes that have announced possession o
 preimage itself or of a block containing the hash of the preimage in its lookup extrinsic.
 
 Note that this protocol is essentially the same as protocol 136 (work-report request), but the hash
-is expected to be checked against a different database (in the case of this protocol, the preimage
-lookup database).
+is expected to be checked against a different database.
 
 ```
-Hash = [u8; 32]
 Preimage = [u8]
 
 Node -> Node
@@ -613,28 +631,45 @@ tranche, broadcast an announcement to all other such auditors specifying which w
 intend to audit, unless they do not intend to audit any work-reports, in which case no announcement
 should be sent.
 
+If an auditor determines, after the beginning of a tranche, additional work-reports that they
+should audit, they should broadcast additional announcements covering these work-reports. This
+situation can occur if an announcement for the previous tranche arrives late, and no corresponding
+judgment has been received.
+
+An auditor should never announce intent to audit a particular work-report, in the context of a
+particular block, in more than one tranche.
+
 An announcement contains a list of work-reports as well as evidence backing up the announcer's
 decision to audit them. In combination with the block being audited and the prior state, the
 evidence should be sufficient for recipients of the announcement to verify the audit requirement
-claim. Note that although the announcements for any claimed no-shows must be provided, there is no
-way to prove/verify that the judgments were not received; this must simply be accepted.
+claim.
+
+The evidence provided for a tranche 0 announcement is simply the Bandersnatch signature from which
+the list of work-reports to audit was derived. For subsequent tranche announcements, separate
+evidence is provided for each announced work-report. This evidence consists of:
+
+- A Bandersnatch signature, $s_n(w)$ in the GP.
+- A list of announcements from the previous tranche, each declaring intent to audit the work-report
+  in question. Inclusion of an announcement in this list is a claim that no corresponding judgment
+  for the work-report in question was received (this cannot be proven and so must simply be
+  accepted). Each announcement in the list thus corresponds to a "no-show" and the length of the
+  list is the claimed number of no-shows. No two announcements in the list should be from the same
+  auditor.
 
 ```
-Header Hash = [u8; 32]
 Tranche = u8
-Core Index = u16
-Work Report Hash = [u8; 32]
-Reports = len++[Core Index ++ Work Report Hash]
-Ed25519 Signature = [u8; 64]
+Announcement = len++[Core Index ++ Work-Report Hash] ++ Ed25519 Signature
+
 Bandersnatch Signature = [u8; 96]
-Validator Index = u16
-No Shows = len++[Validator Index ++ Reports ++ Ed25519 Signature] (Previous tranche announcements)
+First Tranche Evidence = Bandersnatch Signature (s_0 in GP)
+No-Show = Validator Index ++ Announcement (From the previous tranche)
+Subsequent Tranche Evidence = [Bandersnatch Signature (s_n(w) in GP) ++ len++[No-Show]] (One entry per announced work-report)
+Evidence = First Tranche Evidence (If tranche is 0) OR Subsequent Tranche Evidence (If tranche is not 0)
 
 Auditor -> Auditor
 
---> Header Hash ++ Tranche ++ Reports ++ Ed25519 Signature
-[Tranche 0] --> Bandersnatch Signature (s_0 in GP)
-[Tranche not 0] --> [Bandersnatch Signature (s_n(w) in GP) ++ No Shows] (One entry per WR in the first message)
+--> Header Hash ++ Tranche ++ Announcement
+--> Evidence
 --> FIN
 <-- FIN
 ```
@@ -655,20 +690,16 @@ judgments, this broadcasting may optionally be deferred until a negative judgmen
 work-report is observed (which may never happen).
 
 On receipt of a new negative judgment for a work-report that the node is (potentially) responsible
-for auditing, the judgment should be forwarded to all other known auditors that are linked via the
-grid structure. The intent of this is to increase the likelihood that negative judgments are seen
-by all auditors.
+for auditing, the judgment should be forwarded to all other known auditors that are neighbours in
+the grid structure. The intent of this is to increase the likelihood that negative judgments are
+seen by all auditors.
 
 ```
-Epoch Index = u32
-Validator Index = u16
-Validity = { 0 (Invalid), 1 (Valid) } (Single byte)
-Work Report Hash = [u8; 32]
-Ed25519 Signature = [u8; 64]
+Validity = 0 (Invalid) OR 1 (Valid) (Single byte)
 
 Auditor -> Validator
 
---> Epoch Index ++ Validator Index ++ Validity ++ Work Report Hash ++ Ed25519 Signature
+--> Epoch Index ++ Validator Index ++ Validity ++ Work-Report Hash ++ Ed25519 Signature
 --> FIN
 <-- FIN
 ```
