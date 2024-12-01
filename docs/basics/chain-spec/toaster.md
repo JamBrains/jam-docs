@@ -1,12 +1,13 @@
 ---
-id: Toaster
-sidebar_label: Toaster
+id: full
+sidebar_label: full
 ---
 
-The full scale version that will be known as the "JAM Chain". The name comes from the fact that it can only run in the JAM "Toaster" datacenter.
+The full scale version that will be known as the "JAM Chain". All parameters here must match the Gray Paper.
+
 
 ```yaml
-chain: toaster
+chain: full
 num_validators: 1023
 num_cores: 341
 slot_duration: 6
@@ -15,3 +16,5 @@ contest_duration: 500
 tickets_per_validator: 2
 rotation_period: 10
 ```
+
+The "full" name comes from the fact that full takes up the entire JAM "Toaster".

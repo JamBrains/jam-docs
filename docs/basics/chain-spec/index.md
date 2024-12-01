@@ -45,3 +45,9 @@ Constraint: $(\frac{2*\mathsf{V}}{3} + 1) * \mathsf{N} >= \mathsf{E}$
 ### R `rotation_period`
 
 The rotation period of validator-core assignments, in timeslots.
+
+### K `max_tickets_per_extrinsic`
+
+The maximum number of tickets which may be submitted in a single extrinsic.
+Constraint: $\mathsf{K} > 0$
+
