@@ -2,7 +2,7 @@
 id: JAM0
 sidebar_label: JAM0 Nov 2024
 sidebar_position: 5
-slug: /advanced/jam0-nov204
+slug: /event/jam0-nov204
 ---
 
 JAM0 brought together 13 teams and 35+ people in Bangkok in November 2024, coincident with sub0/Devcon 7.  [Forum post](https://forum.polkadot.network/t/jam0-jam-implementers-meetup-sub0-devcon-7-bangkok-nov-11-nov-16-2024/10866)

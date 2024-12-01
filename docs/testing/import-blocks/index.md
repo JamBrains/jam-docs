@@ -1,8 +1,8 @@
 ---
 id: Import Blocks
-sidebar_label: Import Blocks
-sidebar_position: 2
-slug: /basics/import-blocks
+sidebar_label: Import Blocks CLI
+sidebar_position: 1
+slug: /testing/import-blocks
 ---
 
 # importblocks CLI Tool

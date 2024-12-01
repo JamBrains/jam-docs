@@ -48,6 +48,5 @@ The rotation period of validator-core assignments, in timeslots.
 
 ### K `max_tickets_per_extrinsic`
 
-The maximum number of tickets which may be submitted in a single extrinsic.
+The maximum number of tickets which may be submitted in a single extrinsic.  
 Constraint: $\mathsf{K} > 0$
-

@@ -14,6 +14,7 @@ epoch_duration: 600
 contest_duration: 500
 tickets_per_validator: 2
 max_tickets_per_extrinsic: 16
+rotation_period: TODO
 ```
 
 * The epochs are 30 minutes rather than the full hour of the toaster.  

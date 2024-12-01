@@ -1,6 +1,7 @@
 ---
 title: Test Suite
-sidebar_position: 1
+sidebar_position: 2
+slug: /testing/suite
 ---
 
 # JAM Trustless Supercomputing Test Suite
