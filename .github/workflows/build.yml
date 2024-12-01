@@ -1,0 +1,51 @@
+name: Build Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+        # Add more Node.js versions if needed
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Forbid localhost links
+      run: |
+        if grep -r "localhost:3000" docs/; then
+          echo "Error: Found localhost:3000 in the codebase. Please remove hardcoded development URLs."
+          grep -r "localhost:3000" docs/
+          exit 1
+        else
+          echo "No localhost:3000 references found."
+        fi
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'yarn'
+
+    - name: Install dependencies
+      run: |
+        yarn install --frozen-lockfile
+
+    - name: Build project
+      run: |
+        bash build.sh
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-output
+        path: dist/
+        retention-days: 7
