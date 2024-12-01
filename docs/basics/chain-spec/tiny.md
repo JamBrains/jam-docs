@@ -17,5 +17,5 @@ tickets_per_validator: 3
 max_tickets_per_extrinsic: 3
 ```
 
-* As many W3F test vectors match this tiny configuration, many teams are building short-lived testnets to match this configuration.  
-* Consult a few other JAM implementers before changing "tiny" parameters.
+Please consult a few other JAM implementer teams before changing this spec, as it is in use for
+testnet setup and by W3F test vectors.

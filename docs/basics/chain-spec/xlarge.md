@@ -15,4 +15,4 @@ contest_duration: 200
 tickets_per_validator: 2
 ```
 
-* The JAM Toaster can support 5 XLarge configurations
+* The JAM Toaster can support 5 XLarge configurations.
