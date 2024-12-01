@@ -6,7 +6,7 @@ slug: /basics/chain-spec/3x-large
 ---
 
 ```yaml
-chain: xxxlarge
+chain: 3xlarge
 num_validators: 576
 num_cores: 192
 slot_duration: 6
@@ -17,4 +17,4 @@ max_tickets_per_extrinsic: 16
 ```
 
 * The epochs are 30 minutes rather than the full hour of the toaster.  
-* We cannot fit TWO xxxlarge in the JAM Toaster.
+* We cannot fit TWO 3xlarge in the JAM Toaster.
