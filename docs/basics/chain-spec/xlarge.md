@@ -13,6 +13,7 @@ slot_duration: 6
 epoch_duration: 240
 contest_duration: 200
 tickets_per_validator: 2
+rotation_period: TODO
 ```
 
 * The JAM Toaster can support 5 XLarge configurations.

@@ -1,5 +1,5 @@
 ---
-title: Networking
+title: Simple QUIC Networking
 sidebar_position: 1
 ---
 

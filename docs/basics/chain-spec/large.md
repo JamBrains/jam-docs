@@ -13,4 +13,5 @@ epoch_duration: 120
 contest_duration: 100
 tickets_per_validator: 2
 max_tickets_per_extrinsic: 3
+rotation_period: TODO
 ```

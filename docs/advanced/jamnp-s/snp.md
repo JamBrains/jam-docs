@@ -1,6 +1,6 @@
 ---
-id: SNP
-sidebar_label: SNP
+id: spec
+sidebar_label: JAMNP-S Spec
 sidebar_position: 1
 ---
 

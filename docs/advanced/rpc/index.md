@@ -1,12 +1,12 @@
 ---
 id: json-rpc
-title: JSON RPC Methods
-sidebar_label: JSON RPC Methods
+title: JSON RPC
+sidebar_label: JSON RPC
 sidebar_position: 2
 slug: /basics/rpc
 ---
 
-# JSON RPC Methods
+# JSON RPC
 
 :::warning
 🚧 This section is under construction and not final yet.  
