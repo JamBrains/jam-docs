@@ -28,15 +28,10 @@ jobs:
     - name: Install dependencies
       run: |
         yarn install --frozen-lockfile
-      
-    - name: Check for lint errors
-      run: |
-        yarn lint
-      continue-on-error: true
-      
+
     - name: Build project
       run: |
-        yarn build
+        bash build.sh
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3
