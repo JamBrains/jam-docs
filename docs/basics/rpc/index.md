@@ -8,6 +8,10 @@ slug: /basics/rpc
 
 # JSON RPC Methods
 
+:::warning
+🚧 This section is under construction and not final yet.  
+:::
+
 Here is a short _wishlist_ of JSON-RPC methods:
 
 | Method Name                 | Description                                                                                                                                              | Response Format                                                                                                                         | JSON Response Support | JAM Codec Response Support | Paginatable |
