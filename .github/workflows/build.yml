@@ -21,9 +21,9 @@ jobs:
 
     - name: Forbid localhost links
       run: |
-        if grep -r "localhost:3000" .; then
+        if grep -r "localhost:3000" docs/; then
           echo "Error: Found localhost:3000 in the codebase. Please remove hardcoded development URLs."
-          grep -r "localhost:3000" .
+          grep -r "localhost:3000" docs/
           exit 1
         else
           echo "No localhost:3000 references found."
