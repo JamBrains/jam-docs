@@ -9,7 +9,7 @@ The genesis config provides the initial values that are needed by all nodes to s
 
 ## Authorities
 
-A list of Validator Key Tuples, called $\mathbb{K}$ in the Graypaper. This defines the validators that are permissioned to seal blocks for the current epoch. The accounts are the [Dev Accounts](../dev_accounts.md). 
+A list of Validator Key Tuples, called $\mathbb{K}$ in the Graypaper. This defines the validators that are permissioned to seal blocks for the current epoch. The accounts are the [Dev Accounts](../dev_accounts.md).
 
 ## Schema
 
