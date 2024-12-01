@@ -22,23 +22,23 @@ how to deal with errors and precise formats with a few teams.
 
 ### JAMNP + OpenTelemetry
 
-The [JAMNP spec](http://localhost:3000/advanced/networking/SNP) is used as a primary starting point to develop a telemetry system:
+The [JAMNP spec](/advanced/networking/SNP) is used as a primary starting point to develop a telemetry system:
 
-0. UP 0: Block Announcement
-1. CE 128: Block Request
-2. CE 129: State Request (for warp sync)
-3. CE 131/132: Safrole Ticket Distribution
-4. CE 133: Work-Package Submission
-5. CE 134: Work-Package Sharing
-6. CE 135: Work-Report Distribution
-7. CE 136: Work-Report Request
-8. CE 137: Shard Distribution
-9. CE 138: Audit Shard Request
-10. CE 139/140: Segment Shard Request
-11. CE 141: Assurance Distribution
-12. CE 142: Preimage Announcement
-13. CE 143: Preimage Request
-14. CE 144: Audit Announcement
+1. UP 0: Block Announcement
+2. CE 128: Block Request
+3. CE 129: State Request (for warp sync)
+4. CE 131/132: Safrole Ticket Distribution
+5. CE 133: Work-Package Submission
+6. CE 134: Work-Package Sharing
+7. CE 135: Work-Report Distribution
+8. CE 136: Work-Report Request
+9. CE 137: Shard Distribution
+10. CE 138: Audit Shard Request
+11. CE 139/140: Segment Shard Request
+12. CE 141: Assurance Distribution
+13. CE 142: Preimage Announcement
+14. CE 143: Preimage Request
+15. CE 144: Audit Announcement
 
 We have drafted a protospec of how these may be instrumented in Go [here](https://github.com/jam-duna/jamtestnet/blob/main/telemetry/go/otel.go) -- this can be mapped to a PoC in this and other languages that OpenTelemetry supports [multiple languages](https://opentelemetry.io/docs/languages/)
 
