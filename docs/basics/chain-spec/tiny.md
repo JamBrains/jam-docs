@@ -14,6 +14,7 @@ slot_duration: 6
 epoch_duration: 12
 contest_duration: 10
 tickets_per_validator: 3
+rotation_period: 4
 max_tickets_per_extrinsic: 3
 ```
 
