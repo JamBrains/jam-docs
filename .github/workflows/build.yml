@@ -19,6 +19,16 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Forbid localhost links
+      run: |
+        if grep -r "localhost:3000" .; then
+          echo "Error: Found localhost:3000 in the codebase. Please remove hardcoded development URLs."
+          grep -r "localhost:3000" .
+          exit 1
+        else
+          echo "No localhost:3000 references found."
+        fi
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
