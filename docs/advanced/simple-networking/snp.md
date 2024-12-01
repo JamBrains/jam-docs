@@ -2,6 +2,7 @@
 id: spec
 sidebar_label: JAMNP-S Spec
 sidebar_position: 1
+slug: /advanced/simple-networking/spec
 ---
 
 (source https://github.com/zdave-parity/jam-np/blob/main/simple.md from {new Date().toISOString().split('T')[0]})

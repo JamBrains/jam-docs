@@ -10,7 +10,7 @@ sidebar_position: 2
 🚧 This section is under construction and may contain mistakes.  
 :::
 
-This guide demonstrates how to generate Ed25519 keys and certificates for the [Alice](/basics/dev-accounts#alice) dev account using the OpenSSL CLI. These certificates can be used for the [Simple Networking Protocol](/advanced/networking/SNP#encryption-and-handshake).
+This guide demonstrates how to generate Ed25519 keys and certificates for the [Alice](/basics/dev-accounts#alice) dev account using the OpenSSL CLI. These certificates can be used for the [Simple Networking Protocol](/advanced/simple-networking/spec#encryption-and-handshake).
 
 ## Secret Key Generation
 
@@ -65,7 +65,7 @@ openssl req -new -x509 -days 365 \
     -addext "subjectAltName=DNS:$DNS_ALT_NAME"
 ```
 
-Where `$DNS_ALT_NAME` should match the [SNP Specification](/advanced/networking/SNP#encryption-and-handshake).
+Where `$DNS_ALT_NAME` should match the [SNP Specification](/advanced/simple-networking/spec#encryption-and-handshake).
 
 For CA certificates that will sign other certificates, add these extensions:
 
