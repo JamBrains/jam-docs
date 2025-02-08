@@ -42,10 +42,3 @@ jobs:
     - name: Build project
       run: |
         bash build.sh
-
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: build-output
-        path: dist/
-        retention-days: 7
