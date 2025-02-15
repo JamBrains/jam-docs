@@ -14,7 +14,7 @@ Otherwise there is the chance that private conformance test vector will reveal i
 
 The Web3 Foundation provides conformance tests at [w3f/jamtestvectors](https://github.com/w3f/jamtestvectors). These need to be passed by any conformant implementation.
 
-## Colorful Nation
+## Colorful Notion
 
 - [Safrole fallback](https://github.com/jam-duna/jamtestnet/tree/main/traces/fallback/jam_duna): this is [Babystep M0.0](/event/jam0-nov204#m00-import-block-safrole-fallback)
 - [Safrole proper](https://github.com/jam-duna/jamtestnet/tree/main/traces/safrole/jam_duna): this is [Babystep M0.1](/event/jam0-nov204#m01-import-block-safrole-proper)
