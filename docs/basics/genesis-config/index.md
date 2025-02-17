@@ -71,7 +71,7 @@ presented within the header:
 - `slot`: expected to match $\sigma_0 \cdot \tau$.
 - `epoch_mark.entropy` expected to match $\sigma_0 \cdot \eta_1$.
 - `epoch_mark.tickets_entropy` expected to match $\sigma_0 \cdot \eta_2$.
- -`validators` expected to match $\sigma_0 \cdot \gamma_k$.
+- `validators` expected to match $\sigma_0 \cdot \gamma_k$.
 
 It is important to note that using this header as $H_0$ will inevitably
 lead to small inconsistencies within the state it references, $\sigma_0$. These
