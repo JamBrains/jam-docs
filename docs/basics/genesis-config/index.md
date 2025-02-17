@@ -74,7 +74,7 @@ presented within the header:
  -`validators` expected to match $\sigma_0 \cdot \gamma_k$.
 
 It is important to note that using this header as $H_0$ will inevitably
-lead to inconsistencies within the state it references, $\sigma_0$. These
+lead to small inconsistencies within the state it references, $\sigma_0$. These
 inconsistencies violate certain invariants assumed for posterior states
 referenced by other block header hashes when computed through the protocol's
 State Transition Function (STF). Specifically, $\sigma_0 \cdot \eta_0$ is technically
