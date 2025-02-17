@@ -45,6 +45,8 @@ vectors - we define the following values for the genesis header.
   }
 ```
 
+Expected hash: `0x476243ad7cc4fc49cb6cb362c6568e931731d8650d917007a6037cceedd62244`
+
 Binary encoding must adhere to the Block serialization specification established in the Gray Paper.
 
 ### Chosen Values Rationale
