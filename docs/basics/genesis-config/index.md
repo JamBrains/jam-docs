@@ -11,49 +11,73 @@ The genesis config provides the initial values that are needed by all nodes to s
 
 A list of Validator Key Tuples, called $\mathbb{K}$ in the Graypaper. This defines the validators that are permissioned to seal blocks for the current epoch. The accounts are the [Dev Accounts](../dev_accounts.md).
 
-## Schema
+## Genesis Block Header
 
-Machine readable JSON schema for the genesis config:
+The genesis block header ($H_0$) is the initial header in the chain, upon which
+consensus is inherently assumed.
 
-<details>
-
-<summary>JSON Schema</summary>
+For the purpose of simplifying interoperability testing - such as importing test
+vectors - we define the following values for the genesis header.
 
 ```json
-{
-  "$schema": "https://json-schema.org/draft/2024-06/schema#",
-  "type": "object",
-  "properties": {
-    "authorities": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "ed25519": {
-            "type": "string",
-            "pattern": "^0x[a-fA-F0-9]{64}$"
-          },
-          "bandersnatch": {
-            "type": "string",
-            "pattern": "^0x[a-fA-F0-9]{64}$"
-          },
-          "bls": {
-            "type": "string",
-            "pattern": "^0x[a-fA-F0-9]{288}$"
-          },
-          "metadata": {
-            "type": "string",
-            "pattern": "^0x[a-fA-F0-9]{256}$"
-          }
-        },
-        "required": ["ed25519", "bandersnatch", "bls", "metadata"],
-        "additionalProperties": true
-      }
-    }
-  },
-  "required": ["authorities"],
-  "additionalProperties": true
-}
+  {
+      "parent": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "parent_state_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "extrinsic_hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "slot": 0,
+      "epoch_mark": {
+          "entropy": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "tickets_entropy": "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "validators": [
+              "0x5e465beb01dbafe160ce8216047f2155dd0569f058afd52dcea601025a8d161d",
+              "0x3d5e5a51aab2b048f8686ecd79712a80e3265a114cc73f14bdb2a59233fb66d0",
+              "0xaa2b95f7572875b0d0f186552ae745ba8222fc0b5bd456554bfe51c68938f8bc",
+              "0x7f6190116d118d643a98878e294ccf62b509e214299931aad8ff9764181a4e33",
+              "0x48e5fcdce10e0b64ec4eebd0d9211c7bac2f27ce54bca6f7776ff6fee86ab3e3",
+              "0xf16e5352840afb47e206b5c89f560f2611835855cf2e6ebad1acc9520a72591d"
+          ]
+      },
+      "tickets_mark": null,
+      "offenders_mark": [],
+      "author_index": 65535,
+      "entropy_source": "0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "seal": "0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  }
 ```
 
-</details>
+Binary encoding must adhere to the Block serialization specification established in the Gray Paper.
+
+### Chosen Values Rationale
+
+- **`parent`**: Set to zero because there is no parent block preceding the genesis block.  
+- **`parent_state_root`**: Set to zero since there is no parent preceding the genesis state.  
+- **`extrinsic_hash`**: There is no extrinsic to hash.
+- **`slot`**: Set to `0` (representing the count of slots since the start of the Jam Common Era).  
+- **`epoch_mark`**: The first block in an epoch should contain the validators for the next epoch.
+  - **`entropy`**: Set to zero.  
+  - **`tickets_entropy`**: No tickets exist, meaning no entropy is utilized.  
+  - **`validators`**: Defined as the dev authorities [accounts](../dev_accounts.md).
+- **`tickets_mark`**: No tickets are available to share.  
+- **`offenders_mark`**: No offenders have been identified yet.  
+- **`author_index`**: As this block has not been authored by a specific validator, use `0xffff` as a wildcard.  
+- **`entropy_source`**: This block has not been signed by a specific validator.  
+- **`seal`**: Similarly, this block has not been signed by a specific validator.  
+
+For technical accuracy, the state referenced by this header hash, which
+represents the genesis state ($σ_0$), should match with some of the values
+presented within the header:
+- `slot`: expected to match $\sigma_0$.$\tau`.
+- `epoch_mark.entropy` expected to match $\sigma_0$.$\eta_1$.
+- `epoch_mark.tickets_entropy` expected to match $\sigma_0$.$\eta_2$.
+ -`validators` expected to match $\sigma_0$.$\gamma_k$.
+
+It is important to note that using this header as $H_0$ will inevitably
+lead to inconsistencies within the state it references, $\sigma_0$. These
+inconsistencies violate certain invariants assumed for posterior states
+referenced by other block header hashes when computed through the protocol's
+State Transition Function (STF). Specifically, $\sigma_0$.$\eta_0$ is technically
+expected to be derived from hashing a prior entropy value concatenated with
+the fresh entropy generated by the `entropy_source` specified in the header.
+However, because this header lacks a valid signature for the entropy source,
+we adopt a lenient approach to these discrepancies during this initial testing
+phase (and potentially in production as well).
