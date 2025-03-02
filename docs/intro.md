@@ -8,7 +8,7 @@ This wiki hosts information for JAM implementers. The goal is to aid collaborati
 setup](https://github.com/jam-duna/jamtestnet). Any information that is not specified in the [Gray
 Paper](https://graypaper.com) can be added here.
 
-Joins us to build JAM (you can even win [prizes](https://jam.web3.foundation/) 🤫):
+Joins us to build JAM (and win some [prizes](https://jam.web3.foundation/) 🤫):
 - [Telegram Testnet](https://t.me/jamtestnet): Causal and public channel to orchestrate on testnet setup.
 - [Matrix Gray Paper](https://matrix.to/#/#graypaper:polkadot.io): Technical discussion about the Gray Paper - not implementations.
 - [Matrix JAM](https://matrix.to/#/#jam:polkadot.io): Discussions about implementing the Gray Paper.
