@@ -4,7 +4,7 @@ sidebar_label: tiny
 sidebar_position: 0
 ---
 
-A tiny spec for local testing.  
+A tiny spec for local testing.
 
 ```yaml
 chain: tiny

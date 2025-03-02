@@ -5,7 +5,6 @@ sidebar_label: full
 
 The full scale version that will be known as the "JAM Chain". All parameters here must match the Gray Paper.
 
-
 ```yaml
 chain: full
 num_validators: 1023
