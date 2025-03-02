@@ -8,7 +8,7 @@ const katex = require('rehype-katex');
 const config: Config = {
   title: 'JAM Docs',
   tagline: 'Implementors Knowledge Base',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.png',
 
   // Set the production url of your site here
   url: 'https://jam-docs.onrender.com',
