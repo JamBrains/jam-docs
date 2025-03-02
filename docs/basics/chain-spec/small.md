@@ -1,9 +1,10 @@
 ---
 id: small
-sidebar_label: small
+sidebar_label: Small
 sidebar_position: 1
 ---
 
+# Small
 
 ```yaml
 chain: small

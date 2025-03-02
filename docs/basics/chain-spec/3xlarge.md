@@ -1,9 +1,11 @@
 ---
 id: 3xlarge
-sidebar_label: 3xlarge
+sidebar_label: 3xLarge
 sidebar_position: 6
 slug: /basics/chain-spec/3x-large
 ---
+
+# 3xLarge
 
 ```yaml
 chain: 3xlarge

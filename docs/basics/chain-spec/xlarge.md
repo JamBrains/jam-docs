@@ -1,9 +1,11 @@
 ---
 id: xlarge
-sidebar_label: xlarge
+sidebar_label: xLarge
 sidebar_position: 4
 slug: /basics/chain-spec/x-large
 ---
+
+# xLarge
 
 ```yaml
 chain: xlarge

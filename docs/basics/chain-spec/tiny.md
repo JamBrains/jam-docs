@@ -1,10 +1,12 @@
 ---
 id: tiny
-sidebar_label: tiny
+sidebar_label: Tiny
 sidebar_position: 0
 ---
 
-A tiny spec for local testing.  
+# Tiny
+
+A tiny spec for local testing.
 
 ```yaml
 chain: tiny
