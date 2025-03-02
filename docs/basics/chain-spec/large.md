@@ -1,8 +1,10 @@
 ---
 id: large
-sidebar_label: large
+sidebar_label: Large
 sidebar_position: 3
 ---
+
+# Large
 
 ```yaml
 chain: large

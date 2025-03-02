@@ -1,8 +1,10 @@
 ---
 id: medium
-sidebar_label: medium
+sidebar_label: Medium
 sidebar_position: 2
 ---
+
+# Medium
 
 ```yaml
 chain: medium

@@ -1,8 +1,10 @@
 ---
 id: tiny
-sidebar_label: tiny
+sidebar_label: Tiny
 sidebar_position: 0
 ---
+
+# Tiny
 
 A tiny spec for local testing.
 

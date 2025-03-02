@@ -1,7 +1,9 @@
 ---
 id: full
-sidebar_label: full
+sidebar_label: Full
 ---
+
+# Full
 
 The full scale version that will be known as the "JAM Chain". All parameters here must match the Gray Paper.
 
