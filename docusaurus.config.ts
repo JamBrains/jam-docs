@@ -66,12 +66,13 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/jam-chain-docs-banner.png',
     navbar: {
       title: 'JAM Docs',
       logo: {
         alt: 'JAM Docs Logo',
-        src: 'img/logo.svg',
+        src: 'img/polkadot-shift-dark.png',
+        srcDark: 'img/polkadot-shift-light.png',
       },
       items: [
         {
