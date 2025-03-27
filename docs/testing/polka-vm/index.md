@@ -1,11 +1,11 @@
 ---
-id: Polka VM
-sidebar_label: Polka VM
+id: PolkaVM
+sidebar_label: PolkaVM
 sidebar_position: 3
 slug: /testing/polka-vm
 ---
 
-Tools to help testing Polka VM blobs and JAM services.
+Tools to help testing PolkaVM blobs and JAM services.
 
 PVM blobs:
 - [polkatool](https://github.com/paritytech/polkavm/tree/master/tools/polkatool): Must have for disassembling and inspecting blobs.
@@ -16,4 +16,6 @@ Host calls:
 - [JIP-1](/testing/polka-vm/host-call-log): Optional host call that can be used to log messages.
 
 JAM services:
-- ???
+- CoreVM
+- CoreChains
+- CorePly

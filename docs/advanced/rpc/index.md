@@ -166,8 +166,6 @@ To post a work package in raw JAM codec form, supply the core as the first input
 curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"jam_submitWorkPackage","params":[1, "0x1234567..." }],"id":11}' http://localhost:8545
 ```
 
-
-
 ## Other RPC methods
 
 To support a full JAM Services explorer, here are additional methods that would be desirable to support, in no particular order:
