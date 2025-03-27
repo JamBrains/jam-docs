@@ -1,42 +1,16 @@
 ---
-id: dao
-sidebar_label: JAM Implementers DAO
-sidebar_position: 5
-slug: /dao/
+id: opengov
+sidebar_label: Polkadot OpenGov
+sidebar_position: 3
+slug: /dao/opengov
 ---
 
-# JAM Implementers DAO 
-
-JAM Implementers DAO is a community of [JAM Implementers](https://jamcha.in/clients) dedicated to implementing JAM protocols and building the future of trustless supercomputing, which is envisioned to underpin Polkadot’s technical evolution. By implementing JAM and building JAM-related services and tooling, we aim to advance the Polkadot ecosystem and drive real-world adoption of Polkadot+JAM protocols.
-
-## Membership
-
-This section functions as the single source of truth of JAM Implementer DAO Membership, supported by on-chain extrinsics.
-
-* [JAM DUNA](https://polkadot.subscan.io/extrinsic/25277967-2)	121Rs6fKm8nguHnvPfG1Cq3ctFuNAVZGRmghwkJwHpKxKjbx 
-* [Gossamer](https://polkadot.subscan.io/extrinsic/25278352-2) 143FppLAgb1KrvTRfkWKnozBeoZsZrhRr41gSBMyUDkUNT8z	
-* [Jamixir](https://polkadot.subscan.io/tx/0x2a66d68acab375502c60a4d36f168e476d7785189fcd916522a0a2666c746588  15mXN5E3gn14t3etvcGHGfR4zL9WNoCBGCu9rJJiERqjePY8	
-* [JavaJAM](https://polkadot.subscan.io/extrinsic/25317339-2)	14zb7FpKGRCoW8SPezDHsMzqhGAuEn6Wjprf4j2Gn85dGVEh	
-* [JamZig ⚡️](https://polkadot.subscan.io/extrinsic/25319122-2)	14T1UcnoaMND24ubV86FCT4YxJ8q5CKVG7winwZ7umAit8g2	
-* [Jampy](https://polkadot.subscan.io/extrinsic/0x240cbc421e93ba875bb40edf5998a7f85f6da5bfacf4efa2d401a8cd1fe00005)	12iqwZGB2sguEhjFi2ZRuWWixU8mHJnSiP1pwDefqGsBy4rV	
-* [Vinwolf](https://polkadot.subscan.io/extrinsic/25317663-2) 1urZ9pp1D6aL6SRwepP9zhU2kzgxJ3dtRodSLe4paJCpLrk	
-* [TSJam](https://polkadot.subscan.io/extrinsic/25317150-2)	155tk9HmeJGsNZtA5LFasSCGZCdpAb2P2Gs6ej9JeP38sAww	
-
-Additional membership and participation is welcome, subject to _Membership Requirements_ below.  
-
-## Membership Requirements
-
-1. Your team must be registered a JAM Implementer on [jamcha.in/clients](https://jamcha.in/clients)
-2. You agree to abide by [Code of Conduct](/dao/code_of_conduct) 
-3. You submit an on-chain extrinsic (to Polkadot Relay Chain or Asset Hub) with a system.remark "join(JAM Implementers DAO, [your team name])" and add to above via a PR.
-
-If there are multiple remarks from the same team or additions/removals based on issues related to Code of Conduct, the admins of this repo may decide these issues unilaterally if clear resolutions reasonably exist or request that existing members decide it based on social proof (participation in online or real-world meetups, GP Chat room, W3F Github repos, etc.).  
-
-_Note: This is only be taken as a draft and NOT considered final._
-
-## Polkadot OpenGov Participation
+# Polkadot OpenGov Participation
   
-Engaging in Polkadot OpenGov is one of the key functions of the DAO.  Concerning this function, we have drafted this section and the *Code of Conduct*.  This draft is heavily based on that of the [Permanence DAO](https://docs.permanence.io/)), which are considered exemplary.  _Note: This is only be taken as a draft and NOT considered final._
+_Note: This is only be taken as a draft and *NOT* considered final._
+
+Engaging in Polkadot OpenGov is one of the key functions of the DAO.  Concerning this function, we have drafted this section and the *Code of Conduct*.  This draft is heavily based on that of the [Permanence DAO](https://docs.permanence.io/), which are considered exemplary.  
+
 
 On March 27, 2025, the Web3 Foundation selected the JAM Implementers DAO to be a part of Decentralized Voices Cohort 4 (April - Aug 2025) -- see [official announcement](https://medium.com/web3foundation/decentralized-voices-cohort-4-delegates-announced-a5a9c64927fd).   This was based on an [Decentralized Voices Cohort 4: JAM Implementers DAO](https://forum.polkadot.network/t/decentralized-voices-cohort-4-jam-implementers-dao/12001) application post where a quorum of JAM Implementers expressed interest after an March online meetup.   
 

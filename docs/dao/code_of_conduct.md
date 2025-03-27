@@ -1,12 +1,19 @@
-##  Code of Conduct for JAM Implementer's DAO
+---
+id: code_of_conduct
+sidebar_label: Code of Conduct
+sidebar_position: 6
+slug: /dao/code_of_conduct
+---
 
-This is only be taken as a draft and not considered ratified.  It is based off of a [Permanence DAO](https://docs.permanence.io/code_of_conduct.html_)
+#  Code of Conduct for JAM Implementer's DAO
 
-### Dos and Donts
+_Note: This is only be taken as a draft and *NOT* considered final._   It is based off of the [Permanence DAO Code of Conduct](https://docs.permanence.io/code_of_conduct.html_).
+
+## Dos and Donts
 
 This section provides a brief overview of the expectation and guidelines for DAO members.  
 
-#### Dos:
+### Dos:
 
 1. Actively Participate: Members should engage in the Telegram/Discord group to advance objectives of the JAM Implementer DAO.  There are no specific benchmarks or rules for participation.
 
@@ -16,7 +23,7 @@ This section provides a brief overview of the expectation and guidelines for DAO
 
 4. Adhere to the Code of Conduct: Follow the Code of Conduct and consistently demonstrate respectful and inclusive behavior.
 
-#### Don'ts:
+### Don'ts:
 
 1. Do Not Violate the Code of Conduct: Avoid any behavior that goes against the program's Code of Conduct, including disrespectful or discriminatory actions.
 
@@ -26,7 +33,7 @@ This section provides a brief overview of the expectation and guidelines for DAO
 
 4. Do Not Engage in Conflicts of Interest: Maintain transparency in all actions and avoid activities that could present a conflict of interest.
 
-### Private+Public Telegram/Discord/Matrix Chat Rules
+## Private+Public Telegram/Discord/Matrix Chat Rules
 
 Members have a private Telegram/Discord group for communication.  All members must read and adhere to the following rules to keep the group friendly, welcoming, professional, and on-topic.  The rules are few, simple, and are generally recognizable as common decency:
 
@@ -52,6 +59,6 @@ At the moderators’ discretion, a lesser action (such as warning the individual
 
 If members believe someone in the channel is breaking these rules, members may propose a vote for their removal with proof of offense.  No member can be removed without members.
 
-### Amendments to the Code of Conduct
+## Amendments to the Code of Conduct
 
 Any DAO member can propose changes to this Code of Conduct by putting a proposition up for a vote in the DAO Telegram/Discord group. The amendment must be approved by a majority vote (≥50%) with the same quorum required for Big Spender Track.
