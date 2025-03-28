@@ -21,7 +21,7 @@ to execute on "1 member, 1 vote" mechanics.  It is possible one or both could be
 
 The DAO may switch between Telegram and Discord, based on the objective of maximizing quality participation by all members in Polkadot OpenGov.
 
-If you are a newly joining member and are not in the private Telegram/Discord room, reach out to one of the existing members who can be found in the public [JAM Testnet Telegram room](https://t.me/jamtestnet) or [Public JAM Chat room](https://matrix.to/#/#jam:polkadot.io)
+If you are a newly joining member and are not in the private Telegram/Discord room, reach out to one of the existing members who can be found in the public [JAM Testnet Telegram room](https://t.me/jamtestnet) or [Public JAM Chat room](https://matrix.to/#/#jam:polkadot.io).
 
 ### Voting Philosophy
 
