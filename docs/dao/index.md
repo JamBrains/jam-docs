@@ -35,6 +35,55 @@ This section functions as the single source of truth of JAM Implementer DAO Memb
 | JAMdotTech \| PyJAMaz | 15gPiSBxhrrQFfShFbrnsQK7kokgQtVs3SEh38YjCDC31de3 | [Link](https://polkadot.subscan.io/extrinsic/25331656-2) |
 | MORUM | 123KEnwuHKiu48WsfwAX4YonGFTpkEmWS6V2WGoJA1qzBkbS | [Link](https://polkadot.subscan.io/extrinsic/25330323-2) |
 | Tessera | 15p3jWZaP4dHTkDTuKM5VXQL5XGfH9U5r6Ntu3UAv2K7vPb8 | [Link](https://polkadot.subscan.io/extrinsic/25331398-2) |
+
+<details>
+<summary>Raw YAML</summary>
+
+```yaml
+members:
+  - name: "JAM DUNA"
+    address: "121Rs6fKm8nguHnvPfG1Cq3ctFuNAVZGRmghwkJwHpKxKjbx"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25277967-2"
+  - name: "Gossamer"
+    address: "143FppLAgb1KrvTRfkWKnozBeoZsZrhRr41gSBMyUDkUNT8z"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25278352-2"
+  - name: "Jamixir"
+    address: "15mXN5E3gn14t3etvcGHGfR4zL9WNoCBGCu9rJJiERqjePY8"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25315722-2"
+  - name: "JavaJAM"
+    address: "14zb7FpKGRCoW8SPezDHsMzqhGAuEn6Wjprf4j2Gn85dGVEh"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25317339-2"
+  - name: "JamZig ⚡️"
+    address: "14T1UcnoaMND24ubV86FCT4YxJ8q5CKVG7winwZ7umAit8g2"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25319122-2"
+  - name: "JamPy"
+    address: "12iqwZGB2sguEhjFi2ZRuWWixU8mHJnSiP1pwDefqGsBy4rV"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25317530-2"
+  - name: "Vinwolf"
+    address: "1urZ9pp1D6aL6SRwepP9zhU2kzgxJ3dtRodSLe4paJCpLrk"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25317663-2"
+  - name: "TSJam"
+    address: "155tk9HmeJGsNZtA5LFasSCGZCdpAb2P2Gs6ej9JeP38sAww"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25317150-2"
+  - name: "Boka"
+    address: "14DsLzVyTUTDMm2eP3czwPbH53KgqnQRp3CJJZS9GR7yxGDP"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25322563-2"
+  - name: "New JAMneration"
+    address: "134Dbw4pZY1E81fb79XtjRvzW55qEx3FpEgrRYfJfDf3weF6"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25326753-2"
+  - name: "JAMdotTech | PyJAMaz"
+    address: "15gPiSBxhrrQFfShFbrnsQK7kokgQtVs3SEh38YjCDC31de3"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25331656-2"
+  - name: "MORUM"
+    address: "123KEnwuHKiu48WsfwAX4YonGFTpkEmWS6V2WGoJA1qzBkbS"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25330323-2"
+  - name: "Tessera"
+    address: "15p3jWZaP4dHTkDTuKM5VXQL5XGfH9U5r6Ntu3UAv2K7vPb8"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25331398-2"
+
+```
+
+</details>
 <!-- End-auto-generated -->
 
 Additional membership and participation is strongly encouraged by JAM Implementers, subject to _Membership Requirements_ below.  
