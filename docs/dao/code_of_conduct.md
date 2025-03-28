@@ -29,7 +29,7 @@ This section provides a brief overview of the expectation and guidelines for DAO
 
 2. Do Not Spread Misinformation: Ensure all information shared about the DAO is accurate.
 
-3. Do Not Represent Without Authorization: Do not enter into partnerships or commercial arrangemnts on behalf of the DAO without proper authorization or approval from the DAO.
+3. Do Not Represent Without Authorization: Do not enter into partnerships or commercial arrangements on behalf of the DAO without proper authorization or approval from the DAO.
 
 4. Do Not Engage in Conflicts of Interest: Maintain transparency in all actions and avoid activities that could present a conflict of interest.
 
