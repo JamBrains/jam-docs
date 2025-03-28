@@ -36,7 +36,8 @@ Extending support to JAM Service builders, tool builders and general JAM evangel
 
 1. Your team must be registered a JAM Implementer on [jamcha.in/clients](https://jamcha.in/clients).
 2. You have read and agree to abide by [JAM Implementers Code of Conduct](/dao/code_of_conduct).
-3. You submit an on-chain extrinsic (to Polkadot Relay Chain or Asset Hub) with a system.remark `join(JAM Implementers DAO, [your team name])` and add your team to above via a PR.
+3. You submit an on-chain extrinsic (to Polkadot Relay Chain or Asset Hub) with a `System.Remark` of `join(JAM Implementers DAO, [your team name])` (without the `[]`).
+4. Add your team to the list above via a PR to the [docs repo](https://github.com/jambrains/jam-docs).
 
 If there are multiple remarks from the same team or additions/removals based on issues related to Code of Conduct, the admins of this repo may decide these issues unilaterally if clear resolutions reasonably exist or request that existing members decide it based on social proof (participation in online or real-world meetups, GP Chat room, W3F Github repos, etc.).  
 
