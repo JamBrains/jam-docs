@@ -28,7 +28,8 @@ This section functions as the single source of truth of JAM Implementer DAO Memb
 * [Vinwolf](https://polkadot.subscan.io/extrinsic/25317663-2) 1urZ9pp1D6aL6SRwepP9zhU2kzgxJ3dtRodSLe4paJCpLrk	
 * [TSJam](https://polkadot.subscan.io/extrinsic/25317150-2)	155tk9HmeJGsNZtA5LFasSCGZCdpAb2P2Gs6ej9JeP38sAww
 * [Boka](https://polkadot.subscan.io/extrinsic/25322563-2) 14DsLzVyTUTDMm2eP3czwPbH53KgqnQRp3CJJZS9GR7yxGDP
-* [New JAMneration](https://polkadot.subscan.io/extrinsic/25326753-2) 134Dbw4pZY1E81fb79XtjRvzW55qEx3FpEgrRYfJfDf3weF6	
+* [New JAMneration](https://polkadot.subscan.io/extrinsic/25326753-2) 134Dbw4pZY1E81fb79XtjRvzW55qEx3FpEgrRYfJfDf3weF6
+* [JAMdotTech | PyJAMaz](https://polkadot.subscan.io/extrinsic/25331656-2) 15gPiSBxhrrQFfShFbrnsQK7kokgQtVs3SEh38YjCDC31de3
 
 Additional membership and participation is strongly encouraged by JAM Implementers, subject to _Membership Requirements_ below.  
 
