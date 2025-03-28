@@ -39,7 +39,7 @@ Every member enjoys equal voting power and complete autonomy in governance decis
 
 ### Voting Mechanics 
 
-All internal referenda will be recorded in the [OpenSquare Space](https://voting.opensquare.io/space/jamdao), ensuring full transparency of members' votes and feedback on each referendum, openly accessible through the OpenSquare API for historical analysis.
+All internal referenda will be recorded in the [OpenSquare Space](https://voting.opensquare.io/space/jamdao) 🚧, ensuring full transparency of members' votes and feedback on each referendum, openly accessible through the OpenSquare API for historical analysis.
 
 A basic explanation of the DAO's voting process and timeline is as follows: (adapting from [Operational Details](https://docs.permanence.io/voting_policy.html#operation-details))
 

@@ -5,9 +5,11 @@ sidebar_position: 6
 slug: /dao/code_of_conduct
 ---
 
-#  Code of Conduct for JAM Implementer's DAO
+#  Code of Conduct for JAM Implementers DAO
 
-_Note: This is only be taken as a draft and *NOT* considered final._   It is based off of the [Permanence DAO Code of Conduct](https://docs.permanence.io/code_of_conduct.html_).
+_Note: This is only be taken as a draft and *NOT* considered final._   
+
+This has been adapted from the [Permanence DAO Code of Conduct](https://docs.permanence.io/code_of_conduct.html_).
 
 ## Dos and Don'ts
 
