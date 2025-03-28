@@ -9,7 +9,7 @@ slug: /dao/code_of_conduct
 
 _Note: This is only be taken as a draft and *NOT* considered final._   It is based off of the [Permanence DAO Code of Conduct](https://docs.permanence.io/code_of_conduct.html_).
 
-## Dos and Donts
+## Dos and Don'ts
 
 This section provides a brief overview of the expectation and guidelines for DAO members.  
 
