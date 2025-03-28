@@ -535,8 +535,8 @@ the correctness of each response as it is received, requesting shards from a dif
 the case of an incorrect response. If the reconstructed segment and proof are still inconsistent,
 then it can be concluded that the erasure-root is invalid.
 
-The number of segment shards requested in a single stream should not exceed $W_M = 2^{11}$ (this
-constant is defined in the GP).
+The number of segment shards requested in a single stream should not exceed $2W_M$ ($W_M = 2^{11}$,
+this constant is defined in the GP).
 
 ```
 Segment Index = u16
