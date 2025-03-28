@@ -30,6 +30,8 @@ This section functions as the single source of truth of JAM Implementer DAO Memb
 * [Boka](https://polkadot.subscan.io/extrinsic/25322563-2) 14DsLzVyTUTDMm2eP3czwPbH53KgqnQRp3CJJZS9GR7yxGDP
 * [New JAMneration](https://polkadot.subscan.io/extrinsic/25326753-2) 134Dbw4pZY1E81fb79XtjRvzW55qEx3FpEgrRYfJfDf3weF6
 * [JAMdotTech | PyJAMaz](https://polkadot.subscan.io/extrinsic/25331656-2) 15gPiSBxhrrQFfShFbrnsQK7kokgQtVs3SEh38YjCDC31de3
+* [MORUM](https://polkadot.subscan.io/extrinsic/25330323-2)123KEnwuHKiu48WsfwAX4YonGFTpkEmWS6V2WGoJA1qzBkbS
+* [Tessera](https://polkadot.subscan.io/extrinsic/25331398-2)15p3jWZaP4dHTkDTuKM5VXQL5XGfH9U5r6Ntu3UAv2K7vPb8
 
 Additional membership and participation is strongly encouraged by JAM Implementers, subject to _Membership Requirements_ below.  
 
