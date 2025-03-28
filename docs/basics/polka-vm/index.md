@@ -1,6 +1,6 @@
 ---
-id: Polka VM
-sidebar_label: Polka VM
+id: PolkaVM
+sidebar_label: PolkaVM
 sidebar_position: 4
 slug: /polkavm
 ---
