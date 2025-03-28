@@ -16,9 +16,10 @@ The Web3 Foundation provides conformance tests at [w3f/jamtestvectors](https://g
 
 ## Colorful Notion
 
-- [Safrole fallback](https://github.com/jam-duna/jamtestnet/tree/main/traces/fallback/jam_duna): this is [Babystep M0.0](/event/jam0-nov204#m00-import-block-safrole-fallback)
-- [Safrole proper](https://github.com/jam-duna/jamtestnet/tree/main/traces/safrole/jam_duna): this is [Babystep M0.1](/event/jam0-nov204#m01-import-block-safrole-proper)
-- [Assurances](https://github.com/jam-duna/jamtestnet/tree/main/traces/assurances/jam_duna)
+- [Safrole fallback](https://github.com/jam-duna/jamtestnet/tree/main/data/fallback)
+- [Safrole proper](https://github.com/jam-duna/jamtestnet/tree/main/data/safrole)
+- [Assurances](https://github.com/jam-duna/jamtestnet/tree/main/data/assurances)
+- [Ordered accumulation](https://github.com/jam-duna/jamtestnet/tree/main/data/orderedaccumulation)
 
 ## JavaJAM
 
