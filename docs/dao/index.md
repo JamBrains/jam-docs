@@ -21,7 +21,7 @@ This section functions as the single source of truth of JAM Implementer DAO Memb
 
 * [JAM DUNA](https://polkadot.subscan.io/extrinsic/25277967-2)	121Rs6fKm8nguHnvPfG1Cq3ctFuNAVZGRmghwkJwHpKxKjbx 
 * [Gossamer](https://polkadot.subscan.io/extrinsic/25278352-2) 143FppLAgb1KrvTRfkWKnozBeoZsZrhRr41gSBMyUDkUNT8z	
-* [Jamixir](https://polkadot.subscan.io/tx/0x2a66d68acab375502c60a4d36f168e476d7785189fcd916522a0a2666c746588)  15mXN5E3gn14t3etvcGHGfR4zL9WNoCBGCu9rJJiERqjePY8	
+* [Jamixir](https://polkadot.subscan.io/extrinsic/25315722-2)  15mXN5E3gn14t3etvcGHGfR4zL9WNoCBGCu9rJJiERqjePY8	
 * [JavaJAM](https://polkadot.subscan.io/extrinsic/25317339-2)	14zb7FpKGRCoW8SPezDHsMzqhGAuEn6Wjprf4j2Gn85dGVEh	
 * [JamZig ⚡️](https://polkadot.subscan.io/extrinsic/25319122-2)	14T1UcnoaMND24ubV86FCT4YxJ8q5CKVG7winwZ7umAit8g2	
 * [Jampy](https://polkadot.subscan.io/extrinsic/0x240cbc421e93ba875bb40edf5998a7f85f6da5bfacf4efa2d401a8cd1fe00005)	12iqwZGB2sguEhjFi2ZRuWWixU8mHJnSiP1pwDefqGsBy4rV	
