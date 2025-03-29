@@ -35,6 +35,7 @@ This section functions as the single source of truth of JAM Implementer DAO Memb
 | JAMdotTech \| PyJAMaz | 15gPiSBxhrrQFfShFbrnsQK7kokgQtVs3SEh38YjCDC31de3 | [Link](https://polkadot.subscan.io/extrinsic/25331656-2) |
 | MORUM | 123KEnwuHKiu48WsfwAX4YonGFTpkEmWS6V2WGoJA1qzBkbS | [Link](https://polkadot.subscan.io/extrinsic/25330323-2) |
 | Tessera | 15p3jWZaP4dHTkDTuKM5VXQL5XGfH9U5r6Ntu3UAv2K7vPb8 | [Link](https://polkadot.subscan.io/extrinsic/25331398-2) |
+| Fluffy Labs \| typeberry | 15fGrDWmFoaApnZXEw1Zg45zuCqpkbMS9YPzczeU9dHseUUu | [Link](https://polkadot.subscan.io/multisig_extrinsic/25345876-2) |
 
 <details>
 <summary>Raw YAML</summary>
@@ -80,6 +81,9 @@ members:
   - name: "Tessera"
     address: "15p3jWZaP4dHTkDTuKM5VXQL5XGfH9U5r6Ntu3UAv2K7vPb8"
     extrinsic: "https://polkadot.subscan.io/extrinsic/25331398-2"
+  - name: "Fluffy Labs | typeberry"
+    address: "15fGrDWmFoaApnZXEw1Zg45zuCqpkbMS9YPzczeU9dHseUUu"
+    extrinsic: "https://polkadot.subscan.io/multisig_extrinsic/25345876-2"
 
 ```
 
