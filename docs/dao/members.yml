@@ -38,3 +38,6 @@ members:
   - name: "Tessera"
     address: "15p3jWZaP4dHTkDTuKM5VXQL5XGfH9U5r6Ntu3UAv2K7vPb8"
     extrinsic: "https://polkadot.subscan.io/extrinsic/25331398-2"
+  - name: "Fluffy Labs | typeberry"
+    address: "15fGrDWmFoaApnZXEw1Zg45zuCqpkbMS9YPzczeU9dHseUUu"
+    extrinsic: "https://polkadot.subscan.io/multisig_extrinsic/25345876-2"
