@@ -88,6 +88,7 @@ members:
   - name: "JamBrains"
     address: "15R1pWegyu7AfMev8DBMT67qxYoJhA1v7BbA2nn7S2uJ5QDF"
     extrinsic: "https://assethub-polkadot.subscan.io/extrinsic/8512653-2"
+
 ```
 
 </details>
