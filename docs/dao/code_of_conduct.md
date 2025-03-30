@@ -1,7 +1,7 @@
 ---
 id: code_of_conduct
 sidebar_label: Code of Conduct
-sidebar_position: 6
+sidebar_position: 2
 slug: /dao/code_of_conduct
 ---
 

@@ -2,6 +2,7 @@
 id: tiny
 sidebar_label: Tiny
 sidebar_position: 0
+slug: /basics/chain-spec/tiny
 ---
 
 # Tiny

@@ -1,7 +1,7 @@
 ---
 id: dao
 sidebar_label: JAM Implementers DAO
-sidebar_position: 5
+sidebar_position: 0
 slug: /dao/
 ---
 
@@ -36,6 +36,7 @@ This section functions as the single source of truth of JAM Implementer DAO Memb
 | MORUM | 123KEnwuHKiu48WsfwAX4YonGFTpkEmWS6V2WGoJA1qzBkbS | [Link](https://polkadot.subscan.io/extrinsic/25330323-2) |
 | Tessera | 15p3jWZaP4dHTkDTuKM5VXQL5XGfH9U5r6Ntu3UAv2K7vPb8 | [Link](https://polkadot.subscan.io/extrinsic/25331398-2) |
 | Fluffy Labs \| typeberry | 15fGrDWmFoaApnZXEw1Zg45zuCqpkbMS9YPzczeU9dHseUUu | [Link](https://polkadot.subscan.io/multisig_extrinsic/25345876-2) |
+| JamBrains | 15R1pWegyu7AfMev8DBMT67qxYoJhA1v7BbA2nn7S2uJ5QDF | [Link](https://assethub-polkadot.subscan.io/extrinsic/8512653-2) |
 
 <details>
 <summary>Raw YAML</summary>
@@ -84,7 +85,9 @@ members:
   - name: "Fluffy Labs | typeberry"
     address: "15fGrDWmFoaApnZXEw1Zg45zuCqpkbMS9YPzczeU9dHseUUu"
     extrinsic: "https://polkadot.subscan.io/multisig_extrinsic/25345876-2"
-
+  - name: "JamBrains"
+    address: "15R1pWegyu7AfMev8DBMT67qxYoJhA1v7BbA2nn7S2uJ5QDF"
+    extrinsic: "https://assethub-polkadot.subscan.io/extrinsic/8512653-2"
 ```
 
 </details>

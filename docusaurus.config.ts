@@ -81,6 +81,12 @@ const config: Config = {
           label: 'Knowledge',
         },
         {
+          type: 'docSidebar',
+          sidebarId: 'daoSidebar',
+          position: 'left',
+          label: 'DAO',
+        },
+        {
           href: 'https://github.com/jambrains/jam-docs',
           label: 'GitHub',
           position: 'right',
@@ -96,6 +102,10 @@ const config: Config = {
             {
               label: 'Knowledge',
               to: '/',
+            },
+            {
+              label: 'DAO',
+              to: '/dao',
             },
           ],
         },

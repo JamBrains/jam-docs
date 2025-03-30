@@ -2,6 +2,7 @@
 id: large
 sidebar_label: Large
 sidebar_position: 3
+slug: /basics/chain-spec/large
 ---
 
 # Large

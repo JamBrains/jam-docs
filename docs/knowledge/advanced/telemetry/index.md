@@ -22,7 +22,7 @@ how to deal with errors and precise formats with a few teams.
 
 ### JAMNP + OpenTelemetry
 
-The [JAMNP spec](/advanced/simple-networking/spec) is used as a primary starting point to develop a telemetry system:
+The [JAMNP spec](/knowledge/advanced/simple-networking/spec.md) is used as a primary starting point to develop a telemetry system:
 
 1. UP 0: Block Announcement
 2. CE 128: Block Request

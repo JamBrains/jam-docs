@@ -13,7 +13,7 @@ PVM blobs:
 - [JamBrains/PolkaVm-examples](https://github.com/JamBrains/polkavm-examples?tab=readme-ov-file#universal-pvm-executor): Universal PVM executor with hostcall mocking. Only good for smokescreen testing.
 
 Host calls:
-- [JIP-1](/testing/polka-vm/host-call-log): Optional host call that can be used to log messages.
+- [JIP-1](/knowledge/testing/polka-vm/host-call-log.md): Optional host call that can be used to log messages.
 
 JAM services:
 - CoreVM

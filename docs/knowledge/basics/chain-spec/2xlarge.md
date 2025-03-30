@@ -2,7 +2,7 @@
 id: 2xlarge
 sidebar_label: 2xLarge
 sidebar_position: 5
-slug: /basics/chain-spec/xxlarge
+slug: /basics/chain-spec/2xlarge
 ---
 
 # 2xLarge

@@ -1,6 +1,7 @@
 ---
 id: full
 sidebar_label: Full
+slug: /basics/chain-spec/full
 ---
 
 # Full

@@ -2,6 +2,7 @@
 id: small
 sidebar_label: Small
 sidebar_position: 1
+slug: /basics/chain-spec/small
 ---
 
 # Small
