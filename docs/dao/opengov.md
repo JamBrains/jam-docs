@@ -1,7 +1,7 @@
 ---
 id: opengov
 sidebar_label: Polkadot OpenGov
-sidebar_position: 3
+sidebar_position: 1
 slug: /dao/opengov
 ---
 

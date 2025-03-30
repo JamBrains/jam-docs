@@ -2,7 +2,7 @@
 id: 3xlarge
 sidebar_label: 3xLarge
 sidebar_position: 6
-slug: /basics/chain-spec/3x-large
+slug: /basics/chain-spec/3xlarge
 ---
 
 # 3xLarge
