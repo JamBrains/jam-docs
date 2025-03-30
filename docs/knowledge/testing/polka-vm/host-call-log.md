@@ -4,7 +4,7 @@ sidebar_label: Log Host Call
 sidebar_position: 1
 ---
 
-(source: https://hackmd.io/@polkadot/jip1 from {new Date().toISOString().split('T')[0]})
+(source: https://hackmd.io/@polkadot/jip1 from 2025-03-30)
 
 <!-- The raw MD from above will be downloaded and appended -->
  # JIP-1: Debug message host call
@@ -15,6 +15,7 @@ A host call for passing a debugging message from the service/authorizer to the h
 
 Index: 100
 Name: `log`
+Gas usage: 0
 Input registers: $\omega_{7\dots+5}$
 Output registers: $\{\}$
 

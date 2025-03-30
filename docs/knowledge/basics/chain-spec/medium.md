@@ -2,6 +2,7 @@
 id: medium
 sidebar_label: Medium
 sidebar_position: 2
+slug: /basics/chain-spec/medium
 ---
 
 # Medium

@@ -4,7 +4,7 @@ sidebar_label: Spec
 sidebar_position: 1
 ---
 
-(source: https://github.com/zdave-parity/jam-np/blob/main/simple.md from {new Date().toISOString().split('T')[0]})
+(source: https://github.com/zdave-parity/jam-np/blob/main/simple.md from 2025-03-30)
 
 <!-- The raw MD from above will be downloaded and appended -->
  # JAM Simple Networking Protocol (JAMNP-S)

@@ -1,7 +1,7 @@
 ---
 id: dao
 sidebar_label: JAM Implementers DAO
-sidebar_position: 5
+sidebar_position: 0
 slug: /dao/
 ---
 
