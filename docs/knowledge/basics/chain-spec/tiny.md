@@ -19,6 +19,7 @@ contest_duration: 10
 tickets_per_validator: 3
 max_tickets_per_extrinsic: 3
 rotation_period: 4
+num_ec_pieces_per_segment: 1026
 ```
 
 Please consult a few other JAM implementer teams before changing this spec, as it is in use for
