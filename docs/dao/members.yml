@@ -44,3 +44,6 @@ members:
   - name: "JamBrains"
     address: "15R1pWegyu7AfMev8DBMT67qxYoJhA1v7BbA2nn7S2uJ5QDF"
     extrinsic: "https://assethub-polkadot.subscan.io/extrinsic/8512653-2"
+  - name: "Clawbird"
+    address: "1dsrQjL34njJ4Y8FXGyxeLnmunPZ6XAvid9jSQe9S4pTUh2"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25393677-2"
