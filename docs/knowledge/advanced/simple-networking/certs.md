@@ -6,10 +6,6 @@ sidebar_position: 2
 
 # OpenSSL Certificate Generation
 
-:::warning  
-🚧 This section is under construction and may contain mistakes.  
-:::
-
 This guide demonstrates how to generate Ed25519 keys and certificates for the [Alice](/basics/dev-accounts#alice) dev account using the OpenSSL CLI. These certificates can be used for the [Simple Networking Protocol](/knowledge/advanced/simple-networking/spec.md#encryption-and-handshake).
 
 ## Secret Key Generation
