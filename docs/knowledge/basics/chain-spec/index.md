@@ -50,3 +50,7 @@ The rotation period of validator-core assignments, in timeslots.
 
 The maximum number of tickets which may be submitted in a single extrinsic.  
 Constraint: $\mathsf{K} > 0$
+
+### WP `num_ec_pieces_per_segment`
+
+The number of erasure-coded pieces in a segment

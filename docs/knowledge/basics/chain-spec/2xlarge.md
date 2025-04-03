@@ -9,12 +9,13 @@ slug: /basics/chain-spec/2xlarge
 
 ```yaml
 chain: 2xlarge
-num_validators: 384
-num_cores: 128
+num_validators: 342
+num_cores: 114
 slot_duration: 6
 epoch_duration: 300
 contest_duration: 250
 tickets_per_validator: 2
 max_tickets_per_extrinsic: 16
 rotation_period: TODO
+num_ec_pieces_per_segment: 18
 ```

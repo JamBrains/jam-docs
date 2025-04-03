@@ -9,14 +9,15 @@ slug: /basics/chain-spec/3xlarge
 
 ```yaml
 chain: 3xlarge
-num_validators: 576
-num_cores: 192
+num_validators: 684
+num_cores: 228
 slot_duration: 6
 epoch_duration: 600
 contest_duration: 500
 tickets_per_validator: 2
 max_tickets_per_extrinsic: 16
 rotation_period: TODO
+num_ec_pieces_per_segment: 9
 ```
 
 * The epochs are 30 minutes rather than the full hour of the toaster.  

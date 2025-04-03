@@ -17,6 +17,7 @@ epoch_duration: 600
 contest_duration: 500
 tickets_per_validator: 2
 rotation_period: 10
+num_ec_pieces_per_segment: 6
 ```
 
 The "full" name comes from the fact that full takes up the entire JAM "Toaster".
