@@ -32,7 +32,6 @@ This section functions as the single source of truth of JAM Implementer DAO Memb
 | TSJam | 155tk9HmeJGsNZtA5LFasSCGZCdpAb2P2Gs6ej9JeP38sAww | [Link](https://polkadot.subscan.io/extrinsic/25317150-2) |
 | Boka | 14DsLzVyTUTDMm2eP3czwPbH53KgqnQRp3CJJZS9GR7yxGDP | [Link](https://polkadot.subscan.io/extrinsic/25322563-2) |
 | New JAMneration | 134Dbw4pZY1E81fb79XtjRvzW55qEx3FpEgrRYfJfDf3weF6 | [Link](https://polkadot.subscan.io/extrinsic/25326753-2) |
-| JAMdotTech \| PyJAMaz | 15gPiSBxhrrQFfShFbrnsQK7kokgQtVs3SEh38YjCDC31de3 | [Link](https://polkadot.subscan.io/extrinsic/25331656-2) |
 | MORUM | 123KEnwuHKiu48WsfwAX4YonGFTpkEmWS6V2WGoJA1qzBkbS | [Link](https://polkadot.subscan.io/extrinsic/25330323-2) |
 | Tessera | 15p3jWZaP4dHTkDTuKM5VXQL5XGfH9U5r6Ntu3UAv2K7vPb8 | [Link](https://polkadot.subscan.io/extrinsic/25331398-2) |
 | Fluffy Labs \| typeberry | 13Tomek8c9wxPJ7hFrbmXXHMzyJfcRWuxFjUbJLQgigRHAiv | [Link](https://polkadot.subscan.io/extrinsic/25373617-2) |
@@ -73,9 +72,6 @@ members:
   - name: "New JAMneration"
     address: "134Dbw4pZY1E81fb79XtjRvzW55qEx3FpEgrRYfJfDf3weF6"
     extrinsic: "https://polkadot.subscan.io/extrinsic/25326753-2"
-  - name: "JAMdotTech | PyJAMaz"
-    address: "15gPiSBxhrrQFfShFbrnsQK7kokgQtVs3SEh38YjCDC31de3"
-    extrinsic: "https://polkadot.subscan.io/extrinsic/25331656-2"
   - name: "MORUM"
     address: "123KEnwuHKiu48WsfwAX4YonGFTpkEmWS6V2WGoJA1qzBkbS"
     extrinsic: "https://polkadot.subscan.io/extrinsic/25330323-2"
