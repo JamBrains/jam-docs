@@ -36,6 +36,7 @@ This section functions as the single source of truth of JAM Implementer DAO Memb
 | Tessera | 15p3jWZaP4dHTkDTuKM5VXQL5XGfH9U5r6Ntu3UAv2K7vPb8 | [Link](https://polkadot.subscan.io/extrinsic/25331398-2) |
 | Fluffy Labs \| typeberry | 13Tomek8c9wxPJ7hFrbmXXHMzyJfcRWuxFjUbJLQgigRHAiv | [Link](https://polkadot.subscan.io/extrinsic/25373617-2) |
 | JamBrains | 15R1pWegyu7AfMev8DBMT67qxYoJhA1v7BbA2nn7S2uJ5QDF | [Link](https://assethub-polkadot.subscan.io/extrinsic/8512653-2) |
+| Clawbird | 1dsrQjL34njJ4Y8FXGyxeLnmunPZ6XAvid9jSQe9S4pTUh2 | [Link](https://polkadot.subscan.io/extrinsic/25393677-2) |
 
 <details>
 <summary>Raw YAML</summary>
@@ -84,6 +85,9 @@ members:
   - name: "JamBrains"
     address: "15R1pWegyu7AfMev8DBMT67qxYoJhA1v7BbA2nn7S2uJ5QDF"
     extrinsic: "https://assethub-polkadot.subscan.io/extrinsic/8512653-2"
+  - name: "Clawbird"
+    address: "1dsrQjL34njJ4Y8FXGyxeLnmunPZ6XAvid9jSQe9S4pTUh2"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25393677-2"
 
 ```
 
