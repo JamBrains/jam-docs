@@ -64,4 +64,4 @@ If members believe someone in the channel is breaking these rules, members may p
 ## Disclaimer on the Mutability of the Rules
 Governance is an emergent and evolving field, and we envision it as a space for experimentation and rapid iteration. As such, the rules outlined above are subject to change without prior notice. The most current version of the rules can always be found in our GitHub repository with next link `https://github.com/JamBrains/jam-docs/blob/main/docs/dao/code_of_conduct.md`.
 
-Any DAO member may propose changes to this Code of Conduct by submitting a proposal for vote in the DAO Telegram or Discord group. Amendments require majority approval (≥50%) and must meet the quorum set for the Big Spender Track.
+Any DAO member may propose changes to this Code of Conduct by submitting a proposal for vote in the DAO Discord group. Amendments require majority approval (≥50%) and must meet the quorum set for the Big Spender Track.
