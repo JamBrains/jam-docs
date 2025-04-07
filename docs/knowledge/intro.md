@@ -5,7 +5,7 @@ slug: /
 ---
 
 :::note
-See [graypaper.com](https://graypaper.com) for official information about JAM. This website only contains information that is not part of the Gray Paper but may still be useful to developers.
+See [graypaper.com](https://graypaper.com) for official information about JAM. This is an unofficial community-driven website.
 :::
 
 Join us to build [JAM](https://graypaper.com/):
