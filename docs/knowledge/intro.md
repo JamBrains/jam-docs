@@ -4,11 +4,15 @@ sidebar_position: 0
 slug: /
 ---
 
-This wiki hosts information for JAM implementers. The goal is to aid collaboration and [testnet
-setup](https://github.com/jam-duna/jamtestnet). Any information that is not specified in the [Gray
-Paper](https://graypaper.com) can be added here.
+:::note
+This is an unofficial website that is not endorsed by the Web3 Foundation or Parity Technologies.  
+For official statements, please see `graypaper.com`.
+:::
 
-Join us to build JAM (and win some [prizes](https://jam.web3.foundation/) 🤫):
+Collaborative wiki for aspiring JAM implementers. The goal is to aid collaboration and [testnet
+setup](https://github.com/jam-duna/jamtestnet).
+
+Join us to build JAM:
 - [Telegram JAM Testnet](https://t.me/jamtestnet): Casual and public channel to orchestrate a testnet setup on the way to the JAM Toaster.
 - [Matrix Gray Paper](https://matrix.to/#/#graypaper:polkadot.io): Technical discussion about the Gray Paper - not implementations.
 - [Matrix JAM](https://matrix.to/#/#jam:polkadot.io): Discussions about implementing the Gray Paper.
