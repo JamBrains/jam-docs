@@ -37,6 +37,7 @@ This section functions as the single source of truth of JAM Implementer DAO Memb
 | Fluffy Labs \| typeberry | 13Tomek8c9wxPJ7hFrbmXXHMzyJfcRWuxFjUbJLQgigRHAiv | [Link](https://polkadot.subscan.io/extrinsic/25373617-2) |
 | JamBrains | 15R1pWegyu7AfMev8DBMT67qxYoJhA1v7BbA2nn7S2uJ5QDF | [Link](https://assethub-polkadot.subscan.io/extrinsic/8512653-2) |
 | Clawbird | 1dsrQjL34njJ4Y8FXGyxeLnmunPZ6XAvid9jSQe9S4pTUh2 | [Link](https://polkadot.subscan.io/extrinsic/25393677-2) |
+| SpaceJam | 12j112AQPXh9ZbaDnt32xishF6KH8tRg5zVbxgdptzLSEeoq | [Link](https://polkadot.subscan.io/extrinsic/25589552-2) |
 
 <details>
 <summary>Raw YAML</summary>
@@ -88,6 +89,9 @@ members:
   - name: "Clawbird"
     address: "1dsrQjL34njJ4Y8FXGyxeLnmunPZ6XAvid9jSQe9S4pTUh2"
     extrinsic: "https://polkadot.subscan.io/extrinsic/25393677-2"
+  - name: "SpaceJam"
+    address: "12j112AQPXh9ZbaDnt32xishF6KH8tRg5zVbxgdptzLSEeoq"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25589552-2"
 
 ```
 
