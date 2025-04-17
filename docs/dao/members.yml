@@ -44,3 +44,6 @@ members:
   - name: "Clawbird"
     address: "1dsrQjL34njJ4Y8FXGyxeLnmunPZ6XAvid9jSQe9S4pTUh2"
     extrinsic: "https://polkadot.subscan.io/extrinsic/25393677-2"
+  - name: "SpaceJam"
+    address: "12j112AQPXh9ZbaDnt32xishF6KH8tRg5zVbxgdptzLSEeoq"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25589552-2"
