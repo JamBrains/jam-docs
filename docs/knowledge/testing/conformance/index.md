@@ -16,6 +16,8 @@ The Web3 Foundation provides conformance tests at [w3f/jamtestvectors](https://g
 
 ## Colorful Notion
 
+[Testnet Compliance](https://docs.google.com/spreadsheets/d/1JVt_1daKJWslCaP9hfggKQSN4aGuV_le0XkKcsrjXDc/edit?gid=0#gid=0) tracking sheet per client for the different levels:
+
 - [Safrole fallback](https://github.com/jam-duna/jamtestnet/tree/main/data/fallback)
 - [Safrole proper](https://github.com/jam-duna/jamtestnet/tree/main/data/safrole)
 - [Assurances](https://github.com/jam-duna/jamtestnet/tree/main/data/assurances)
