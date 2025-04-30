@@ -441,6 +441,23 @@ Node -> Node
 <-- FIN
 ```
 
+### Shard assignment
+
+Erasure coded shards are assigned to validators as follows:
+
+```math
+i = (cR + v) \bmod V
+```
+
+Where:
+
+- $v$ is the index of a validator.
+- $i$ is the index of the shard assigned to the validator.
+- $c$ is the index of the core which produced the work-report.
+- $R$ is the recovery threshold: the minimum number of EC shards required to recover the original
+  data. With 1023 validators, $R = 342$.
+- $V$ is the number of validators.
+
 ### CE 137: Shard distribution
 
 This protocol should be used by assurers to request their EC shards from the guarantors of a
