@@ -38,6 +38,7 @@ This section functions as the single source of truth of JAM Implementer DAO Memb
 | JamBrains | 15R1pWegyu7AfMev8DBMT67qxYoJhA1v7BbA2nn7S2uJ5QDF | [Link](https://assethub-polkadot.subscan.io/extrinsic/8512653-2) |
 | Clawbird | 1dsrQjL34njJ4Y8FXGyxeLnmunPZ6XAvid9jSQe9S4pTUh2 | [Link](https://polkadot.subscan.io/extrinsic/25393677-2) |
 | SpaceJam | 12j112AQPXh9ZbaDnt32xishF6KH8tRg5zVbxgdptzLSEeoq | [Link](https://polkadot.subscan.io/extrinsic/25589552-2) |
+| Eiger | 131MpMXeuKG6L27Ye23uzWr739KFbbrCBdiv39XZtnTCPwQB | [Link](https://polkadot.subscan.io/extrinsic/25812820-2) |
 
 <details>
 <summary>Raw YAML</summary>
@@ -92,6 +93,9 @@ members:
   - name: "SpaceJam"
     address: "12j112AQPXh9ZbaDnt32xishF6KH8tRg5zVbxgdptzLSEeoq"
     extrinsic: "https://polkadot.subscan.io/extrinsic/25589552-2"
+  - name: "Eiger"
+    address: "131MpMXeuKG6L27Ye23uzWr739KFbbrCBdiv39XZtnTCPwQB"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25812820-2"
 
 ```
 

@@ -4,7 +4,7 @@ sidebar_label: Spec
 sidebar_position: 1
 ---
 
-(source https://github.com/zdave-parity/jam-np/blob/main/simple.md from 2025-04-17)
+(source https://github.com/zdave-parity/jam-np/blob/main/simple.md from 2025-05-01)
 
 <!-- The raw MD from above will be downloaded and appended -->
  # JAM Simple Networking Protocol (JAMNP-S)
@@ -168,9 +168,9 @@ Segment Shard = [u8; 12]
 
 ### Grid structure
 
-Primarily for the purpose of block announcements, the previous, current, and next validator sets
-are conceptually arranged in a grid structure. Two validators are considered neighbours in the grid
-if:
+Primarily for the purpose of block and preimage announcements, the previous, current, and next
+validator sets are conceptually arranged in a grid structure. Two validators are considered
+neighbours in the grid if:
 
 - They are validators in the same epoch and either have the same row (`index / W`) or the same
   column (`index % W`). `W` here is `floor(sqrt(V))`, where `V` is the number of validators.
@@ -184,7 +184,9 @@ This should be opened between two connected nodes if either:
 - At least one of the nodes is not a validator.
 
 Here, "validator" means a validator in either the previous, current, or next epoch. As this is a UP
-protocol, the initiator of the connection is responsible for opening the stream when necessary.
+protocol, the initiator of the connection is responsible for opening the stream when necessary. At
+the beginning of a new epoch, UP 0 stream adjustments should be made at the same time as
+connectivity changes are applied; see the section on epoch transitions above.
 
 Both sides should begin by sending a handshake message containing all known leaves (descendants of
 the latest finalized block with no known children).
@@ -225,10 +227,6 @@ There are two types of request:
   followed by its parent, grandparent, and so on.
 
 The number of blocks in the response should be limited to the given maximum.
-
-Note that blocks directly contain only the hashes of included work-reports and preimages. If
-unknown, the actual work-reports and preimages should be requested using protocols 136 and 143
-respectively.
 
 ```
 Direction = 0 (Ascending exclusive) OR 1 (Descending inclusive) (Single byte)
@@ -402,12 +400,6 @@ Guaranteed work-reports should be distributed to all current validators, and dur
 rotation of an epoch, additionally to all validators for the next epoch. Note that these validator
 sets are likely to overlap.
 
-There are two reasons for distributing to the validators for the next epoch:
-
-- These validators may be able to include the work-report in a block themselves.
-- If the work-report is included in a block by a current validator, they will need the work-report
-  in order to validate the block and keep up with the chain.
-
 Guarantors should try to avoid producing and distributing work-reports that cannot be included in
 the next block. In particular, they should avoid producing and distributing work-reports with slots
 that are too far in the past or the future.
@@ -426,20 +418,37 @@ Guarantor -> Validator
 
 Request for the work-report with the given hash.
 
-This should be used to request missing work-reports on receipt of a new block; blocks directly
-contain only the hashes of included work-reports.
+This should be used by auditors to request missing work-reports which have been negatively judged
+by other auditors.
 
-A node announcing a new block may be assumed to possess the referenced work-reports. Such nodes
-should thus be queried first for missing reports.
+An auditor publishing or forwarding a negative judgment may be assumed to possess the referenced
+work-report. Such auditors should thus be queried first for missing reports.
 
 ```
-Node -> Node
+Auditor -> Auditor
 
 --> Work-Report Hash
 --> FIN
 <-- Work-Report
 <-- FIN
 ```
+
+### Shard assignment
+
+Erasure coded shards are assigned to validators as follows:
+
+```math
+i = (cR + v) \bmod V
+```
+
+Where:
+
+- $v$ is the index of a validator.
+- $i$ is the index of the shard assigned to the validator.
+- $c$ is the index of the core which produced the work-report.
+- $R$ is the recovery threshold: the minimum number of EC shards required to recover the original
+  data. With 1023 validators, $R = 342$.
+- $V$ is the number of validators.
 
 ### CE 137: Shard distribution
 
@@ -558,9 +567,11 @@ Guarantor -> Assurer
 Distribution of an availability assurance ready for inclusion in a block.
 
 Assurers should distribute availability assurances approximately 2 seconds before each slot, to all
-possible block authors. Note that the assurer set and the block author set should switch over to
-the next validator set for the distribution 2 seconds before a new epoch -- the assurances
-extrinsic and block seal are both checked using the posterior keysets.
+possible block authors. Note that the assurer set should switch over to the next validator set for
+the distribution 4 seconds after a new epoch, whereas the block author set should switch over for
+the distribution one slot earlier (2 seconds before the new epoch). This is because the assurances
+extrinsic is checked using the prior keysets, while the block seal is checked using the posterior
+keysets.
 
 ```
 Bitfield = [u8; 43] (One bit per core)
@@ -576,14 +587,14 @@ Assurer -> Validator
 ### CE 142: Preimage announcement
 
 Announcement of possession of a requested preimage. This should be used by non-validator nodes to
-introduce preimages.
+introduce preimages, and by validators to gossip these preimages to other validators.
 
 The recipient of the announcement is expected to follow up by requesting the preimage using
 protocol 143, provided the preimage has been requested on chain by the given service and the
 recipient is not already in possession of it.
 
-Preimage announcements _should not_ be forwarded to other validators; validators should propagate
-preimages only be including them in blocks they author.
+Once a validator has obtained a requested preimage, it should announce possession to its neighbours
+in the grid structure.
 
 ```
 Service ID = u32
@@ -600,13 +611,7 @@ Node -> Validator
 
 Request for a preimage of the given hash.
 
-This should be used to request:
-
-- Preimages announced via protocol 142.
-- Missing preimages of hashes in the lookup extrinsics of new blocks.
-
-Requests for a preimage should be made to nodes that have announced possession of either the
-preimage itself or of a block containing the hash of the preimage in its lookup extrinsic.
+This should be used to request preimages announced via protocol 142.
 
 Note that this protocol is essentially the same as protocol 136 (work-report request), but the hash
 is expected to be checked against a different database.
@@ -626,7 +631,7 @@ Node -> Node
 
 Announcement of requirement to audit.
 
-Auditors of a block (defined to be the posterior validator set) should, at the beginning of each
+Auditors of a block (defined to be the prior validator set) should, at the beginning of each
 tranche, broadcast an announcement to all other such auditors specifying which work-reports they
 intend to audit, unless they do not intend to audit any work-reports, in which case no announcement
 should be sent.
@@ -683,16 +688,20 @@ An announcement declaring intention to audit a particular work-report must be fo
 judgment, declaring the work-report to either be valid or invalid, as soon as this has been
 determined.
 
-Any judgments produced should also be broadcast to the validator set(s) for the epoch(s) following
-the block(s) in which the audited work-report was declared available. This is to ensure the
-judgments are available for block authors to include in the disputes extrinsic. For positive
-judgments, this broadcasting may optionally be deferred until a negative judgment for the
-work-report is observed (which may never happen).
+Any judgments produced should also be broadcast to the validator set(s) succeeding the relevant
+auditor set(s). This is to ensure the judgments are available to all block authors capable of
+including them in a disputes extrinsic. For positive judgments, this broadcasting may optionally be
+deferred until a negative judgment for the work-report is observed (which may never happen).
 
-On receipt of a new negative judgment for a work-report that the node is (potentially) responsible
-for auditing, the judgment should be forwarded to all other known auditors that are neighbours in
-the grid structure. The intent of this is to increase the likelihood that negative judgments are
-seen by all auditors.
+On receipt of a new negative judgment for a work-report that the node is responsible for auditing
+(as determined by the epoch index):
+
+- The node should obtain the work-report using CE 136 if it does not already have it.
+- The negative judgment should be forwarded to all other known auditors that are neighbours in the
+  grid structure. The intent of this is to increase the likelihood that negative judgments are seen
+  by all auditors.
+- The node should audit the work-report, if it has not already done so, publishing its own judgment
+  following this.
 
 ```
 Validity = 0 (Invalid) OR 1 (Valid) (Single byte)

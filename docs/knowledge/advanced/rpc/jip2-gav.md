@@ -6,7 +6,7 @@ sidebar_position: 1
 slug: /advanced/rpc/jip2-node-rpc
 ---
 
-(source https://hackmd.io/@polkadot/jip2 from 2025-04-17)
+(source https://hackmd.io/@polkadot/jip2 from 2025-05-01)
 
 <!-- The raw MD from above will be downloaded and appended -->
 # JIP-2: Node RPC
