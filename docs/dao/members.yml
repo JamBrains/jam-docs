@@ -47,3 +47,6 @@ members:
   - name: "SpaceJam"
     address: "12j112AQPXh9ZbaDnt32xishF6KH8tRg5zVbxgdptzLSEeoq"
     extrinsic: "https://polkadot.subscan.io/extrinsic/25589552-2"
+  - name: "Eiger"
+    address: "131MpMXeuKG6L27Ye23uzWr739KFbbrCBdiv39XZtnTCPwQB"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/25812820-2"
