@@ -2,7 +2,7 @@
 id: Polkadot Virtual Machine
 sidebar_label: Virtual Machine
 sidebar_position: 4
-slug: /pvm
+slug: /basics/pvm
 ---
 
 The Polkadot Virtual Machine (aka *PVM*) is a Virtual Machine specification based on the RISC-V instruction set. It is based on a prototype known as PolkaVM and developed by [Parity](https://github.com/paritytech/polkavm?tab=readme-ov-file#polkavm) as an open source project. It will be utilized by the JAM Chain to provide [deterministic](#determinism) and [metered](#metering) execution and is specified in the [Gray Paper](https://graypaper.fluffylabs.dev/#/cc517d7/231100231200?v=0.6.5). It can be programmed in any language that compiles to RISC-V. Some examples are: Rust, YUL (Solidity) or C/C++.
