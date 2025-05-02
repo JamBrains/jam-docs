@@ -11,7 +11,7 @@ Its architecture is optimized for [compilation-](#compilation) and execution-spe
 
 ## JAM Services
 
-The main use-case for PVM is to provide execution semantics for JAM services. PolkaVM can also be used for things that are unrelated to JAM, but may not be optimized for those. 
+The main use-case for PVM is to provide execution semantics for JAM services. PVM can also be used for things that are unrelated to JAM, but may not be optimized for those. 
 A JAM service contains metadata that is relevant for JAM and an inner PVM bytecode program. This PVM program exposes specific entry points for the JAM chain to invoke, for example: *refine* and *accumulate*.
 
 ## Determinism
