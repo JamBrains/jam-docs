@@ -37,3 +37,7 @@ To execute a PVM bytecode program (aka *blob*) on modern hardware, it is necessa
 This process happens on-the-fly whenever a *blob* should be executed and must therefore be fast.
 
 Note that it is also possible to interpret PVM bytecode instead of compiling it. This is easier to achieve, but will yield much lower performance.
+
+## Implementations
+
+The only public implementation currently is [PolkaVM by Parity](https://github.com/paritytech/polkavm?tab=readme-ov-file#polkavm). It is expected that more implementations will be shared here in the future, once other JAM teams open-source their work.
