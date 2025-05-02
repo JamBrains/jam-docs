@@ -2,6 +2,7 @@
 id: host-call-log
 sidebar_label: Log Host Call
 sidebar_position: 1
+slug: /testing/pvm/host-call-log
 ---
 
 (source https://hackmd.io/@polkadot/jip1 from 2025-05-01)
