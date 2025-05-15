@@ -18,7 +18,7 @@ A JAM service contains metadata that is relevant for JAM and an inner PVM byteco
 
 >A function is called *deterministic* if and only if it yields the same result on the same input every time.
 
-The JAM Chain relies on PolkaVM for interpreting what a service wants to do. For the consensus of the JAM Chain to work,
+The JAM Chain relies on PVM for interpreting what a service wants to do. For the consensus of the JAM Chain to work,
 all validators that interpret a service must arrive at the same outcome. PVM must therefore be deterministic for it to be useful for the JAM Chain.
 
 For example, if one validator had a faulty PVM implementation, it would report a different outcome and possibly be slashed for such an offence.
