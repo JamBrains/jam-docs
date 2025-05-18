@@ -25,9 +25,9 @@ For example, if one validator had a faulty PVM implementation, it would report a
 
 ## Metering
 
-PVM defines a fixed cost for each instruction (aka *weight*). It gets initialized with an upper limit of *weight* and can run at most until that limit is reached. This is very useful to progressively advance a service in each block.
+PVM defines a fixed cost for each instruction (aka *gas*). It gets initialized with an upper limit of *gas* and can run at most until that limit is reached. This is very useful to progressively advance a service in each block.
 
-Abstractly, you can think of *weight* as being similar to Polkadot's *Core Time*.
+Abstractly, you can think of *gas* as being similar to Polkadot's *Core Time*.
 
 ## Compilation
 
