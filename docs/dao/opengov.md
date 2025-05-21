@@ -58,7 +58,7 @@ A basic explanation of the DAO's voting process and timeline is as follows:
 
 The DAO utilizes a fully transparent voting bot.   Two key parameters encourages high participation and in-depth internal discussion before any vote is cast:
 
-* MIN_PARTICIPATION: 45% -- the number members required to vote before a AYE or NAY vote can be cast.
+* MIN_PARTICIPATION: 45% -- the number of members required to vote before an AYE or NAY vote can be cast.
 * Voting Threshold: 51%  -- The percentage of AYE (or NAY) votes relative to the total number of votes cast to vote AYE (or NAY).
 
 If neither the MIN_PARTICIPATION nor Voting Threshold is met, the resulting vote is _abstain_.
