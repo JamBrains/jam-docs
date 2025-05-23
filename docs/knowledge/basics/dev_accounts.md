@@ -8,7 +8,7 @@ slug: /basics/dev-accounts
 These well known accounts can be used for testing and are known by all JAM node implementations.
 
 :::warning
-Please be advised that [JIP-5](https://github.com/polkadot-fellows/JIPs/pull/2) will change the concrete values here. An updated JIP-5 page will be available soon.
+Please be advised that [JIP-5](https://github.com/polkadot-fellows/JIPs/pull/2) will change the concrete values here. An updated version will be available soon.
 :::
 
 
