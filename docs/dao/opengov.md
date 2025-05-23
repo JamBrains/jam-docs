@@ -7,21 +7,24 @@ slug: /dao/opengov
 
 # Polkadot OpenGov Participation
   
-_Note: This is only be taken as a draft and *NOT* considered final._
+Engaging in Polkadot OpenGov is one of the key functions of the DAO.  Concerning this function, we have drafted this section and the *Code of Conduct*.  
 
-Engaging in Polkadot OpenGov is one of the key functions of the DAO.  Concerning this function, we have drafted this section and the *Code of Conduct*.  This draft is heavily based on that of the [Permanence DAO](https://docs.permanence.io/), which are considered exemplary.  
+On March 27, 2025, the Web3 Foundation selected the JAM Implementers DAO to be a part of Decentralized Voices Cohort 4 (April - Aug 2025) -- see [official announcement](https://medium.com/web3foundation/decentralized-voices-cohort-4-delegates-announced-a5a9c64927fd).   Voting members are now engaged in a newly Discord room for this function.
+
+* JAM Implementer DAO Address: `13NCLd3foNpsv1huPDzvvfyKh37NEEkGFotZnP52CTR98YFJ`
+* [DAO Voting Record](https://polkadot.subsquare.io/user/13NCLd3foNpsv1huPDzvvfyKh37NEEkGFotZnP52CTR98YFJ/votes)
 
 
-On March 27, 2025, the Web3 Foundation selected the JAM Implementers DAO to be a part of Decentralized Voices Cohort 4 (April - Aug 2025) -- see [official announcement](https://medium.com/web3foundation/decentralized-voices-cohort-4-delegates-announced-a5a9c64927fd).   This was based on an [Decentralized Voices Cohort 4: JAM Implementers DAO](https://forum.polkadot.network/t/decentralized-voices-cohort-4-jam-implementers-dao/12001) application post where a quorum of JAM Implementers expressed interest after an March online meetup.   
+###  Voting on Discord
 
-###  Voting on Telegram/Discord
+In April 2025, a public Discord server was set up to execute on "1 JAM Team, 1 vote" mechanics, implemented with the following [OpenGov bot](https://github.com/JamBrains/opengov-bot), forked from ChaosDAO bot.
 
-As of late March/early April 2025, a private Telegram room (utilizing the [Permanence DAO bot](https://github.com/permanence-dao/permanence-dao-services/tree/main/pdao-telegram-bot)) and Discord room (utilizing a similar Discord bot) with members is being set up 
-to execute on "1 member, 1 vote" mechanics.  It is possible one or both could be used.
+New member can reach out to one of the existing members in the [Public JAM Chat room](https://matrix.to/#/#jam:polkadot.io) and get set up:
+* The team lead are tagged `dao-team-representative` to submit votes and comment on OpenGov refs on behalf of your team
+* The other members of the team are tagged `dao-participant` to view OpenGov refs and comments from all teams.
 
-The DAO may switch between Telegram and Discord, based on the objective of maximizing quality participation by all members in Polkadot OpenGov.
+Non-voting JAM Implementer teams are welcome to join the Discord server without voting, and will be assigned a `jam-implementer` tag.
 
-If you are a newly joining member and are not in the private Telegram/Discord room, reach out to one of the existing members who can be found in the public [JAM Testnet Telegram room](https://t.me/jamtestnet) or [Public JAM Chat room](https://matrix.to/#/#jam:polkadot.io).
 
 ### Voting Philosophy
 
@@ -39,44 +42,28 @@ Every member enjoys equal voting power and complete autonomy in governance decis
 
 ### Voting Mechanics 
 
-All internal referenda will be recorded in the [OpenSquare Space](https://voting.opensquare.io/space/jamdao) 🚧, ensuring full transparency of members' votes and feedback on each referendum, openly accessible through the OpenSquare API for historical analysis.
+All internal referenda are voted on within the JAM DAO Discord by team representatives,  ensuring full transparency of members' votes and feedback on each referendum.  
 
-A basic explanation of the DAO's voting process and timeline is as follows: (adapting from [Operational Details](https://docs.permanence.io/voting_policy.html#operation-details))
+A basic explanation of the DAO's voting process and timeline is as follows:
 
 * A new relay chain referendum is created.
-* The bot fetches the referendum details and creates a matching internal referendum in our OpenSquare space.
-* The bot creates a discussion topic in our Telegram group.
+* The bot fetches the referendum details and creates a matching internal referendum in a Discord.
+* The bot creates a discussion topic 
 * Members discuss the referendum details. For some referenda, we also reach out to proposers for a call.
-* Members submit their signed votes on the internal referendum alongside their feedback.
-* A voting admin triggers the bot to submit the on-chain vote.
-* The bot evaluates the outcome of the referendum against the voting policy for the specific track.
-* The bot submits the on-chain vote accordingly.
-* The bot collects all member feedback and generates a summary using the OpenAI API.
-* The bot submits the final outcome and collective feedback through the Subsquare API.
+* Members submit their votes on the internal referendum alongside their feedback.
+* The bot submits an on-chain vote on day 7 (first vote) and day 20 (second vote, if changed),  the final day (if changed), and during confirmation (again, if changed).
+* [planned] The bot collects all member feedback and generates a summary of comments using a ChatGPT (or similar) API, submitted to Subsquare or Polkassembly.
 
-#### Per-Track Voting Policy
+#### Voting Policy
 
-The DAO utilizes a per-track voting policy.  Our voting system is defined by two key parameters, encouraging high participation and in-depth internal discussion before any vote is cast:
+The DAO utilizes a fully transparent voting bot.   Two key parameters encourages high participation and in-depth internal discussion before any vote is cast:
 
-* Quorum: The quorum is required from members to issue a vote depending on track.
-* Majority: The percentage of AYE votes relative to the total number of votes cast.
+* MIN_PARTICIPATION: 45% -- the number of members required to vote before an AYE or NAY vote can be cast.
+* Voting Threshold: 51%  -- The percentage of AYE (or NAY) votes relative to the total number of votes cast to vote AYE (or NAY).
 
-Based on these parameters, our voting policy is defined for various OpenGov tracks for 2025 as follows:
+If neither the MIN_PARTICIPATION nor Voting Threshold is met, the resulting vote is _abstain_.
 
-Track	        | Quorum (≥) | Majority (>) |
-----------------| -- | -------------------|
-Small Tipper	| 3	 | 	50% |
-Big Tipper	    | 4	 |	50% |
-Small Spender	| 5	 |	50% |
-Medium Spender	| 6  |	50%	|
-Wish for Change	| 6  |  50%	|
-Big Spender     | 7  | 	60%	|
-Treasurer	    | 8  | 60%	|
-All Other Tracks | 6  | 50%	|
-
-If no quorum is met, the vote is _abstain_.
-
-Note: The above is a draft only.  Revisions to the above are strongly suggested as membership increases. 
+Members _may_ be removed due to lack of voting behavior in order to meet MIN_PARTICIPATION objectives.
 
 ### Conflict of Interest
 
