@@ -61,7 +61,7 @@ openssl req -new -x509 -days 365 \
     -addext "subjectAltName=DNS:$DNS_ALT_NAME"
 ```
 
-Where `$DNS_ALT_NAME` should match the [SNP Specification](/knowledge/advanced/simple-networking/spec.md#encryption-and-handshake).
+Where `$DNS_ALT_NAME` should match the [SNP Specification](/knowledge/advanced/simple-networking/spec.md#encryption-and-handshake). (The DNS alt name was reported to be wrong, please do not rely on it).
 
 For CA certificates that will sign other certificates, add these extensions:
 
