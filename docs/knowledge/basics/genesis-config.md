@@ -67,7 +67,7 @@ vectors - we define the following values for the genesis header.
 }
 ```
 
-Expected hash: `0x476243ad7cc4fc49cb6cb362c6568e931731d8650d917007a6037cceedd62244`
+Expected hash: `0xe864d485113737c28c2fef3b2aed39cb2f289a369b15c54e9c44720bcfdc0ca0`
 
 Binary encoding must adhere to the Block serialization specification established in the Gray Paper.
 
@@ -111,11 +111,5 @@ phase (and potentially in production as well).
 Every spec has a unique genesis header hash. All genesis headers  generated in the same manner as
 the `tiny` header. The only difference between them are the initial authorities.
 
-- [Tiny](./chain-spec/tiny.md) `0x476243ad7cc4fc49cb6cb362c6568e931731d8650d917007a6037cceedd62244`
-- [Small](./chain-spec/small.md) `0x67cfc50bfec9d5408ca5c72bf90cd7f109cd3a001787900f68a8e666c6665bd4`
-- [Medium](./chain-spec/medium.md) `0x3756763d49854b97de440b301f1c69ef0f6981c64c4ffc764c0ad5a8870f1901`
-- [Large](./chain-spec/large.md) `0xb3d06530c201be34522f4df0df3e572f37f046b8f26e74dc24307c3b36d05e22`
-- [xLarge](./chain-spec/xlarge.md) `0x1031339ffb6e132953a3d97ee0e38728bebadfef4cc7453642226cb0ccb53b27`
-- [2xLarge](./chain-spec/2xlarge.md) `0x8e5a7a7e28a973b45927da8539fe222faa45dcb0d1d6133afe0dbc398cfdcbe5`
-- [3xLarge](./chain-spec/3xlarge.md) `0xe53cfeb7a3f892be40dbe6098efa5f5ba6b28e9a9edde447a56664540c02f901`
-- [Full](./chain-spec/toaster.md) `0xef6195f355ae03123e065990d34470be9a112df37029d340e1a8428e5d541a55`
+- [Tiny](./chain-spec/tiny.md) `0xe864d485113737c28c2fef3b2aed39cb2f289a369b15c54e9c44720bcfdc0ca0`
+- [Full](./chain-spec/toaster.md) `0x57f075e6bb0b8778b59261fa7ec32626464e4d2f444fca4312dfbf94f3584032`
