@@ -1,16 +1,15 @@
 ---
-id: Dev Accounts
-sidebar_label: Dev Accounts
-sidebar_position: 1
-slug: /basics/dev-accounts
+id: Dev Accounts (Old)
+sidebar_label: Dev Accounts (Old)
+sidebar_position: 2
+slug: /old/basics/dev-accounts
 ---
 
 These well known accounts can be used for testing and are known by all JAM node implementations.
 
 :::warning
-Please be advised that [JIP-5](https://github.com/polkadot-fellows/JIPs/pull/2) will change the concrete values here. An updated version will be available soon.
+This page does not take [JIP-5](https://github.com/polkadot-fellows/JIPs/pull/2) into account. The new version is available [here](../knowledge/basics/dev-accounts.md).
 :::
-
 
 ## Seeds
 
