@@ -1,15 +1,19 @@
 ---
-id: Genesis Config
-sidebar_label: Genesis Config
-sidebar_position: 2
-slug: /basics/genesis-config
+id: Genesis Config (Old)
+sidebar_label: Genesis Config (Old)
+sidebar_position: 4
+slug: /old/basics/genesis-config
 ---
 
 The genesis config provides the initial values that are needed by all nodes to start the JAM chain. Each field is explained below.
 
+:::warning
+This page does not take [JIP-5](https://github.com/polkadot-fellows/JIPs/pull/2) into account. The new version is available [here](../knowledge/basics/genesis-config.md).
+:::
+
 ## Authorities
 
-A list of Validator Key Tuples, called $\mathbb{K}$ in the Graypaper. This defines the validators that are permissioned to seal blocks for the current epoch. The accounts are the [Dev Accounts](../dev_accounts.md).
+A list of Validator Key Tuples, called $\mathbb{K}$ in the Graypaper. This defines the validators that are permissioned to seal blocks for the current epoch. The accounts are the [Dev Accounts](./dev-accounts-pre-jip5.md).
 
 ## Genesis Block Header
 
@@ -58,7 +62,7 @@ Binary encoding must adhere to the Block serialization specification established
 - `epoch_mark`: The first block in an epoch should contain the validators for the next epoch.
   - `entropy`: Set to zero.  
   - `tickets_entropy`: No tickets exist, meaning no entropy is utilized.  
-  - `validators`: Defined as the dev authorities [accounts](../dev_accounts.md).
+  - `validators`: Defined as the dev authorities [accounts](./dev-accounts-pre-jip5.md).
 - `tickets_mark`: No tickets are available to share.  
 - `offenders_mark`: No offenders have been identified yet.  
 - `author_index`: As this block has not been authored by a specific validator, use `0xffff` as a wildcard.  
@@ -89,11 +93,11 @@ phase (and potentially in production as well).
 Every spec has a unique genesis header hash. All genesis headers  generated in the same manner as
 the `tiny` header. The only difference between them are the initial authorities.
 
-- [Tiny](../chain-spec/tiny.md) `0x476243ad7cc4fc49cb6cb362c6568e931731d8650d917007a6037cceedd62244`
-- [Small](../chain-spec/small.md) `0x67cfc50bfec9d5408ca5c72bf90cd7f109cd3a001787900f68a8e666c6665bd4`
-- [Medium](../chain-spec/medium.md) `0x3756763d49854b97de440b301f1c69ef0f6981c64c4ffc764c0ad5a8870f1901`
-- [Large](../chain-spec/large.md) `0xb3d06530c201be34522f4df0df3e572f37f046b8f26e74dc24307c3b36d05e22`
-- [xLarge](../chain-spec/xlarge.md) `0x1031339ffb6e132953a3d97ee0e38728bebadfef4cc7453642226cb0ccb53b27`
-- [2xLarge](../chain-spec/2xlarge.md) `0x8e5a7a7e28a973b45927da8539fe222faa45dcb0d1d6133afe0dbc398cfdcbe5`
-- [3xLarge](../chain-spec/3xlarge.md) `0xe53cfeb7a3f892be40dbe6098efa5f5ba6b28e9a9edde447a56664540c02f901`
-- [Full](../chain-spec/toaster.md) `0xef6195f355ae03123e065990d34470be9a112df37029d340e1a8428e5d541a55`
+- [Tiny](../knowledge/basics/chain-spec/tiny.md) `0x476243ad7cc4fc49cb6cb362c6568e931731d8650d917007a6037cceedd62244`
+- [Small](../knowledge/basics/chain-spec/small.md) `0x67cfc50bfec9d5408ca5c72bf90cd7f109cd3a001787900f68a8e666c6665bd4`
+- [Medium](../knowledge/basics/chain-spec/medium.md) `0x3756763d49854b97de440b301f1c69ef0f6981c64c4ffc764c0ad5a8870f1901`
+- [Large](../knowledge/basics/chain-spec/large.md) `0xb3d06530c201be34522f4df0df3e572f37f046b8f26e74dc24307c3b36d05e22`
+- [xLarge](../knowledge/basics/chain-spec/xlarge.md) `0x1031339ffb6e132953a3d97ee0e38728bebadfef4cc7453642226cb0ccb53b27`
+- [2xLarge](../knowledge/basics/chain-spec/2xlarge.md) `0x8e5a7a7e28a973b45927da8539fe222faa45dcb0d1d6133afe0dbc398cfdcbe5`
+- [3xLarge](../knowledge/basics/chain-spec/3xlarge.md) `0xe53cfeb7a3f892be40dbe6098efa5f5ba6b28e9a9edde447a56664540c02f901`
+- [Full](../knowledge/basics/chain-spec/toaster.md) `0xef6195f355ae03123e065990d34470be9a112df37029d340e1a8428e5d541a55`
