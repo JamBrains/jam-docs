@@ -1,7 +1,7 @@
 ---
 id: CLI Arguments
 sidebar_label: CLI Arguments
-sidebar_position: 5
+sidebar_position: 3
 slug: /basics/cli-args
 ---
 

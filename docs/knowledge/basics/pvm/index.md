@@ -1,7 +1,7 @@
 ---
 id: Polkadot Virtual Machine
 sidebar_label: Virtual Machine
-sidebar_position: 6
+sidebar_position: 4
 slug: /basics/pvm
 ---
 

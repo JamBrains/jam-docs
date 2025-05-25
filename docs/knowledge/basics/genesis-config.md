@@ -1,7 +1,7 @@
 ---
 id: Genesis Config (JIP-5)
 sidebar_label: Genesis Config (JIP-5)
-sidebar_position: 3
+sidebar_position: 2
 slug: /basics/genesis-config
 ---
 
