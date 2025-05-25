@@ -26,6 +26,8 @@ With the following indices for the accounts:
 | Eve    | 4     |
 | Fergie | 5     |
 
+## Nomenclature
+
 Note that `ed25519_secret` would be the same as `ed25519_seed` and is therefore omitted.  
 For Bandersnatch, only the `bandersnatch_seed` is shown and `bandersnatch_secret` (also called *Scalar*) is omitted since it is sufficient to arrive at the `bandersnatch_public` key to assert correctness.
 
