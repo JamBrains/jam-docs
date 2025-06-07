@@ -8,7 +8,7 @@ slug: /basics/dev-accounts
 These well known accounts can be used for testing and are known by all JAM node implementations.
 
 :::warning
-This page is assumes that [JIP-5@d016c0f](https://github.com/polkadot-fellows/JIPs/pull/2) is accepted. The pre-JIP-5 version is available [here](../../old/dev-accounts-pre-jip5.md).
+This page is assumes that [JIP-5@7048f79](https://github.com/polkadot-fellows/JIPs/pull/2) is accepted. The pre-JIP-5 version is available [here](../../old/dev-accounts-pre-jip5.md).
 :::
 
 ## Seeds
@@ -26,18 +26,19 @@ With the following indices for the accounts:
 | Eve    | 4     |
 | Fergie | 5     |
 
-## Nomenclature
+## Bandersnatch Nomenclature
 
-Note that `ed25519_secret` would be the same as `ed25519_seed` and is therefore omitted.  
-For Bandersnatch, only the `bandersnatch_seed` is shown and `bandersnatch_secret` (also called *Scalar*) is omitted since it is sufficient to arrive at the `bandersnatch_public` key to assert correctness.
+Only the `bandersnatch_secret_seed` is shown since it is sufficient to calculate the `bandersnatch_public` key.
+Internally, many implementations may first generate a *secret* key (aka *Scalar*) and then derive the public key from it.
+But this is an implementation detail and therefore not listed here.
 
 ## Alice
 
 ```yaml
 seed: 0x0000000000000000000000000000000000000000000000000000000000000000
-ed25519_seed: 0x996542becdf1e78278dc795679c825faca2e9ed2bf101bf3c4a236d3ed79cf59
+ed25519_secret_seed: 0x996542becdf1e78278dc795679c825faca2e9ed2bf101bf3c4a236d3ed79cf59
 ed25519_public: 0x4418fb8c85bb3985394a8c2756d3643457ce614546202a2f50b093d762499ace
-bandersnatch_seed: 0x007596986419e027e65499cc87027a236bf4a78b5e8bd7f675759d73e7a9c799
+bandersnatch_secret_seed: 0x007596986419e027e65499cc87027a236bf4a78b5e8bd7f675759d73e7a9c799
 bandersnatch_public: 0xff71c6c03ff88adb5ed52c9681de1629a54e702fc14729f6b50d2f0a76f185b3
 dns_alt_name: "eecgwpgwq3noky4ijm4jmvjtmuzv44qvigciusxakq5epnrfj2utb"
 ```
@@ -46,9 +47,9 @@ dns_alt_name: "eecgwpgwq3noky4ijm4jmvjtmuzv44qvigciusxakq5epnrfj2utb"
 
 ```yaml
 seed: 0x0100000001000000010000000100000001000000010000000100000001000000
-ed25519_seed: 0xb81e308145d97464d2bc92d35d227a9e62241a16451af6da5053e309be4f91d7
+ed25519_secret_seed: 0xb81e308145d97464d2bc92d35d227a9e62241a16451af6da5053e309be4f91d7
 ed25519_public: 0xad93247bd01307550ec7acd757ce6fb805fcf73db364063265b30a949e90d933
-bandersnatch_seed: 0x12ca375c9242101c99ad5fafe8997411f112ae10e0e5b7c4589e107c433700ac
+bandersnatch_secret_seed: 0x12ca375c9242101c99ad5fafe8997411f112ae10e0e5b7c4589e107c433700ac
 bandersnatch_public: 0xdee6d555b82024f1ccf8a1e37e60fa60fd40b1958c4bb3006af78647950e1b91
 dns_alt_name: "en5ejs5b2tybkfh4ym5vpfh7nynby73xhtfzmazumtvcijpcsz6ma"
 ```
@@ -57,9 +58,9 @@ dns_alt_name: "en5ejs5b2tybkfh4ym5vpfh7nynby73xhtfzmazumtvcijpcsz6ma"
 
 ```yaml
 seed: 0x0200000002000000020000000200000002000000020000000200000002000000
-ed25519_seed: 0x0093c8c10a88ebbc99b35b72897a26d259313ee9bad97436a437d2e43aaafa0f
+ed25519_secret_seed: 0x0093c8c10a88ebbc99b35b72897a26d259313ee9bad97436a437d2e43aaafa0f
 ed25519_public: 0xcab2b9ff25c2410fbe9b8a717abb298c716a03983c98ceb4def2087500b8e341
-bandersnatch_seed: 0x3d71dc0ffd02d90524fda3e4a220e7ec514a258c59457d3077ce4d4f003fd98a
+bandersnatch_secret_seed: 0x3d71dc0ffd02d90524fda3e4a220e7ec514a258c59457d3077ce4d4f003fd98a
 bandersnatch_public: 0x9326edb21e5541717fde24ec085000b28709847b8aab1ac51f84e94b37ca1b66
 dns_alt_name: "ekwmt37xecoq6a7otkm4ux5gfmm4uwbat4bg5m223shckhaaxdpqa"
 ```
@@ -68,9 +69,9 @@ dns_alt_name: "ekwmt37xecoq6a7otkm4ux5gfmm4uwbat4bg5m223shckhaaxdpqa"
 
 ```yaml
 seed: 0x0300000003000000030000000300000003000000030000000300000003000000
-ed25519_seed: 0x69b3a7031787e12bfbdcac1b7a737b3e5a9f9450c37e215f6d3b57730e21001a
+ed25519_secret_seed: 0x69b3a7031787e12bfbdcac1b7a737b3e5a9f9450c37e215f6d3b57730e21001a
 ed25519_public: 0xf30aa5444688b3cab47697b37d5cac5707bb3289e986b19b17db437206931a8d
-bandersnatch_seed: 0x107a9148b39a1099eeaee13ac0e3c6b9c256258b51c967747af0f8749398a276
+bandersnatch_secret_seed: 0x107a9148b39a1099eeaee13ac0e3c6b9c256258b51c967747af0f8749398a276
 bandersnatch_public: 0x0746846d17469fb2f95ef365efcab9f4e22fa1feb53111c995376be8019981cc
 dns_alt_name: "etxckkczii4mvm22ox4m3horvx2bwlzerjxbd3n6c36qehdms2idb"
 ```
@@ -79,9 +80,9 @@ dns_alt_name: "etxckkczii4mvm22ox4m3horvx2bwlzerjxbd3n6c36qehdms2idb"
 
 ```yaml
 seed: 0x0400000004000000040000000400000004000000040000000400000004000000
-ed25519_seed: 0xb4de9ebf8db5428930baa5a98d26679ab2a03eae7c791d582e6b75b7f018d0d4
+ed25519_secret_seed: 0xb4de9ebf8db5428930baa5a98d26679ab2a03eae7c791d582e6b75b7f018d0d4
 ed25519_public: 0x8b8c5d436f92ecf605421e873a99ec528761eb52a88a2f9a057b3b3003e6f32a
-bandersnatch_seed: 0x0bb36f5ba8e3ba602781bb714e67182410440ce18aa800c4cb4dd22525b70409
+bandersnatch_secret_seed: 0x0bb36f5ba8e3ba602781bb714e67182410440ce18aa800c4cb4dd22525b70409
 bandersnatch_public: 0x151e5c8fe2b9d8a606966a79edd2f9e5db47e83947ce368ccba53bf6ba20a40b
 dns_alt_name: "eled3vb5nse3n7cii6ybvtms5s2bdwvlkivc7cnwa33oatby4txka"
 ```
@@ -90,9 +91,9 @@ dns_alt_name: "eled3vb5nse3n7cii6ybvtms5s2bdwvlkivc7cnwa33oatby4txka"
 
 ```yaml
 seed: 0x0500000005000000050000000500000005000000050000000500000005000000
-ed25519_seed: 0x4a6482f8f479e3ba2b845f8cef284f4b3208ba3241ed82caa1b5ce9fc6281730
+ed25519_secret_seed: 0x4a6482f8f479e3ba2b845f8cef284f4b3208ba3241ed82caa1b5ce9fc6281730
 ed25519_public: 0xab0084d01534b31c1dd87c81645fd762482a90027754041ca1b56133d0466c06
-bandersnatch_seed: 0x75e73b8364bf4753c5802021c6aa6548cddb63fe668e3cacf7b48cdb6824bb09
+bandersnatch_secret_seed: 0x75e73b8364bf4753c5802021c6aa6548cddb63fe668e3cacf7b48cdb6824bb09
 bandersnatch_public: 0x2105650944fcd101621fd5bb3124c9fd191d114b7ad936c1d79d734f9f21392e
 dns_alt_name: "elfaiiixcuzmzroa34lajwp52cdsucikaxdviaoeuvnygdi3imtba"
 ```
@@ -104,49 +105,49 @@ dns_alt_name: "elfaiiixcuzmzroa34lajwp52cdsucikaxdviaoeuvnygdi3imtba"
 ```yaml
 Alice:
   seed: 0x0000000000000000000000000000000000000000000000000000000000000000
-  ed25519_seed: 0x996542becdf1e78278dc795679c825faca2e9ed2bf101bf3c4a236d3ed79cf59
+  ed25519_secret_seed: 0x996542becdf1e78278dc795679c825faca2e9ed2bf101bf3c4a236d3ed79cf59
   ed25519_public: 0x4418fb8c85bb3985394a8c2756d3643457ce614546202a2f50b093d762499ace
-  bandersnatch_seed: 0x007596986419e027e65499cc87027a236bf4a78b5e8bd7f675759d73e7a9c799
+  bandersnatch_secret_seed: 0x007596986419e027e65499cc87027a236bf4a78b5e8bd7f675759d73e7a9c799
   bandersnatch_public: 0xff71c6c03ff88adb5ed52c9681de1629a54e702fc14729f6b50d2f0a76f185b3
   dns_alt_name: "eecgwpgwq3noky4ijm4jmvjtmuzv44qvigciusxakq5epnrfj2utb"
 
 Bob:
   seed: 0x0100000001000000010000000100000001000000010000000100000001000000
-  ed25519_seed: 0xb81e308145d97464d2bc92d35d227a9e62241a16451af6da5053e309be4f91d7
+  ed25519_secret_seed: 0xb81e308145d97464d2bc92d35d227a9e62241a16451af6da5053e309be4f91d7
   ed25519_public: 0xad93247bd01307550ec7acd757ce6fb805fcf73db364063265b30a949e90d933
-  bandersnatch_seed: 0x12ca375c9242101c99ad5fafe8997411f112ae10e0e5b7c4589e107c433700ac
+  bandersnatch_secret_seed: 0x12ca375c9242101c99ad5fafe8997411f112ae10e0e5b7c4589e107c433700ac
   bandersnatch_public: 0xdee6d555b82024f1ccf8a1e37e60fa60fd40b1958c4bb3006af78647950e1b91
   dns_alt_name: "en5ejs5b2tybkfh4ym5vpfh7nynby73xhtfzmazumtvcijpcsz6ma"
 
 Carol:
   seed: 0x0200000002000000020000000200000002000000020000000200000002000000
-  ed25519_seed: 0x0093c8c10a88ebbc99b35b72897a26d259313ee9bad97436a437d2e43aaafa0f
+  ed25519_secret_seed: 0x0093c8c10a88ebbc99b35b72897a26d259313ee9bad97436a437d2e43aaafa0f
   ed25519_public: 0xcab2b9ff25c2410fbe9b8a717abb298c716a03983c98ceb4def2087500b8e341
-  bandersnatch_seed: 0x3d71dc0ffd02d90524fda3e4a220e7ec514a258c59457d3077ce4d4f003fd98a
+  bandersnatch_secret_seed: 0x3d71dc0ffd02d90524fda3e4a220e7ec514a258c59457d3077ce4d4f003fd98a
   bandersnatch_public: 0x9326edb21e5541717fde24ec085000b28709847b8aab1ac51f84e94b37ca1b66
   dns_alt_name: "ekwmt37xecoq6a7otkm4ux5gfmm4uwbat4bg5m223shckhaaxdpqa"
 
 David:
   seed: 0x0300000003000000030000000300000003000000030000000300000003000000
-  ed25519_seed: 0x69b3a7031787e12bfbdcac1b7a737b3e5a9f9450c37e215f6d3b57730e21001a
+  ed25519_secret_seed: 0x69b3a7031787e12bfbdcac1b7a737b3e5a9f9450c37e215f6d3b57730e21001a
   ed25519_public: 0xf30aa5444688b3cab47697b37d5cac5707bb3289e986b19b17db437206931a8d
-  bandersnatch_seed: 0x107a9148b39a1099eeaee13ac0e3c6b9c256258b51c967747af0f8749398a276
+  bandersnatch_secret_seed: 0x107a9148b39a1099eeaee13ac0e3c6b9c256258b51c967747af0f8749398a276
   bandersnatch_public: 0x0746846d17469fb2f95ef365efcab9f4e22fa1feb53111c995376be8019981cc
   dns_alt_name: "etxckkczii4mvm22ox4m3horvx2bwlzerjxbd3n6c36qehdms2idb"
 
 Eve:
   seed: 0x0400000004000000040000000400000004000000040000000400000004000000
-  ed25519_seed: 0xb4de9ebf8db5428930baa5a98d26679ab2a03eae7c791d582e6b75b7f018d0d4
+  ed25519_secret_seed: 0xb4de9ebf8db5428930baa5a98d26679ab2a03eae7c791d582e6b75b7f018d0d4
   ed25519_public: 0x8b8c5d436f92ecf605421e873a99ec528761eb52a88a2f9a057b3b3003e6f32a
-  bandersnatch_seed: 0x0bb36f5ba8e3ba602781bb714e67182410440ce18aa800c4cb4dd22525b70409
+  bandersnatch_secret_seed: 0x0bb36f5ba8e3ba602781bb714e67182410440ce18aa800c4cb4dd22525b70409
   bandersnatch_public: 0x151e5c8fe2b9d8a606966a79edd2f9e5db47e83947ce368ccba53bf6ba20a40b
   dns_alt_name: "eled3vb5nse3n7cii6ybvtms5s2bdwvlkivc7cnwa33oatby4txka"
 
 Fergie:
   seed: 0x0500000005000000050000000500000005000000050000000500000005000000
-  ed25519_seed: 0x4a6482f8f479e3ba2b845f8cef284f4b3208ba3241ed82caa1b5ce9fc6281730
+  ed25519_secret_seed: 0x4a6482f8f479e3ba2b845f8cef284f4b3208ba3241ed82caa1b5ce9fc6281730
   ed25519_public: 0xab0084d01534b31c1dd87c81645fd762482a90027754041ca1b56133d0466c06
-  bandersnatch_seed: 0x75e73b8364bf4753c5802021c6aa6548cddb63fe668e3cacf7b48cdb6824bb09
+  bandersnatch_secret_seed: 0x75e73b8364bf4753c5802021c6aa6548cddb63fe668e3cacf7b48cdb6824bb09
   bandersnatch_public: 0x2105650944fcd101621fd5bb3124c9fd191d114b7ad936c1d79d734f9f21392e
   dns_alt_name: "elfaiiixcuzmzroa34lajwp52cdsucikaxdviaoeuvnygdi3imtba"
 ```
