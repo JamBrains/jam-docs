@@ -5,7 +5,6 @@ const PrefixSearchComponent = () => {
 
 	// Key definitions with Greek letters added
 	const keys = useMemo(() => [
-		// JAM State Keys - Core State
 		{ key: '01000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(1) - Authorizer Pool', symbol: 'α', greekName: 'alpha' },
 		{ key: '02000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(2) - Authorizer Queue', symbol: 'φ', greekName: 'phi' },
 		{ key: '03000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(3) - Recent Blocks', symbol: 'β', greekName: 'beta' },
@@ -22,15 +21,13 @@ const PrefixSearchComponent = () => {
 		{ key: '0e000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(14) - Accumulation Queue', symbol: 'θ', greekName: 'theta' },
 		{ key: '0f000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(15) - Accumulation History', symbol: 'ξ', greekName: 'xi' },
 
-		// Service Keys - Metadata
-		{ key: 'ff000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(255) - Service Metadata (ID: 0x00000000)', symbol: 'δ', greekName: 'delta' },
+		// TODO add metadata keys of well-known services
+		// TODO check upper case search terms
 
-		// Regex patterns for service keys
-		{ key: '0[0-9a-f]*', type: 'regex', regex: /^0[0-9a-f][0-9a-f]*$/, name: 'Core State Keys (0x0X)' },
-		{ key: 'ff*', type: 'regex', regex: /^ff[0-9a-f]*$/, name: 'Service Metadata Keys (0xFF prefix)', symbol: 'δ', greekName: 'delta' },
-		{ key: '[0-9a-f]{2}ff*', type: 'regex', regex: /^[0-9a-f]{2}ff[0-9a-f]*$/, name: 'Service Storage Keys (ServiceID + 0xFF)', symbol: 'δ', greekName: 'delta' },
-		{ key: '[0-9a-f]{2}fe*', type: 'regex', regex: /^[0-9a-f]{2}fe[0-9a-f]*$/, name: 'Service Preimage Keys (ServiceID + 0xFE)', symbol: 'δ', greekName: 'delta' },
-		{ key: '[0-9a-f]{2}[0-9a-f]{2}*', type: 'regex', regex: /^[0-9a-f]{2}[0-9a-f]{2}[0-9a-f]*$/, name: 'Service Lookup History Keys', symbol: 'δ', greekName: 'delta' }
+		// Regex patterns
+		{ key: 'ff??00??00??00??0000000000000000000000000000000000000000000000', type: 'regex', regex: /^ff[0-9a-f]{2}00[0-9a-f]{2}00[0-9a-f]{2}00[0-9a-f]{2}0{46}/, name: 'C(255, s) - Service Metadata', symbol: 'δ', greekName: 'delta', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3bc0023bd402?v=0.6.7' },
+
+		{ key: '??????????????????????????????????????????????????????????????', type: 'regex', regex: /^[0-9a-f]{62}/, name: 'C(s, *) - Opaque Service Storage', symbol: 'δ', greekName: 'delta' },
 	], []);
 
 	// Search logic
@@ -48,7 +45,7 @@ const PrefixSearchComponent = () => {
 				normalizedQuery,
 				normalizedQuery + '0',
 				normalizedQuery + '00000000',
-				normalizedQuery + 'a'.repeat(Math.max(0, 64 - normalizedQuery.length))
+				normalizedQuery + '0'.repeat(Math.max(0, 62 - normalizedQuery.length))
 			];
 
 			for (const testStr of testStrings) {
@@ -98,6 +95,7 @@ const PrefixSearchComponent = () => {
 
 		const matches = [];
 		const normalizedQuery = query.toLowerCase();
+		let has_perfect_static_match = false;
 
 		for (const keyItem of keys) {
 			let matchLength = 0;
@@ -105,11 +103,15 @@ const PrefixSearchComponent = () => {
 
 			if (keyItem.type === 'static') {
 				const normalizedKey = keyItem.key.toLowerCase();
-				if (normalizedKey.startsWith(normalizedQuery)) {
+				if (normalizedQuery.startsWith(normalizedKey) || normalizedKey.startsWith(normalizedQuery)) {
 					isMatch = true;
 					matchLength = normalizedQuery.length;
+
+					if (normalizedKey === normalizedQuery) {
+						has_perfect_static_match = true;
+					}
 				}
-			} else if (keyItem.type === 'regex') {
+			} else if (keyItem.type === 'regex' && !has_perfect_static_match) {
 				if (couldMatchRegex(normalizedQuery, keyItem.regex)) {
 					isMatch = true;
 					matchLength = calculateRegexMatchLength(normalizedQuery, keyItem.key);
@@ -338,13 +340,10 @@ const PrefixSearchComponent = () => {
 						type="text"
 						value={searchQuery}
 						onChange={(e) => setSearchQuery(e.target.value)}
-						placeholder="Search by hex prefix, Greek letter, or name (e.g. 01, alpha, φ, validator)..."
+						placeholder="Search by hex prefix, Greek letter, or name (e.g. 01, alpha, validator)..."
 						autoComplete="off"
 						style={styles.searchInput}
 					/>
-					<div style={styles.searchHint}>
-						Try: hex prefixes (01, ff), Greek letters (alpha, β), or descriptions (validator, entropy)
-					</div>
 				</div>
 
 				<div style={styles.resultsContainer}>
