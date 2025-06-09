@@ -5,21 +5,23 @@ const PrefixSearchComponent = () => {
 
 	// Key definitions with Greek letters added
 	const keys = useMemo(() => [
-		{ key: '01000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(1) - Authorizer Pool', symbol: 'α', greekName: 'alpha' },
-		{ key: '02000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(2) - Authorizer Queue', symbol: 'φ', greekName: 'phi' },
-		{ key: '03000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(3) - Recent Blocks', symbol: 'β', greekName: 'beta' },
-		{ key: '04000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(4) - Safrole', symbol: 'γ', greekName: 'gamma' },
-		{ key: '05000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(5) - Disputes', symbol: 'ψ', greekName: 'psi' },
-		{ key: '06000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(6) - Entropy Pool', symbol: 'η', greekName: 'eta' },
-		{ key: '07000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(7) - Validator Queue', symbol: 'ι', greekName: 'iota' },
-		{ key: '08000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(8) - Current Validators', symbol: 'κ', greekName: 'kappa' },
-		{ key: '09000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(9) - Previous Validators', symbol: 'λ', greekName: 'lambda' },
-		{ key: '0a000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(10) - Assigned Reports', symbol: 'ρ', greekName: 'rho' },
-		{ key: '0b000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(11) - Time', symbol: 'τ', greekName: 'tau' },
-		{ key: '0c000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(12) - Priviledged Services', symbol: 'χ', greekName: 'chi' },
-		{ key: '0d000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(13) - Validator Statistics', symbol: 'π', greekName: 'pi' },
-		{ key: '0e000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(14) - Accumulation Queue', symbol: 'θ', greekName: 'theta' },
-		{ key: '0f000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(15) - Accumulation History', symbol: 'ξ', greekName: 'xi' },
+		{ key: '01000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(1) - Authorizer Pool', symbol: 'α', greekName: 'alpha', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b15013b2101?v=0.6.7' },
+		{ key: '02000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(2) - Authorizer Queue', symbol: 'φ', greekName: 'phi', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b31013b3301?v=0.6.7' },
+		{ key: '03000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(3) - Recent Blocks', symbol: 'β', greekName: 'beta', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b3e013b5801?v=0.6.7' },
+		{ key: '04000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(4) - Safrole', symbol: 'γ', greekName: 'gamma', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b63013baf01?v=0.6.7' },
+		{ key: '05000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(5) - Disputes', symbol: 'ψ', greekName: 'psi', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3bba013be801?v=0.6.7' },
+		{ key: '06000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(6) - Entropy Pool', symbol: 'η', greekName: 'eta', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3bf3013bf501?v=0.6.7' },
+		{ key: '07000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(7) - Validator Queue', symbol: 'ι', greekName: 'iota', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b00023b0202?v=0.6.7' },
+		{ key: '08000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(8) - Current Validators', symbol: 'κ', greekName: 'kappa', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b0d023b0f02?v=0.6.7' },
+		{ key: '09000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(9) - Previous Validators', symbol: 'λ', greekName: 'lambda', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b1a023b1c02?v=0.6.7' },
+		{ key: '0a000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(10) - Assigned Reports', symbol: 'ρ', greekName: 'rho', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b27023b3302?v=0.6.7' },
+		{ key: '0b000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(11) - Time', symbol: 'τ', greekName: 'tau', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b3e023b4102?v=0.6.7' },
+		{ key: '0c000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(12) - Priviledged Services', symbol: 'χ', greekName: 'chi', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b4c023b5302?v=0.6.7' },
+		{ key: '0d000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(13) - Validator Statistics', symbol: 'π', greekName: 'pi', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b5e023b6a02?v=0.6.7' },
+		{ key: '0e000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(14) - Accumulation Queue', symbol: 'θ', greekName: 'theta', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b75023b8b02?v=0.6.7' },
+		{ key: '0f000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(15) - Accumulation History', symbol: 'ξ', greekName: 'xi', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b96023ba202?v=0.6.7' },
+		{ key: '10000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(16) - Accumulation Output Log', symbol: 'θ', greekName: 'theta', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3bad023bba02?v=0.6.7' },
+		
 
 		// TODO add metadata keys of well-known services
 		// TODO check upper case search terms
@@ -27,7 +29,9 @@ const PrefixSearchComponent = () => {
 		// Regex patterns
 		{ key: 'ff??00??00??00??0000000000000000000000000000000000000000000000', type: 'regex', regex: /^ff[0-9a-f]{2}00[0-9a-f]{2}00[0-9a-f]{2}00[0-9a-f]{2}0{46}/, name: 'C(255, s) - Service Metadata', symbol: 'δ', greekName: 'delta', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3bc0023bd402?v=0.6.7' },
 
-		{ key: '??????????????????????????????????????????????????????????????', type: 'regex', regex: /^[0-9a-f]{62}/, name: 'C(s, *) - Opaque Service Storage', symbol: 'δ', greekName: 'delta' },
+		{ key: '??????????????????????????????????????????????????????????????', type: 'regex', regex: /^[0-9a-f]{62}/, name: 'C(s, *) - Service Storage', symbol: 'δ', greekName: 'delta', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3bda023be502?v=0.6.7' },
+		{ key: '??????????????????????????????????????????????????????????????', type: 'regex', regex: /^[0-9a-f]{62}/, name: 'C(s, *) - Service Preimage', symbol: 'δ', greekName: 'delta', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3beb023bf602?v=0.6.7' },
+		{ key: '??????????????????????????????????????????????????????????????', type: 'regex', regex: /^[0-9a-f]{62}/, name: 'C(s, *) - Service Preimage Availability', symbol: 'δ', greekName: 'delta', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b0b033b1203?v=0.6.7' },
 	], []);
 
 	// Search logic
@@ -401,12 +405,14 @@ const PrefixSearchComponent = () => {
 									)}
 									<div style={styles.keyText}>{keyItem.key}</div>
 								</div>
-								<div style={styles.keyName}>
-									{keyItem.name}
-									{keyItem.greekName && (
-										<span> ({keyItem.greekName})</span>
-									)}
-								</div>
+								<a href={keyItem.link || ''} target="_blank" rel="noopener noreferrer">
+									<div style={styles.keyName}>
+										{keyItem.name}
+										{keyItem.greekName && (
+											<span> ({keyItem.greekName})</span>
+										)}
+									</div>
+								</a>
 								<div style={styles.keyType}>{keyItem.type}</div>
 							</div>
 						))}
