@@ -21,7 +21,7 @@ const PrefixSearchComponent = () => {
 		{ key: '0e000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(14) - Accumulation Queue', symbol: 'θ', greekName: 'theta', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b75023b8b02?v=0.6.7' },
 		{ key: '0f000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(15) - Accumulation History', symbol: 'ξ', greekName: 'xi', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b96023ba202?v=0.6.7' },
 		{ key: '10000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(16) - Accumulation Output Log', symbol: 'θ', greekName: 'theta', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3bad023bba02?v=0.6.7' },
-		
+
 
 		// TODO add metadata keys of well-known services
 		// TODO check upper case search terms
@@ -173,7 +173,7 @@ const PrefixSearchComponent = () => {
 
 	const styles = {
 		container: {
-			fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+			fontFamily: "inherit",
 			maxWidth: '800px',
 			margin: '0 auto',
 			padding: '0',
@@ -185,7 +185,6 @@ const PrefixSearchComponent = () => {
 			boxShadow: 'none',
 		},
 		title: {
-			color: '#333',
 			textAlign: 'center',
 			marginBottom: '30px',
 			fontWeight: '600',
@@ -197,59 +196,52 @@ const PrefixSearchComponent = () => {
 			width: '100%',
 			padding: '15px',
 			fontSize: '16px',
-			border: '2px solid #e0e0e0',
+			border: '2px solid',
+			borderColor: 'var(--ifm-color-emphasis-300, #e0e0e0)',
 			borderRadius: '10px',
 			outline: 'none',
 			transition: 'border-color 0.3s ease',
 			boxSizing: 'border-box',
-		},
-		searchInputFocus: {
-			borderColor: '#667eea',
-			boxShadow: '0 0 0 3px rgba(102, 126, 234, 0.1)',
+			backgroundColor: 'var(--ifm-background-color, transparent)',
+			color: 'inherit',
 		},
 		resultsContainer: {
 			marginBottom: '30px',
 		},
 		resultsTitle: {
 			fontWeight: '600',
-			color: '#333',
 			marginBottom: '15px',
 			fontSize: '18px',
 		},
 		resultsList: {
-			background: '#f8f9fa',
+			backgroundColor: 'var(--ifm-color-emphasis-100, #f8f9fa)',
 			borderRadius: '10px',
 			maxHeight: '300px',
 			overflowY: 'auto',
 		},
 		resultItem: {
 			padding: '12px 15px',
-			borderBottom: '1px solid #e9ecef',
+			borderBottom: '1px solid var(--ifm-color-emphasis-200, #e9ecef)',
 			display: 'flex',
 			justifyContent: 'space-between',
 			alignItems: 'center',
 			transition: 'background-color 0.2s ease',
 		},
-		resultItemHover: {
-			backgroundColor: '#e9ecef',
-		},
 		resultKey: {
 			fontFamily: "'Courier New', monospace",
 			fontWeight: '600',
-			color: '#495057',
 			wordBreak: 'break-all',
 			fontSize: '12px',
 		},
 		resultName: {
 			fontSize: '10px',
-			color: '#6c757d',
+			opacity: 0.7,
 			marginTop: '2px',
 			lineHeight: '1.2',
 		},
 		greekSymbol: {
 			fontSize: '18px',
 			fontWeight: 'bold',
-			color: '#495057',
 			marginRight: '8px',
 			minWidth: '24px',
 			textAlign: 'center',
@@ -260,21 +252,21 @@ const PrefixSearchComponent = () => {
 			borderRadius: '20px',
 			fontWeight: '500',
 			textTransform: 'uppercase',
+			border: '1px solid',
 		},
 		typeStatic: {
-			backgroundColor: '#d1ecf1',
-			color: '#0c5460',
+			borderColor: 'var(--ifm-color-info, #17a2b8)',
+			color: 'var(--ifm-color-info, #17a2b8)',
 		},
 		typeRegex: {
-			backgroundColor: '#f8d7da',
-			color: '#721c24',
+			borderColor: 'var(--ifm-color-danger, #dc3545)',
+			color: 'var(--ifm-color-danger, #dc3545)',
 		},
 		keysContainer: {
 			marginTop: '30px',
 		},
 		keysTitle: {
 			fontWeight: '600',
-			color: '#333',
 			marginBottom: '15px',
 			fontSize: '18px',
 		},
@@ -284,18 +276,18 @@ const PrefixSearchComponent = () => {
 			gap: '10px',
 		},
 		keyItem: {
-			background: '#f8f9fa',
+			backgroundColor: 'var(--ifm-color-emphasis-100, #f8f9fa)',
 			padding: '10px',
 			borderRadius: '8px',
-			borderLeft: '4px solid transparent',
+			borderLeft: '4px solid',
 			transition: 'transform 0.2s ease, box-shadow 0.2s ease',
 			width: '100%',
 		},
 		keyItemStatic: {
-			borderLeftColor: '#17a2b8',
+			borderLeftColor: 'var(--ifm-color-info, #17a2b8)',
 		},
 		keyItemRegex: {
-			borderLeftColor: '#dc3545',
+			borderLeftColor: 'var(--ifm-color-danger, #dc3545)',
 		},
 		keyHeader: {
 			display: 'flex',
@@ -305,33 +297,26 @@ const PrefixSearchComponent = () => {
 		keyText: {
 			fontFamily: "'Courier New', monospace",
 			fontWeight: 'bold',
-			color: '#495057',
 			wordBreak: 'break-all',
 			fontSize: '12px',
 			flex: 1,
 		},
 		keyName: {
 			fontSize: '12px',
-			color: '#6c757d',
+			opacity: 0.7,
 			marginTop: '4px',
 			lineHeight: '1.3',
 		},
 		keyType: {
 			fontSize: '13px',
-			color: '#6c757d',
+			opacity: 0.7,
 			textTransform: 'uppercase',
 			fontWeight: '500',
 		},
 		noResults: {
 			textAlign: 'center',
-			color: '#6c757d',
+			opacity: 0.7,
 			padding: '20px',
-			fontStyle: 'italic',
-		},
-		searchHint: {
-			fontSize: '12px',
-			color: '#6c757d',
-			marginTop: '5px',
 			fontStyle: 'italic',
 		}
 	};
