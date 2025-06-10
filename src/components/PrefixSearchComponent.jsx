@@ -18,7 +18,7 @@ const PrefixSearchComponent = () => {
 		{ key: '0b000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(11) - Time', symbol: 'τ', greekName: 'tau', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b3e023b4102?v=0.6.7' },
 		{ key: '0c000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(12) - Priviledged Services', symbol: 'χ', greekName: 'chi', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b4c023b5302?v=0.6.7' },
 		{ key: '0d000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(13) - Validator Statistics', symbol: 'π', greekName: 'pi', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b5e023b6a02?v=0.6.7' },
-		{ key: '0e000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(14) - Accumulation Queue', symbol: 'θ', greekName: 'theta', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b75023b8b02?v=0.6.7' },
+		{ key: '0e000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(14) - Accumulation Queue', symbol: 'ϑ', greekName: 'small theta', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b75023b8b02?v=0.6.7' },
 		{ key: '0f000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(15) - Accumulation History', symbol: 'ξ', greekName: 'xi', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3b96023ba202?v=0.6.7' },
 		{ key: '10000000000000000000000000000000000000000000000000000000000000', type: 'static', name: 'C(16) - Accumulation Output Log', symbol: 'θ', greekName: 'theta', link: 'https://graypaper.fluffylabs.dev/#/7e6ff6a/3bad023bba02?v=0.6.7' },
 
