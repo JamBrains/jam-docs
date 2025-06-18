@@ -329,7 +329,7 @@ const PrefixSearchComponent = () => {
 						type="text"
 						value={searchQuery}
 						onChange={(e) => setSearchQuery(e.target.value)}
-						placeholder="Search by hex prefix, Greek letter, or name (e.g. 01, alpha, validator)..."
+						placeholder="Search by hex key or name..."
 						autoComplete="off"
 						style={styles.searchInput}
 					/>
