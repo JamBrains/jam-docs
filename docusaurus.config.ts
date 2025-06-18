@@ -66,6 +66,11 @@ const config: Config = {
 
   themeConfig: {
     image: 'img/jam-chain-docs-banner.png',
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    },
     navbar: {
       title: 'JAM Docs',
       logo: {
