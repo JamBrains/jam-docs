@@ -2,10 +2,9 @@
 id: spec
 sidebar_label: Spec
 sidebar_position: 1
-slug: /advanced/simple-networking/spec
 ---
 
-(source https://github.com/zdave-parity/jam-np/blob/main/simple.md from 2025-06-20)
+(source https://github.com/zdave-parity/jam-np/blob/main/simple.md from 2025-06-21)
 
 <!-- The raw MD from above will be downloaded and appended -->
  # JAM Simple Networking Protocol (JAMNP-S)
