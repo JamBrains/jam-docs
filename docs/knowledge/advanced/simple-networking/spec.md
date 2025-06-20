@@ -2,10 +2,9 @@
 id: spec
 sidebar_label: Spec
 sidebar_position: 1
-slug: /advanced/simple-networking/spec
 ---
 
-(source https://github.com/zdave-parity/jam-np/blob/main/simple.md from 2025-06-20)
+(source https://github.com/zdave-parity/jam-np/blob/main/simple.md from 2025-06-09)
 
 <!-- The raw MD from above will be downloaded and appended -->
  # JAM Simple Networking Protocol (JAMNP-S)
@@ -229,16 +228,9 @@ Announcement = Header ++ Final
 
 Node -> Node
 
---> Handshake
+--> Handshake AND <-- Handshake (In parallel)
 loop {
-    --> Announcement
-}
-
-And in parallel:
-
-<-- Handshake
-loop {
-    <-- Announcement
+    --> Announcement OR <-- Announcement (Either side may send)
 }
 ```
 
@@ -620,10 +612,7 @@ introduce preimages, and by validators to gossip these preimages to other valida
 
 The recipient of the announcement is expected to follow up by requesting the preimage using
 protocol 143, provided the preimage has been requested on chain by the given service and the
-recipient is not already in possession of it. In the case where the sender of the announcement is a
-non-validator node, it is expected to keep the connection open for a reasonable time (eg 10
-seconds) to allow this request to be made; if the connection is closed before the request can be
-made, the recipient is not expected to reopen it.
+recipient is not already in possession of it.
 
 Once a validator has obtained a requested preimage, it should announce possession to its neighbours
 in the grid structure.
