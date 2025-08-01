@@ -23,11 +23,11 @@ This section provides a brief overview of the expectation and guidelines for DAO
 
 3. Follow Telegram/Discord Chat Rules: Always follow both the private and public rules of behavior outlined below.
 
-4. Adhere to the Code of Conduct: Follow the Code of Conduct and consistently demonstrate respectful and inclusive behavior. Members are expected to uphold the principles outlined in the [UN Universal Declaration of Human Rights](https://www.un.org/en/about-us/universal-declaration-of-human-rights) and the [Polkadot DAO Constitution](https://forum.polkadot.network/t/governance-behavioral-track-suggestion-mechanism/10106/15).
+4. Adhere to the Code of Conduct: Follow the Code of Conduct and consistently demonstrate respectful and inclusive behavior. Members are expected to uphold the principles outlined in the [JAM Implementers DAO Constitution](./constitution.md) and the [Polkadot DAO Constitution](https://forum.polkadot.network/t/governance-behavioral-track-suggestion-mechanism/10106/15).
 
 ### Don'ts:
 
-1. Do Not Violate the Code of Conduct: Avoid any behavior that goes against the program's Code of Conduct, including disrespectful or discriminatory actions. This includes actions that contradict the principles of the UN Universal Declaration of Human Rights and the Polkadot DAO Constitution.
+1. Do Not Violate the Code of Conduct: Avoid any behavior that goes against the program's Code of Conduct, including disrespectful or discriminatory actions. This includes actions that contradict the principles of the [JAM Implementers DAO Constitution](./constitution.md) and the [Polkadot DAO Constitution](https://forum.polkadot.network/t/governance-behavioral-track-suggestion-mechanism/10106/15).
 
 2. Do Not Spread Misinformation: Ensure all information shared about the DAO is accurate.
 
@@ -45,7 +45,7 @@ When engaging with JAM DAO members regarding your proposals, please observe the 
 
 2. **Avoid Conflict of Interest Situations**: Requesting JAM Implementers DAO members to help design your proposal creates potential conflicts of interest. If a JAM Implementers DAO member provides detailed consulting on your proposal, both they and potentially the entire JAM Implementers DAO may need to recuse from voting on it, undermining their governance duties.
 
-3. **Recognize Specialized Expertise**: Governance expertise is a specialized skill that requires professional liability protection and appropriate compensation. Casual requests for detailed advice place JAM Implementers DAO members in an awkward position regarding their professional obligations.
+3. **Respect Contribution Boundaries**: While some JAM Implementers DAO members may receive retroactive compensation through Decentralized Voices (DV) such as [DV Cohort 4](https://medium.com/web3foundation/decentralized-voices-cohort-4-delegates-announced-a5a9c64927fd) that is split amongst all members, a proportion of this funding may need to be reinvested in the JAM Implementers DAO to sustain operations, pay for assistance, community management, and event coordination to allow members electing to vote with delegated voting power to focus on governance. Many members contribute their time and knowledge voluntarily. Members may not have professional liability protection for providing detailed consulting advice. Casual requests for detailed proposal design place members in a difficult position regarding their role boundaries and potential conflicts of interest.
 
 4. **Focus on Factual Questions**: When communicating with JAM Implementers DAO members, focus on factual questions about governance processes rather than requesting specific advice on how to design your proposal.
 
