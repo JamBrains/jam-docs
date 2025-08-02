@@ -403,15 +403,13 @@ All implementations of these Constitutional Safeguards shall:
 
 ### Section 2: Amendment Process
 
-These Constitutional Safeguards may be amended through the following process:
+Any JAM Implementers DAO member may propose changes to this Constitution by submitting a proposal for vote in the JAM Implementers DAO Discord group. Amendments require majority approval (≥50%) and must meet the quorum set for the Big Spender Track.
 
-1. JAM Improvement Proposals (JIPs)
-2. Proposal of amendments through the OpenGov Wish For Change (WFC) process.
-3. Review by the Technical Fellowship for technical feasibility.
-4. Public discussion period of no less than 28 days.
-5. Approval through the appropriate OpenGov track with enhanced majority requirements.
-6. Implementation of approved amendments with appropriate transition periods.
-7. Verification that amendments do not compromise client implementation interoperability.
+For amendments related to technical specifications, implementation requirements, or protocol interoperability:
+1. Proposals should be submitted as JAM Improvement Proposals (JIPs)
+2. Technical Fellowship should be consulted for technical feasibility review, if necessary and possible
+3. Ambassador Fellowship should be consulted for ecosystem impact assessment, if necessary and possible
+4. Public discussion should be initiated for a period of no less than 28 days
 
 ### Section 3: Continuous Improvement
 
@@ -467,6 +465,7 @@ This constitution is versioned to track changes and improvements over time:
 | v0.04 | 2025-07-31 | Refined Article XI to balance Sustainable Work Standards with individual freedom by: adding a new individual autonomy and freedom section, clarifying the distinction between treasury-funded initiatives and independent contributors, framing standards as risk management measures, and focusing accountability measures on treasury-funded activities. Created companion justification document explaining the rationale for the balanced approach. | JAM Implementers DAO, with feedback from community members concerned about individual autonomy and innovation. |
 | v0.05 | 2025-07-31 | Enhanced governance accountability in Article XI by: requiring on-chain documentation of emergency decision-making processes and dissenting opinions, streamlining on-call rotation requirements, and implementing a standardized Humane Work Standards Compliance Checklist with self-assessment and random audit mechanisms. These changes strengthen transparency while maintaining practical implementation within resource constraints. | JAM Implementers DAO, with input from governance advocates focused on accountability, transparency, and on-chain verification. |
 | v0.06 | 2025-08-02 | Enhanced accountability Section 5 of Article III and introduced Section 6 of Article III on treasury procurement standards. | JAM Implementers DAO. |
+| v0.07 | 2025-08-02 | Update amendment process in Section 2 of Article X to include Technical and Ambassador Fellowship consultation requirements. | JAM Implementers DAO. |
 
 ### Section 2: Amendment Guidelines
 
