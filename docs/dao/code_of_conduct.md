@@ -69,7 +69,7 @@ Members have a private Telegram/Discord group for communication.  All members mu
 
 5. No (concern-)trolling or otherwise incendiary and/or negative comments and narratives. Keep it constructive and positive.
 
-6. No market, price, or “investor” talk. Members can discuss ICOs, investors, or related topics, as long as the goal isn’t to sponsor investment schemes.
+6. No market, price, or "investor" talk. Members can discuss ICOs, investors, or related topics, as long as the goal isn't to sponsor investment schemes.
 
 7. No constant ranting/complaining. Members may express themselves and vent their frustrations about a topic. However, the frequency of ranting/complaining should not annoy members.
 
@@ -77,9 +77,103 @@ Members have a private Telegram/Discord group for communication.  All members mu
 
 All participants are expected to uphold the above rules in both public and private channels.  Moderators for public channels will be selected from the DAO membership.   Moderators may ban participants who engage in behavior that violates these rules after sufficient warning is provided.  
 
-At the moderators’ discretion, a lesser action (such as warning the individual in question) may be taken. Participants, however, should not count on the good grace of the moderators. In particular, where moderators deem it likely that a single individual is using multiple chat monikers to break the CoC repeatedly, bans without warning may be given. 
+At the moderators' discretion, a lesser action (such as warning the individual in question) may be taken. Participants, however, should not count on the good grace of the moderators. In particular, where moderators deem it likely that a single individual is using multiple chat monikers to break the CoC repeatedly, bans without warning may be given. 
 
 If members believe someone in the channel is breaking these rules, members may propose a vote for their removal with proof of offense.  No member can be removed without members.
+
+## Moderation
+
+The JAM Implementers DAO will implement this code of conduct. If you encounter a problem, please contact the moderators. We will respect confidentiality with regard to the reporter of any incident.
+
+## Procurement Ethics and Fairness
+
+As a participant in JAM Implementers DAO procurement processes, whether as an evaluator, proposer, or stakeholder, you are expected to uphold the following ethical standards:
+
+### Evaluators and JAM Implementers DAO Members:
+
+1. **Impartiality and Objectivity**:
+   - Do evaluate all proposals based solely on the published evaluation criteria
+   - Do maintain consistent standards across all evaluations
+   - Do recuse yourself from evaluations where you cannot be objective
+
+2. **Conflict of Interest Management**:
+   - Do proactively disclose any potential conflicts of interest before participating in evaluations
+   - Do abstain from voting on proposals where you have a direct or indirect interest
+   - Do not provide preferential information to any potential proposers
+   - Do maintain appropriate professional boundaries with proposers during evaluation periods
+
+3. **Confidentiality and Information Management**:
+   - Protect sensitive information shared in proposals
+   - Do not share one proposer's information with other proposers
+   - Maintain confidentiality of deliberations until official decisions are published
+   - Document all evaluation decisions with clear rationales
+
+### Proposers and Suppliers:
+
+1. **Honest Representation**:
+   - Do provide accurate information about your capabilities, experience, and resources
+   - Do disclose any limitations that might affect your ability to deliver
+   - Do not make claims that cannot be substantiated
+
+2. **Fair Competition**:
+   - Do not collude with other proposers to manipulate the procurement process
+   - Do not attempt to obtain confidential information about other proposals
+   - Do compete on the merits of your proposal rather than through undermining others
+
+3. **Ethical Engagement**:
+   - Do not offer gifts, favors, or other inducements to evaluators
+   - Do respect the established procurement process and timelines
+   - Do accept feedback constructively and address concerns professionally
+   - Do report any unethical behavior observed during the procurement process
+
+### All Participants:
+
+1. **Transparency**:
+   - Decision-making processes and justifications should be documented
+   - Clear feedback should be provided on evaluation decisions
+   - Evaluation criteria and weightings should be publicly available **before** proposal submission
+   - Evaluation results should be published with appropriate detail
+
+2. **Accountability**:
+   - Accountability should be taken for your role in the procurement process
+   - Justify decisions when questioned
+   - Accept appropriate consequences for non-conformance of these standards
+   - Report suspected non-conformance through appropriate channels
+
+3. **Continuous Improvement**:
+   - Regular reviews of procurement processes should be conducted with high participation
+   - Improvements based on experience should be suggested
+   - Best practices that enhance fairness and effectiveness should be shared
+   - Mistakes should be documented and learned from and corrective measures implemented
+
+### Evaluation Methodology Guidelines
+
+When implementing the evaluation methodologies outlined in the JAM Implementers DAO Constitution, participants shall adhere to the following guidelines:
+
+1. **Matrix Comparison Implementation**:
+   - Individual evaluations should be completed **before** group discussions to prevent groupthink
+   - Specific justifications should be documented for each score assigned
+   - Consistent scoring scales should be used across all evaluations (e.g. 1-10)
+   - Evaluation records should be maintained that clearly show both individual and consensus scores
+   - Weightings should be determined and published **before** proposal review begins
+
+2. **Inverse Cost Assessment Implementation**:
+   - Unusually low bids should be scrutinized for unsustainable work practices
+   - Mathematical formula used for all price comparisons should be documented
+   - Minimum quality thresholds should be established **before** price evaluation
+   - Collusive pricing risk should be identified and mitigated as it has the potential to undermine the process
+   - Clear explanations of how price scores were calculated should be provided in feedback
+
+3. **Quality-First Evaluation Implementation**:
+   - Separation between quality and price evaluations should be strictly maintained
+   - Minimum quality thresholds (e.g. 35% on each criterion) should be established before price consideration
+   - Rationale for proceeding with or rejecting the highest-quality proposal should be documented
+   - Unopened price envelopes should be returned to unsuccessful proposers
+   - Minimum of three evaluators should participate in quality assessments
+
+Evaluators must select the appropriate methodology based on proposal complexity, value, and strategic importance to the JAM, Polkadot, and Kusama ecosystems. The selection of methodology must be documented and justified as part of the procurement record.
+
+Non-conformance with these procurement ethics standards may result in exclusion from current or future procurement processes, removal from evaluation roles, or other appropriate consequences as determined by the JAM Implementers DAO governance process.
 
 ## Disclaimer on the Mutability of the Rules
 Governance is an emergent and evolving field, and we envision it as a space for experimentation and rapid iteration. As such, the rules outlined above are subject to change without prior notice. The most current version of the rules can always be found in our GitHub repository with next link `https://github.com/JamBrains/jam-docs/blob/main/docs/dao/code_of_conduct.md`.

@@ -20,6 +20,7 @@ These Safeguards shall serve to detect, recognize, and constrain harmful behavio
   - [Section 3: Economic Incentives](#section-3-economic-incentives)
   - [Section 4: Decentralized Oversight to Ensure Constitutional Alignment](#section-4-decentralized-oversight-to-ensure-constitutional-alignment)
   - [Section 5: Accountability Mechanisms](#section-5-accountability-mechanisms)
+  - [Section 6: Treasury Procurement Standards](#section-6-treasury-procurement-standards)
 - [ARTICLE IV: MULTI-LAYERED ACCOUNTABILITY](#article-iv-multi-layered-accountability)
   - [Section 1: Transparent Systems](#section-1-transparent-systems)
   - [Section 2: Expert and Developer Accountability](#section-2-expert-and-developer-accountability)
@@ -142,17 +143,103 @@ The JAM Implementers DAO shall ensure decentralized oversight through:
 
 ### Section 5: Accountability Mechanisms
 
-The JAM Implementers DAO shall implement practical accountability mechanisms including:
+The JAM Implementers DAO shall implement accountability mechanisms including:
 
 1. Clear, executable outcomes for non-compliance that don't require consensus to implement.
 2. Graduated measures proportional to non-compliance severity.
 3. Transparent reporting of all instances of non-compliance and responses.
-4. Mandatory conflict of interest disclosures for all governance participants since hidden conflicts of interest directly undermine governance integrity and can lead to decisions that benefit individuals at the expense of the ecosystem.
+4. Mandatory conflict of interest disclosures for all governance participants since hidden conflicts of interest directly undermine governance integrity and can lead to decisions that benefit individuals at the expense of the ecosystem with disincentives for non-disclosure that may include:
+   a. Scaling of voting power reduction proportional to conflict of interest severity.
+   b. Removal of voting rights on direct conflicts of interest matters.
+   c. Temporary or permanent suspension of governance participation for serious undisclosed conflicts of interest.
+   d. Economic disincentives through compensation token slashing for non-disclosed conflicts of interest.
 5. Implementation team accountability for client performance and security.
 6. Mechanisms for remediation and restoration following instances of non-compliance or failures.
 7. Demonstrate understanding of these constitutional requirements
 8. Establish transparent reporting on actual hours worked compared to estimates, activation of emergency protocols, and team wellbeing metrics throughout the project lifecycle
 9. Accept that non-compliance with these standards constitutes grounds for funding revocation, withdrawal of endorsement, and ineligibility for future treasury support
+
+### Section 6: Treasury Procurement Standards
+
+The JAM Implementers DAO shall implement the following procurement standards for all treasury funding decisions:
+
+1. **Standardized Evaluation Criteria**:
+   a. All treasury funding requests shall be evaluated using weighted criteria including:
+      i. Technical merit and innovation (alignment with JAM protocol requirements)
+      ii. Ecosystem alignment (contribution to Polkadot ecosystem goals)
+      iii. Value for money (cost-effectiveness relative to expected benefits)
+      iv. Implementation capability (team experience and capacity)
+      v. Sustainability (long-term viability and maintenance plan)
+   b. Criteria weightings shall be published in advance to ensure transparency
+   c. Evaluation scores and justifications shall be documented and made publicly available
+
+2. **Inclusive Procurement Practices**:
+   a. Scaled requirements proportional to funding size (using the 500-day Exponential Moving Average (EMA500) of DOT/USD and KSM/USD to establish stable USD equivalent values, as calculated and published by [CoinGecko](https://www.coingecko.com) or an alternative reputable data provider designated by the JAM Implementers DAO):
+      i. **Minimal Documentation and Streamlined Evaluation** (proposals under $20,000 USD equivalent):
+         - Polkadot: Small Tipper (≤250 DOT), Big Tipper (≤1,000 DOT)
+         - Kusama: Small Tipper (≤8.25 KSM), Big Tipper (≤33.33 KSM)
+         - Features: Simplified application forms, expedited review process, lower approval thresholds
+      
+      ii. **Moderate Documentation with Focused Technical Evaluation** (proposals between $20,000 and $100,000 USD equivalent):
+         - Polkadot: Small Spender (≤10,000 DOT)
+         - Kusama: Small Spender (≤333.33 KSM), Medium Spender (≤3,333.33 KSM)
+         - Features: Standard technical documentation, focused evaluation on core deliverables, moderate approval thresholds
+      
+      iii. **Comprehensive Documentation with Rigorous Evaluation** (proposals above $100,000 USD equivalent):
+         - Polkadot: Medium Spender (≤100,000 DOT), Big Spender (≤1,000,000 DOT), Treasurer (≤10,000,000 DOT)
+         - Kusama: Big Spender (≤33,333.33 KSM), Treasurer (≤333,333.33 KSM)
+         - Features: Detailed technical specifications, milestone-based delivery plans, comprehensive risk assessments, higher approval thresholds, enhanced reporting requirements
+   b. Referral to independent resources such as [OpenGov.Watch](https://opengov.watch) for proposal guidance and standards
+   c. Mentorship connections between experienced and emerging teams
+   d. Diversity and inclusion considerations:
+      i. Recognition of proposals from underrepresented geographic regions in the ecosystem
+      ii. Acknowledgment of proposals from teams with diverse composition across dimensions including but not limited to technical background, experience level, and demographic factors
+      iii. Consideration of social impact enterprises that combine technical merit with positive community outcomes
+      iv. Value placed on proposals that expand ecosystem participation to new contributor groups
+
+3. **Conflict of Interest Management**:
+   a. Mandatory disclosure of any potential conflicts **before** evaluation begins
+   b. Recusal requirements for members with direct or indirect conflicts of interest
+   c. Public documentation of all recusals due to conflicts of interest and their justifications
+   d. Prohibition on members providing detailed consulting on proposals they will evaluate
+
+4. **Probity and Fairness**:
+   a. Independent evaluation by multiple JAM Implementers DAO members **before** collective discussion
+   b. Structured deliberation using standardized templates that are publicly available
+   c. Evaluation decisions that are transparent and documented with clear justifications
+   d. Procurement processes should be regularly reviewed for continuous improvement
+   e. Prohibition on post-decision negotiations that materially alter approved proposals
+
+5. **Supplier Obligations**:
+   a. Adherence to the JAM Implementers DAO Code of Conduct
+   b. Compliance with sustainable work standards as outlined in Article XI
+   c. Disclosure of any findings of dishonest, unfair, unconscionable, corrupt, or illegal conduct
+   d. Commitment to transparent reporting throughout the project lifecycle
+
+6. **Evaluation Methodologies**:
+   a. **Matrix Comparison**: Standard proposals shall be evaluated using a matrix comparison methodology where evaluators shall independently score each criterion **before** group discussion with documented justifications for each score
+   b. **Inverse Cost Assessment**: 
+      i. **Multiple proposers**: Price-sensitive proposals shall be evaluated using an inverse cost assessment methodology where a proportional scoring system that divides the lowest tendered price by each proposal price and multiplies by the maximum score, with safeguards against low-ball pricing
+      ii. **Single proposer**: Upon receipt of only one proposal, the JAM Implementers DAO shall evaluate whether the proposed price represents fair value by comparing it to:
+         - Historical costs for similar work
+         - Cost estimates from independent sources
+         - Market benchmarks where available
+         - Alignment of the proposal with treasury capacity and priorities
+         - Funding history of the project, with particular scrutiny for proposals from teams that have received substantial prior treasury funding but have pivoted or not delivered on previous commitments, as such projects should typically seek venture capital funding rather than continued treasury support
+   c. **Quality-First Evaluation**: Complex or high-value proposals shall be evaluated using a two-envelope system where non-price criteria are evaluated **first** with only the highest-rated proposal's price envelope opened for negotiation
+   d. The JAM Implementers DAO shall select the most appropriate methodology based on the proposal type, complexity, and value
+
+7. **Grounds for Exclusion**:
+   a. The JAM Implementers DAO may exclude suppliers or proposers from consideration where there is reasonable belief that the supplier, their directors, or managers have engaged in corrupt conduct, failed to perform under prior contracts, made false declarations, or been convicted of serious offenses.
+   b. For OpenGov proposals with a single proposer, these exclusion criteria shall still apply. In such cases, the JAM Implementers DAO may recommend:
+      i. Rejection of the proposal with documented justification
+      ii. Requesting modifications to the proposal to address concerns
+      iii. Seeking alternative proposers for the same work if the need remains valid
+   c. Proposers who engage in governance spam, including but not limited to repeatedly submitting non-conformant proposals that waste procurement evaluation resources, may be subject to temporary or permanent exclusion from consideration after:
+      i. Receiving formal notification of non-conformance
+      ii. Being provided reasonable opportunity to correct their approach
+      iii. Continuing the pattern of non-conformant submissions
+   d. All exclusion decisions must be documented with clear justification and evidence supporting the decision.
 
 ## ARTICLE IV: MULTI-LAYERED ACCOUNTABILITY
 
@@ -379,6 +466,7 @@ This constitution is versioned to track changes and improvements over time:
 | v0.03 | 2025-07-31 | Added Article XI on Sustainable Work Standards and Ecosystem Wellbeing with comprehensive provisions including: scientific evidence preamble, emergency work protocols with mathematical consistency, balanced multi-stakeholder governance, expanded endorsement requirements covering all ecosystem branding, and resource-constrained implementation guidance. Expanded prohibited actions to include unsustainable work practices. | JAM Implementers DAO, with feedback from ecosystem health advocates and reference to scientific research on overwork health impacts. |
 | v0.04 | 2025-07-31 | Refined Article XI to balance Sustainable Work Standards with individual freedom by: adding a new individual autonomy and freedom section, clarifying the distinction between treasury-funded initiatives and independent contributors, framing standards as risk management measures, and focusing accountability measures on treasury-funded activities. Created companion justification document explaining the rationale for the balanced approach. | JAM Implementers DAO, with feedback from community members concerned about individual autonomy and innovation. |
 | v0.05 | 2025-07-31 | Enhanced governance accountability in Article XI by: requiring on-chain documentation of emergency decision-making processes and dissenting opinions, streamlining on-call rotation requirements, and implementing a standardized Humane Work Standards Compliance Checklist with self-assessment and random audit mechanisms. These changes strengthen transparency while maintaining practical implementation within resource constraints. | JAM Implementers DAO, with input from governance advocates focused on accountability, transparency, and on-chain verification. |
+| v0.06 | 2025-08-02 | Enhanced accountability Section 5 of Article III and introduced Section 6 of Article III on treasury procurement standards. | JAM Implementers DAO. |
 
 ### Section 2: Amendment Guidelines
 
