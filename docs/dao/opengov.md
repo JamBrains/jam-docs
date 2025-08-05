@@ -132,9 +132,7 @@ members.
 
  
 
-\#\# 📄 JAM Implementers DAO Report – DV Cohort 4
-
- 
+JAM Implementers DAO Report – DV Cohort 4
 
 As part of our participation in Decentralized Voices Cohort 4 and our
 application to Cohort 5, we've published a detailed report summarizing our
@@ -142,8 +140,7 @@ activity, lessons learned, and evolving philosophy.
 
  
 
-\- 📥 [Download DV Cohort 4 Report
-(PDF)]([report_dv_cohort_4.pdf](https://github.com/SA-Moshood/jam-docs/blob/add-dv4-report/docs/dao/report_dv_cohort_4.pdf))
+\- [Download DV Cohort 4 Report (PDF)
+](https://raw.githubusercontent.com/SA-Moshood/jam-docs/add-dv4-report/docs/dao/report_dv_cohort_4.pdf)
 
-\- 📥 [Download DV Cohort 4 Report
-(DOCX)]([report_dv_cohort_4.docx](https://github.com/SA-Moshood/jam-docs/blob/add-dv4-report/docs/dao/report_dv_cohort_4.docx))
+ 
