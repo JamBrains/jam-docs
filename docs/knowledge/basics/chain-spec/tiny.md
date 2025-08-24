@@ -19,8 +19,8 @@ tickets_per_validator: 3
 max_tickets_per_extrinsic: 3
 rotation_period: 4
 num_ec_pieces_per_segment: 1026
-max_block_gas: 20_000_000
-max_refine_gas: 1_000_000_000
+max_block_gas: 20000000
+max_refine_gas: 1000000000
 ```
 
 Please consult a few other JAM implementer teams before changing this spec, as it is in use for
