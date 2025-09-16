@@ -50,3 +50,6 @@ members:
   - name: "Eiger"
     address: "131MpMXeuKG6L27Ye23uzWr739KFbbrCBdiv39XZtnTCPwQB"
     extrinsic: "https://polkadot.subscan.io/extrinsic/25812820-2"
+  - name: "PeanutButterAndJAM"
+    address: "15JRT5GjLAZkuvmpwmjCUp1RRLr7Y6Gnusz37ia37h2Xn5Rz"
+    extrinsic: "https://polkadot.subscan.io/extrinsic/27791534-2"
