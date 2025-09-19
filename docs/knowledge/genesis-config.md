@@ -1,7 +1,6 @@
 ---
 id: Genesis Config
 sidebar_label: Genesis Config
-sidebar_position: 2
 slug: /basics/genesis-config
 ---
 

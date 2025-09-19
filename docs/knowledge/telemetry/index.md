@@ -1,6 +1,5 @@
 ---
 title: Telemetry
-sidebar_position: 3
 slug: /knowledge/advanced/telemetry
 ---
 

@@ -1,7 +1,7 @@
 default: dev
 
 dev:
-  yarn start
+  yarn start --no-open
 
 build:
   sh build.sh
