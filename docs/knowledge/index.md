@@ -4,14 +4,17 @@ sidebar_position: 0
 slug: /
 ---
 
-:::note
-See [graypaper.com](https://graypaper.com) for official information about JAM. This is an unofficial community-driven website.
-:::
+There are currently [over 40 teams](https://jamcha.in/clients) registered to implement JAM and [over 17](https://github.com/davxy/jam-conformance/issues) actively participating in conformance testing. Joins us to build JAM together!
 
-Join us to build [JAM](https://graypaper.com/):
-- Matrix [JAM Channel](https://matrix.to/#/#jam:polkadot.io) <sup>[archive](https://paritytech.github.io/matrix-archiver/archive/_21wBOJlzaOULZOALhaRh_3Apolkadot.io/index.html)</sup> Discussions about implementing the Gray Paper.
-- Matrix [Gray Paper](https://matrix.to/#/#graypaper:polkadot.io) <sup>[archive](https://paritytech.github.io/matrix-archiver/archive/_21ddsEwXlCWnreEGuqXZ_3Apolkadot.io/index.html)</sup> Discussion about the Gray Paper.
-- Discord [JAM DAO - implementors channel](https://discord.gg/e8UNJEPmzc): Casual and public channel to orchestrate a testnet setup on the way to the JAM Toaster.
-- Matrix [Conformance Testing](https://matrix.to/#/#jam-conformance:matrix.org) <sup>[archive](https://paritytech.github.io/matrix-archiver/archive/_21ksYpYHcVftKsUAsdMa_3Amatrix.org/index.html)</sup> Discussions about conformance testing.
+*This is an unofficial community-driven website. See [graypaper.com](https://graypaper.com) for official information.*
 
-The [official](https://jam.web3.foundation/) and [unofficial](https://hackmd.io/@polkadot/jamprize) communication rules apply to all channels, have fun!
+### Matrix Channels
+- **[JAM Channel](https://matrix.to/#/#jam:polkadot.io)** - Technical discussions about implementing the Gray Paper
+  <sup>[archive](https://paritytech.github.io/matrix-archiver/archive/_21wBOJlzaOULZOALhaRh_3Apolkadot.io/index.html)</sup>
+- **[Gray Paper](https://matrix.to/#/#graypaper:polkadot.io)** - Discussion about the Gray Paper specification
+  <sup>[archive](https://paritytech.github.io/matrix-archiver/archive/_21ddsEwXlCWnreEGuqXZ_3Apolkadot.io/index.html)</sup>
+- **[Conformance Testing](https://matrix.to/#/#jam-conformance:matrix.org)** - Discussions about conformance testing standards
+  <sup>[archive](https://paritytech.github.io/matrix-archiver/archive/_21ksYpYHcVftKsUAsdMa_3Amatrix.org/index.html)</sup>
+
+### Discord
+- **[JAM DAO - Implementors Channel](https://discord.gg/e8UNJEPmzc)** - Casual discussions and coordination for testnet setup leading to the JAM Toaster.
