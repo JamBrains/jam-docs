@@ -22,6 +22,3 @@ num_ec_pieces_per_segment: 1026
 max_block_gas: 20000000
 max_refine_gas: 1000000000
 ```
-
-Please consult a few other JAM implementer teams before changing this spec, as it is in use for
-testnet setup and by W3F test vectors.

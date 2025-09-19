@@ -6,7 +6,8 @@ slug: /basics/chain-spec/full
 
 # Full
 
-The full scale version that will be known as the "JAM Chain". All parameters here must match the Gray Paper.
+The full scale version that will be known as the "JAM Chain". All parameters here must match the Gray Paper.  
+It is named *full* because it takes up the entire *JAM Toaster*.
 
 ```yaml
 chain: full
@@ -23,5 +24,3 @@ num_ec_pieces_per_segment: 6
 max_block_gas: 3500000000
 max_refine_gas: 5000000000
 ```
-
-The "full" name comes from the fact that full takes up the entire JAM "Toaster".

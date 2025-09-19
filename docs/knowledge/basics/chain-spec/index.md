@@ -6,7 +6,10 @@ slug: /basics/chain-spec
 
 # Chain Spec
 
-The Chain Specification is a configuration that defines all core constants of the JAM Chain. The JAM Chain itself has fixed parameters, but for testing and local deployments it can be useful to define alternative versions of these parameters.
+The Chain Specification is a configuration that defines all core constants of the JAM Chain. The JAM Chain itself has fixed parameters, but for testing and local deployments it can be useful to define alternative versions of these parameters.  
+
+Please consult a few other JAM implementer teams before changing these values, as it is in use for
+testnet setup and by W3F test vectors.
 
 ## Parameters
 
