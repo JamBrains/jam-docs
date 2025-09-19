@@ -1,6 +1,7 @@
 ---
 id: Dev Accounts
 sidebar_label: Dev Accounts
+sidebar_position: 1
 slug: /basics/dev-accounts
 ---
 

@@ -1,7 +1,7 @@
 ---
 sidebar_label: Chain Spec
-sidebar_position: 0
 slug: /basics/chain-spec
+sidebar_position: 3
 ---
 
 # Chain Spec
