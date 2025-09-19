@@ -2,11 +2,12 @@
 id: Certificates
 sidebar_label: Certificates
 sidebar_position: 2
+slug: /knowledge/advanced/simple-networking/certs
 ---
 
 # OpenSSL Certificate Generation
 
-This guide demonstrates how to generate Ed25519 keys and certificates for the [Alice](/basics/dev-accounts#alice) dev account using the OpenSSL CLI. These certificates can be used for the [Simple Networking Protocol](/knowledge/advanced/simple-networking/spec.md#encryption-and-handshake).
+This guide demonstrates how to generate Ed25519 keys and certificates for the [Alice](/basics/dev-accounts#alice) dev account using the OpenSSL CLI. These certificates can be used for the [Simple Networking Protocol](/knowledge/simple-networking/spec.md#encryption-and-handshake).
 
 ## Secret Key Generation
 
@@ -61,7 +62,7 @@ openssl req -new -x509 -days 365 \
     -addext "subjectAltName=DNS:$DNS_ALT_NAME"
 ```
 
-Where `$DNS_ALT_NAME` should match the [SNP Specification](/knowledge/advanced/simple-networking/spec.md#encryption-and-handshake). (The DNS alt name was reported to be wrong, please do not rely on it).
+Where `$DNS_ALT_NAME` should match the [SNP Specification](/knowledge/simple-networking/spec.md#encryption-and-handshake). (The DNS alt name was reported to be wrong, please do not rely on it).
 
 For CA certificates that will sign other certificates, add these extensions:
 
@@ -78,7 +79,7 @@ openssl x509 -noout -text -in cert.pem
 
 This shows:
 1. The Alice public key, starting with `3b:6a:27`.
-3. The correct DNS alternative name, starting with `ehnvc`.
+2. The correct DNS alternative name, starting with `ehnvc`.
 
 Example output for Alice's certificate:
 ```pre
