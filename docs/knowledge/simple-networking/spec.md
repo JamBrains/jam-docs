@@ -2,7 +2,6 @@
 id: spec
 sidebar_label: Spec
 sidebar_position: 1
-slug: /knowledge/advanced/simple-networking/spec
 ---
 
 (source https://github.com/zdave-parity/jam-np/blob/main/simple.md from 2025-09-19)
