@@ -5,3 +5,6 @@ dev:
 
 build:
   sh build.sh
+
+update:
+  yarn upgrade --latest
