@@ -4,7 +4,7 @@ sidebar_label: Spec
 sidebar_position: 1
 ---
 
-(source https://github.com/zdave-parity/jam-np/blob/main/simple.md from 2025-06-21)
+(source https://github.com/zdave-parity/jam-np/blob/main/simple.md from 2025-09-19)
 
 <!-- The raw MD from above will be downloaded and appended -->
  # JAM Simple Networking Protocol (JAMNP-S)
@@ -252,7 +252,10 @@ There are two types of request:
 - Descending inclusive: The sequence of blocks in the response should start with the given block,
   followed by its parent, grandparent, and so on.
 
-The number of blocks in the response should be limited to the given maximum.
+The number of blocks in the response should be limited to the given maximum. The response should
+not contain blocks which, from the responding node's perspective, cannot be finalized. If it is not
+possible to satisfy the request with this constraint (for example, because a block which cannot be
+finalized is explicitly requested), the stream should simply be reset/stopped.
 
 ```
 Direction = 0 (Ascending exclusive) OR 1 (Descending inclusive) (Single byte)

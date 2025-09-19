@@ -1,15 +1,11 @@
 ---
-id: Genesis Config (JIP-5)
-sidebar_label: Genesis Config (JIP-5)
+id: Genesis Config
+sidebar_label: Genesis Config
 sidebar_position: 2
 slug: /basics/genesis-config
 ---
 
 The genesis config provides the initial values that are needed by all nodes to start the JAM chain. Each field is explained below.
-
-:::warning
-This page is assumes that [JIP-5@7048f79](https://github.com/polkadot-fellows/JIPs/pull/2) is accepted. The pre-JIP-5 version is available [here](../../old/genesis-config-pre-jip5.md).
-:::
 
 ## Authorities
 
