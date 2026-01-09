@@ -1,12 +1,15 @@
 ---
 sidebar_label: Chain Spec
-sidebar_position: 0
 slug: /basics/chain-spec
+sidebar_position: 3
 ---
 
 # Chain Spec
 
-The Chain Specification is a configuration that defines all core constants of the JAM Chain. The JAM Chain itself has fixed parameters, but for testing and local deployments it can be useful to define alternative versions of these parameters.
+The Chain Specification is a configuration that defines all core constants of the JAM Chain. The JAM Chain itself has fixed parameters, but for testing and local deployments it can be useful to define alternative versions of these parameters.  
+
+Please consult a few other JAM implementer teams before changing these values, as it is in use for
+testnet setup and by W3F test vectors.
 
 ## Parameters
 
@@ -23,6 +26,10 @@ The number of validators.
 ### C `num_cores`
 
 The number of cores.
+
+### D `preimage_expunge_period`
+
+The period in timeslots after which an unreferenced preimage may be expunged.
 
 ### P `slot_duration`
 
@@ -54,3 +61,11 @@ Constraint: $\mathsf{K} > 0$
 ### WP `num_ec_pieces_per_segment`
 
 The number of erasure-coded pieces in a segment
+
+### G_T `max_block_gas`
+
+The total gas allocated across for **all** Accumulation.
+
+### G_R `max_refine_gas`
+
+The gas allocated to invoke a work-package's Refine logic

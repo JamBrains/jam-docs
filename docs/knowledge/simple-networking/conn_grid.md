@@ -2,6 +2,7 @@
 id: Block Propagation Grid
 sidebar_label: Block Propagation Grid
 sidebar_position: 3
+slug: /knowledge/advanced/simple-networking/Block Propagation Grid
 ---
 
 The SNP spec specifies that nodes need to announce their blocks only to specific peers - not to the whole network. Our interpretation of the SNP spec leads to the following grid for block propagation:
