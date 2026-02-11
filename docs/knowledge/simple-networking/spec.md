@@ -5,7 +5,7 @@ sidebar_position: 1
 slug: /knowledge/advanced/simple-networking/spec
 ---
 
-(source https://github.com/zdave-parity/jam-np/blob/main/simple.md from 2025-12-04)
+(fetched from [here](https://github.com/zdave-parity/jam-np/blob/main/simple.md) on 2026-02-11)
 
 <!-- The raw MD from above will be downloaded and appended -->
  # JAM Simple Networking Protocol (JAMNP-S)
@@ -805,12 +805,18 @@ On receipt of a new negative judgment for a work-report that the node is respons
 - The node should audit the work-report, if it has not already done so, publishing its own judgment
   following this.
 
+A negative judgement should include the guarantees supporting the report. This is not needed for positive judgements.
+The guarantees is a bounded vector of at most 3 elements, preceded by the guarantees' slot.
+
 ```
 Validity = 0 (Invalid) OR 1 (Valid) (Single byte)
+GuaranteeSignature = Validator Index ++ Ed25519 Signature
+Guarantee = Slot ++ len++[GuaranteeSignature] (2 or 3 elements only)
 
 Auditor -> Validator
 
 --> Epoch Index ++ Validator Index ++ Validity ++ Work-Report Hash ++ Ed25519 Signature
+--> Guarantee [Optional, this message is present if and only if Validity == 0]
 --> FIN
 <-- FIN
 ```
