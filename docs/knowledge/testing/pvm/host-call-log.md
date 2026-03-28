@@ -4,7 +4,7 @@ sidebar_label: Log Host Call
 sidebar_position: 1
 ---
 
-(fetched from [here](https://github.com/polkadot-fellows/JIPs/blob/main/JIP-1.md) on 2026-02-11)
+(fetched from [here](https://github.com/polkadot-fellows/JIPs/blob/main/JIP-1.md) on 2026-03-28)
 
 <!-- The raw MD from above will be downloaded and appended -->
  # JIP-1: Debug message host call
