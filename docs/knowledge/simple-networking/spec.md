@@ -5,7 +5,7 @@ sidebar_position: 1
 slug: /knowledge/advanced/simple-networking/spec
 ---
 
-(fetched from [here](https://github.com/zdave-parity/jam-np/blob/main/simple.md) on 2026-02-11)
+(fetched from [here](https://github.com/zdave-parity/jam-np/blob/main/simple.md) on 2026-03-28)
 
 <!-- The raw MD from above will be downloaded and appended -->
  # JAM Simple Networking Protocol (JAMNP-S)
@@ -369,6 +369,10 @@ Note that if the builder can provide the content of imported segments, CE 146 sh
 the full work-package bundle. Otherwise it is the responsibility of the receiving guarantor to fetch 
 this data from the availability system.
 
+The initial message `Core Index ++ Work-Package` should be limited to `2 + (200 * 1024)` bytes. This ensures
+that Guarantors can not be forced to download huge work packages, before they can check that the
+Work-Package is actually authorized.
+
 ```
 Work-Package = As in GP
 Extrinsic = [u8]
@@ -385,7 +389,10 @@ Builder -> Guarantor
 
 Submission of a complete work-package bundle from a builder to a guarantor.
 
-Note that the bundle parts are sent in separate messages to allow for authorizing the work-package before reading the rest of the bundle.
+Note that the bundle parts are sent in separate messages to allow for authorizing the work-package before
+reading the rest of the bundle. The `Work-Package` message should be limited to `200 * 1024` bytes. This
+ensures that Guarantors can not be forced to download huge work packages, before they can check that the
+Work-Package is actually authorized.
 
 The import proof corresponds to $\mathit{J}$ as defined in the gray paper.
 
