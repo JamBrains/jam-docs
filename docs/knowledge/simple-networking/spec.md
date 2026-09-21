@@ -5,7 +5,7 @@ sidebar_position: 1
 slug: /knowledge/advanced/simple-networking/spec
 ---
 
-(fetched from [here](https://github.com/zdave-parity/jam-np/blob/main/simple.md) on 2026-03-28)
+(fetched from [here](https://github.com/zdave-parity/jam-np/blob/main/simple.md) on 2026-09-21)
 
 <!-- The raw MD from above will be downloaded and appended -->
  # JAM Simple Networking Protocol (JAMNP-S)
@@ -59,7 +59,7 @@ defined in the serialization codec appendix of the GP.
 
 The protocol name, version, and chain are identified using QUIC/TLS "ALPN" (Application Layer
 Protocol Negotiation). The (ASCII-encoded) protocol identifier should be either `jamnp-s/V/H` or
-`jamnp-s/V/H/builder`. Here `V` is the protocol version, `0`, and `H` is the first 8 nibbles of the
+`jamnp-s/V/H/builder`. Here `V` is the protocol version, `1`, and `H` is the first 8 nibbles of the
 hash of the chain's genesis header, in lower-case hexadecimal.
 
 The `/builder` suffix should always be permitted by the side accepting the connection, but only
@@ -434,19 +434,33 @@ as the work-package and extrinsic data. The bundle should precisely match the on
 ultimately erasure coded and made available in the case where the work-report gets included on
 chain.
 
+The first message contains the number of erasure-coded shards to generate for the bundle. One
+shard is produced per validator, and a work-report can only be included on chain if its shard
+count matches the number of active validators at inclusion. The shard count determines the
+erasure-root and thus the work-report hash; sending it explicitly ensures that all guarantors
+build and sign the same work-report.
+
+A shard count is acceptable if it matches the number of active validators at a slot in which the
+work-report could possibly be included on chain, judging by the anchor and assuming one block per
+slot. As a work-report can only be included while its anchor is within the recent history, these
+are the $H$ slots following the anchor slot (where $H$ is the size of the recent history, in
+blocks). The sharing guarantor may pick any acceptable shard count.
+
 The guarantor receiving the work-package bundle should perform basic verification first and then
 execute the refine logic, returning the hash of the resulting work-report and a signature that can
-be included in a guaranteed work-report. The basic verification should include checking the
-validity of the authorization and checking the work-package hash to segments-root mappings. If the
-mappings cannot be verified, the guarantor may, at their discretion, either refuse to refine the
-work-package or blindly trust the mappings.
+be included in a guaranteed work-report. The basic verification should include checking that the
+shard count is acceptable (as defined above), checking the validity of the authorization, and
+checking the work-package hash to segments-root mappings. If the mappings cannot be verified, the
+guarantor may, at their discretion, either refuse to refine the work-package or blindly trust the
+mappings.
 
 ```
+Shard Count = u16
 Segments-Root Mappings = len++[Work-Package Hash ++ Segments-Root]
 
 Guarantor -> Guarantor
 
---> Core Index ++ Segments-Root Mappings
+--> Core Index ++ Shard Count ++ Segments-Root Mappings
 --> Work-Package Bundle
 --> FIN
 <-- Work-Report Hash ++ Ed25519 Signature
