@@ -35,6 +35,8 @@ perl -pi -e "s/BUILD_DATE/${BUILD_DATE}/" docs/knowledge/rpc/jip2-gav.md
 # Fix MDX-incompatible syntax in downloaded JIP-2 content
 perl -pi -e 's/<(https?:\/\/[^>]+)>/[$1]($1)/g' docs/knowledge/rpc/jip2-gav.md
 perl -pi -e 'if (!/\$|`/) { s/\{/\\{/g; s/\}/\\}/g }' docs/knowledge/rpc/jip2-gav.md
+# Relative links to sibling JIPs only resolve in the JIPs repository
+perl -pi -e 's|\]\(\./(JIP-[0-9]+\.md)|](https://github.com/polkadot-fellows/JIPs/blob/main/$1|g' docs/knowledge/rpc/jip2-gav.md
 
 npm run convert-yaml docs/dao/index.md
 

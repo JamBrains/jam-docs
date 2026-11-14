@@ -1,0 +1,6 @@
+.git
+.gitea
+.github
+.docusaurus
+build
+node_modules

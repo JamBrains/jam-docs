@@ -1,0 +1,105 @@
+# Runs only in the Selenio Gitea pull mirror (GitHub ignores .gitea/workflows).
+# A mirror sync of main builds, publishes and deploys docs.jamcha.in on Selenio#2.
+name: Deploy docs
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: jam-docs-production
+  cancel-in-progress: false
+
+env:
+  IMAGE: gitea.vpn.selenio-software.ltd/selenio-software-ltd/jam-chain-docs
+  DEPLOY_COMMIT: ${{ gitea.sha }}
+  VERIFY_URL: https://jam-docs.selenio-software.ltd/
+
+jobs:
+  deploy:
+    name: Build, publish and deploy
+    if: ${{ gitea.repository == 'selenio-software-ltd/jam-chain-docs' && gitea.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-24.04
+    container: docker.gitea.com/runner-images:ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Check out mirrored commit
+        # actions/checkout v4.2.2
+        uses: https://github.com/actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ gitea.sha }}
+          persist-credentials: false
+
+      - name: Build image
+        run: |
+          docker build --pull --platform linux/amd64 --file deploy/Dockerfile \
+            --build-arg "DEPLOY_COMMIT=$DEPLOY_COMMIT" \
+            --label "org.opencontainers.image.revision=$DEPLOY_COMMIT" \
+            --tag "$IMAGE:$DEPLOY_COMMIT" .
+
+      - name: Smoke-test image with production container settings
+        run: |
+          set -euo pipefail
+          cid=$(docker run --detach --read-only --tmpfs /tmp --cap-drop ALL \
+            --security-opt no-new-privileges:true "$IMAGE:$DEPLOY_COMMIT")
+          trap 'docker rm --force "$cid" >/dev/null' EXIT
+          for _ in $(seq 20); do
+            docker exec "$cid" wget -q -O /dev/null http://127.0.0.1:8080/healthz && break
+            sleep 1
+          done
+          headers=$(docker exec "$cid" wget -S -q -O /dev/null http://127.0.0.1:8080/ 2>&1)
+          grep -q "200 OK" <<<"$headers"
+          grep -qi "X-Deploy-Commit: $DEPLOY_COMMIT" <<<"$headers"
+          docker exec "$cid" wget -q -O - http://127.0.0.1:8080/ | grep -q "<title"
+          docker exec "$cid" sh -c '! wget -q -O /dev/null http://127.0.0.1:8080/does-not-exist'
+
+      - name: Require main to still point at this commit
+        run: |
+          head=$(git ls-remote "${{ gitea.server_url }}/${{ gitea.repository }}.git" refs/heads/main | cut -f1)
+          if [ "$head" != "$DEPLOY_COMMIT" ]; then
+            echo "main moved to $head; the newer run deploys it."
+            exit 1
+          fi
+
+      - name: Publish commit and main tags
+        env:
+          REGISTRY_USERNAME: ${{ secrets.REGISTRY_USERNAME }}
+          REGISTRY_TOKEN: ${{ secrets.REGISTRY_TOKEN }}
+        run: |
+          set -euo pipefail
+          # Keep registry credentials out of the persistent runner's Docker config.
+          DOCKER_CONFIG=$(mktemp -d)
+          export DOCKER_CONFIG
+          trap 'rm -rf -- "$DOCKER_CONFIG"' EXIT
+          printf '%s' "$REGISTRY_TOKEN" |
+            docker login gitea.vpn.selenio-software.ltd --username "$REGISTRY_USERNAME" --password-stdin
+          docker tag "$IMAGE:$DEPLOY_COMMIT" "$IMAGE:main"
+          docker push "$IMAGE:$DEPLOY_COMMIT"
+          docker push "$IMAGE:main"
+
+      - name: Request Coolify deployment and verify the served commit
+        env:
+          COOLIFY_DEPLOY_WEBHOOK: ${{ secrets.COOLIFY_DEPLOY_WEBHOOK }}
+          COOLIFY_DEPLOY_TOKEN: ${{ secrets.COOLIFY_DEPLOY_TOKEN }}
+        run: |
+          set -euo pipefail
+          # curl reads the token from stdin, never from process arguments.
+          printf 'header = "Authorization: Bearer %s"\n' "$COOLIFY_DEPLOY_TOKEN" |
+            curl --fail --silent --show-error --max-time 30 --config - \
+              --request POST --output /dev/null "$COOLIFY_DEPLOY_WEBHOOK"
+          for _ in $(seq 120); do
+            served=$(curl --silent --max-time 10 --head --header "Cache-Control: no-cache" "$VERIFY_URL" |
+              tr -d '\r' | awk 'tolower($1) == "x-deploy-commit:" { print $2 }')
+            if [ "$served" = "$DEPLOY_COMMIT" ]; then
+              echo "Verified $VERIFY_URL serves $DEPLOY_COMMIT."
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "Timed out: $VERIFY_URL serves '${served:-nothing}', expected $DEPLOY_COMMIT."
+          exit 1
+
+      - name: Remove local images
+        if: ${{ always() }}
+        run: docker image rm --force "$IMAGE:$DEPLOY_COMMIT" "$IMAGE:main" >/dev/null 2>&1 || true
